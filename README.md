@@ -57,7 +57,7 @@ pnpm dev
 
 - 详情页将全部课次地点标注在港大地图(Leaflet + OpenStreetMap)
 - 地点按教学楼聚合:一栋楼一个标记,标记上显示楼栋缩写与课次数,弹窗列出具体课次
-- 数据集 21 个教室归入 9 栋楼(Main Building、K.K. Leung、Meng Wah、图书馆翼、张玉明物理楼、Knowles、徐展堂、综合楼 A、百周年校园);坐标为 OSM 上目测校准的近似值
+- 数据集 21 个教室归入 9 栋楼(Main Building、K.K. Leung、Meng Wah、图书馆新翼、张玉明物理楼、Knowles、徐展堂、综合楼、百周年校园);楼栋坐标取自 OpenStreetMap 建筑数据,与地图底图精确对齐
 - 未标注地点的课次(venue 为空)在地图下方注明数量
 
 ### 4. 课程收藏
@@ -101,4 +101,4 @@ pnpm dev
 - `description` 字段在数据集中全部为空,详情页显示"暂无简介"
 - 部分院系名称在数据源中被截断(如 "School of Computing and Data S"),原样展示
 - 无登录系统,收藏仅存于本浏览器
-- 地图坐标为近似校准值,仅作位置示意
+- 地图楼栋坐标来自 OpenStreetMap 建筑数据;百周年校园(CPD)标记为两塔间中央平台的近似中心点
