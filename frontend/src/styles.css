@@ -772,6 +772,14 @@ body {
 .tt-legend__chip.is-red { background: #ffccc7; border: 1px solid #ff4d4f; }
 .tt-legend__chip.is-selected { background: #b5f5ec; border: 1px solid #13c2c2; }
 .tt-legend__chip.is-coverage { background: rgba(82, 196, 26, 0.44); }
+.tt-legend__chip.is-ghost { background: #b5f5ec; border: 1.5px dashed #13c2c2; }
+
+/* 自动排课方案预览色块 */
+.tt-block.is-ghost {
+  background: #b5f5ec;
+  border: 1.5px dashed #13c2c2;
+  z-index: 2;
+}
 
 /* 右侧备选列表 */
 .tt-side {
@@ -932,6 +940,115 @@ body {
 
 .tt-add-search {
   margin-bottom: 8px;
+}
+
+/* ===== 自动排课向导 ===== */
+
+.auto-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.auto-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 0;
+}
+
+.auto-prefs {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.auto-search-loading {
+  display: flex;
+  justify-content: center;
+  padding: 8px 0;
+}
+
+.auto-search-list {
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #f0f1f4;
+  border-radius: 6px;
+  padding: 0 8px;
+}
+
+/* ===== 排课方案抽屉 ===== */
+
+.sol-sub {
+  font-size: 12px;
+}
+
+.sol-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.sol-row {
+  border: 1px solid #eef0f4;
+  border-radius: 6px;
+  padding: 8px 10px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.sol-row:hover,
+.sol-row.is-hover {
+  border-color: #adc6ff;
+  box-shadow: 0 1px 4px rgba(47, 84, 235, 0.1);
+}
+
+.sol-row.is-locked {
+  border-color: #2f54eb;
+  box-shadow: 0 0 0 1px #2f54eb;
+}
+
+.sol-row__head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sol-row__title {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.sol-row__lock {
+  color: #2f54eb;
+  font-size: 12px;
+}
+
+.sol-row__score {
+  color: rgba(0, 0, 0, 0.45);
+  font-size: 12px;
+  flex: 1;
+}
+
+.sol-row__prefs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 6px 0;
+}
+
+.sol-row__prefs .ant-tag {
+  margin: 0;
+}
+
+.sol-row__summary {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.65);
+  word-break: break-all;
+  line-height: 1.6;
 }
 
 @media (max-width: 992px) {

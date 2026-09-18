@@ -19,6 +19,8 @@ interface TimetableGridProps {
   selected: SelectedBlockInfo[];
   preview: PreviewInfo | null;
   coverage: Map<string, CoverageCell> | null;
+  /** 自动排课方案的预览课表(悬停/锁定方案时整表替换显示) */
+  solutionPreview: SelectedBlockInfo[] | null;
   onRemoveCourse: (courseCode: string) => void;
 }
 
@@ -49,13 +51,14 @@ function CoveragePopover({ cell }: { cell: CoverageCell }) {
   );
 }
 
-/** 一周课表:纵轴小时、横轴周一到周日;渲染已排色块、悬停预览色块与覆盖模式热力。 */
+/** 一周课表:纵轴小时、横轴周一到周日;渲染已排色块、悬停预览色块、方案预览与覆盖模式热力。 */
 export function TimetableGrid({
   hourStart,
   hourEnd,
   selected,
   preview,
   coverage,
+  solutionPreview,
   onRemoveCourse,
 }: TimetableGridProps) {
   const hours: number[] = [];
@@ -86,6 +89,9 @@ export function TimetableGrid({
           ))}
         </div>
         {DAY_COLUMNS.map((day) => {
+          const daySolution = solutionPreview
+            ? solutionPreview.filter((info) => info.blocks.some((block) => block.day === day))
+            : [];
           const daySelected = selected.filter((info) =>
             info.blocks.some((block) => block.day === day),
           );
@@ -114,6 +120,33 @@ export function TimetableGrid({
                     </Popover>
                   );
                 })}
+              {daySolution.map((info) =>
+                info.blocks
+                  .filter((block) => block.day === day)
+                  .map((block) => (
+                    <Tooltip
+                      key={`g-${info.courseCode}-${blockKey(block)}`}
+                      title={
+                        <div>
+                          <div>
+                            {info.courseCode} {info.courseTitle}
+                          </div>
+                          <div>
+                            {info.section} · {dayLabel(block.day)}{' '}
+                            {formatMinutes(block.startMin)}–{formatMinutes(block.endMin)}
+                          </div>
+                        </div>
+                      }
+                    >
+                      <div className="tt-block is-ghost" style={blockPosition(block)}>
+                        <div className="tt-block__label">
+                          <span className="tt-block__code">{info.courseCode}</span>
+                          <span className="tt-block__section">{info.section}</span>
+                        </div>
+                      </div>
+                    </Tooltip>
+                  )),
+              )}
               {dayPreview.map((block) => {
                 const conflict = preview ? preview.conflicts.has(blockKey(block)) : false;
                 return (

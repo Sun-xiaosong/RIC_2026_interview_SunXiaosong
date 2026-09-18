@@ -1,10 +1,18 @@
-import { QuestionCircleOutlined } from '@ant-design/icons';
+import { QuestionCircleOutlined, ThunderboltOutlined } from '@ant-design/icons';
 import { App as AntApp, Button, Checkbox, Segmented, Tooltip, Typography } from 'antd';
 import { useEffect, useMemo, useState } from 'react';
+import { AutoScheduleModal } from '../components/timetable/AutoScheduleModal';
 import { CandidatePanel } from '../components/timetable/CandidatePanel';
+import { SolutionDrawer } from '../components/timetable/SolutionDrawer';
 import { TimetableGrid } from '../components/timetable/TimetableGrid';
 import { useFavorites } from '../hooks/useFavorites';
 import { useCourseDetailMap } from '../hooks/useCourseDetailMap';
+import { request } from '../lib/api';
+import {
+  generateSchedules,
+  type GenerateResult,
+  type SchedulePrefs,
+} from '../lib/autoSchedule';
 import {
   readTimetableSelections,
   writeTimetableSelections,
@@ -24,10 +32,11 @@ import {
   type SelectionEntry,
   type TimeBlock,
 } from '../lib/timetable';
+import type { CourseDetail, CourseDetailResponse } from '../types/course';
 
 /** 我的课表:按学期的一周排课工具,含时间冲突提示与时间覆盖热力。 */
 export default function TimetablePage() {
-  const { favorites } = useFavorites();
+  const { favorites, toggle } = useFavorites();
   const { details, loading } = useCourseDetailMap(favorites);
   const { message } = AntApp.useApp();
 
@@ -40,6 +49,21 @@ export default function TimetablePage() {
     null,
   );
   const [coverageOn, setCoverageOn] = useState(false);
+
+  // ---- 自动排课状态 ----
+  const [autoModalOpen, setAutoModalOpen] = useState(false);
+  const [autoResult, setAutoResult] = useState<GenerateResult | null>(null);
+  const [autoSemester, setAutoSemester] = useState<1 | 2>(1);
+  const [autoPrefs, setAutoPrefs] = useState<SchedulePrefs>({
+    avoidEarlyNine: true,
+    concentrate: true,
+    lunchBreak: true,
+  });
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [hoveredSolution, setHoveredSolution] = useState<number | null>(null);
+  const [lockedSolution, setLockedSolution] = useState<number | null>(null);
+  /** 自动排课搜索添加的非备选课程详情(补全详情用) */
+  const [extraDetails, setExtraDetails] = useState<Map<string, CourseDetail>>(new Map());
 
   useEffect(() => {
     writeTimetableSelections(selections);
@@ -186,6 +210,126 @@ export default function TimetablePage() {
     [details],
   );
 
+  // ---- 自动排课 ----
+
+  /** 收藏详情 + 自动排课补充拉取的详情 */
+  const allDetails = useMemo(() => {
+    const merged = new Map(details);
+    for (const [code, detail] of extraDetails) {
+      if (!merged.has(code)) merged.set(code, detail);
+    }
+    return merged;
+  }, [details, extraDetails]);
+
+  /** 悬停优先,其次锁定;命中时整表切换为方案预览 */
+  const displayedSolutionIndex = hoveredSolution ?? lockedSolution;
+  const solutionPreview: SelectedBlockInfo[] | null = useMemo(() => {
+    if (!autoResult || displayedSolutionIndex === null) return null;
+    const solution = autoResult.solutions[displayedSolutionIndex];
+    if (!solution) return null;
+    return solution.entries.flatMap((entry) => {
+      const detail = allDetails.get(entry.courseCode);
+      const subclass = detail?.subclasses.find((item) => item.id === entry.subclassId);
+      if (!detail || !subclass) return [];
+      return [
+        {
+          courseCode: detail.code,
+          courseTitle: detail.title,
+          section: subclass.section ?? String(subclass.id),
+          blocks: subclassBlocks(subclass),
+        },
+      ];
+    });
+  }, [autoResult, displayedSolutionIndex, allDetails]);
+
+  const closeAutoFlow = () => {
+    setDrawerOpen(false);
+    setAutoResult(null);
+    setHoveredSolution(null);
+    setLockedSolution(null);
+  };
+
+  const runAutoSchedule = async (codes: string[], sem: 1 | 2, prefs: SchedulePrefs) => {
+    setAutoModalOpen(false);
+    setAutoSemester(sem);
+    setAutoPrefs(prefs);
+
+    // 补拉不在收藏详情里的课程(搜索添加的课程)
+    const base = new Map(details);
+    for (const [code, detail] of extraDetails) {
+      if (!base.has(code)) base.set(code, detail);
+    }
+    const missing = codes.filter((code) => !base.has(code));
+    if (missing.length > 0) {
+      try {
+        await Promise.all(
+          missing.map((code) =>
+            request<CourseDetailResponse>(`/api/courses/${encodeURIComponent(code)}`).then(
+              (data) => base.set(code, data.course),
+            ),
+          ),
+        );
+      } catch {
+        // 单个课程拉取失败则跳过该课程
+      }
+    }
+    setExtraDetails(new Map(base));
+
+    const courseList = codes
+      .map((code) => base.get(code))
+      .filter((detail): detail is CourseDetail => Boolean(detail));
+    const result = generateSchedules(courseList, sem, prefs);
+    setAutoResult(result);
+    setHoveredSolution(null);
+    setLockedSolution(null);
+    setDrawerOpen(true);
+
+    if (result.solutions.length === 0) {
+      const reason =
+        result.emptyCourses.length > 0
+          ? `${result.emptyCourses.join('、')} 在 Sem ${sem} 没有分班,无法参与排课`
+          : '所选课程的分班时间存在不可避免的冲突,无法共存';
+      void message.warning(`没有可行的排课方案:${reason}`);
+    }
+  };
+
+  const applySolution = (index: number) => {
+    const solution = autoResult?.solutions[index];
+    if (!solution) return;
+    const solutionCodes = solution.entries.map((entry) => entry.courseCode);
+
+    setSelections((previous) => {
+      const kept = previous.filter((entry) => {
+        if (solutionCodes.includes(entry.courseCode)) return false;
+        const subclass = allDetails
+          .get(entry.courseCode)
+          ?.subclasses.find((item) => item.id === entry.subclassId);
+        return !(subclass && semesterOf(subclass) === autoSemester);
+      });
+      return [
+        ...kept,
+        ...solution.entries.map((entry) => ({
+          courseCode: entry.courseCode,
+          subclassId: entry.subclassId,
+        })),
+      ];
+    });
+    // 排进课表的课程自动加入备选(收藏),保证课表数据完整
+    for (const code of solutionCodes) {
+      if (!favorites.includes(code)) toggle(code);
+    }
+    void message.success(`已应用方案 ${index + 1}(${solutionCodes.length} 门课)`);
+    closeAutoFlow();
+  };
+
+  const favoriteDetails = useMemo(
+    () =>
+      favorites
+        .map((code) => details.get(code))
+        .filter((detail): detail is CourseDetail => Boolean(detail)),
+    [favorites, details],
+  );
+
   const selectSubclass = (courseCode: string, subclassId: number) => {
     const detail = details.get(courseCode);
     const subclass = detail?.subclasses.find((item) => item.id === subclassId);
@@ -238,6 +382,13 @@ export default function TimetablePage() {
                 { label: 'Sem 2', value: 2 },
               ]}
             />
+            <Button
+              type="primary"
+              icon={<ThunderboltOutlined />}
+              onClick={() => setAutoModalOpen(true)}
+            >
+              自动排课
+            </Button>
             <Checkbox
               checked={coverageOn}
               onChange={(event) => setCoverageOn(event.target.checked)}
@@ -256,9 +407,10 @@ export default function TimetablePage() {
         <TimetableGrid
           hourStart={HOUR_START}
           hourEnd={hourEnd}
-          selected={selectedInfos}
-          preview={preview}
-          coverage={coverage}
+          selected={solutionPreview ? [] : selectedInfos}
+          preview={solutionPreview ? null : preview}
+          coverage={solutionPreview ? null : coverage}
+          solutionPreview={solutionPreview}
           onRemoveCourse={removeFromTimetable}
         />
 
@@ -272,9 +424,14 @@ export default function TimetablePage() {
           <span className="tt-legend__item">
             <span className="tt-legend__chip is-selected" /> 已排入课表(悬停色块右上角 × 可移除)
           </span>
-          {coverageOn && (
+          {coverageOn && !solutionPreview && (
             <span className="tt-legend__item">
               <span className="tt-legend__chip is-coverage" /> 覆盖模式:颜色越深可选课程越多
+            </span>
+          )}
+          {solutionPreview && (
+            <span className="tt-legend__item">
+              <span className="tt-legend__chip is-ghost" /> 自动排课方案预览(在右侧方案列表中悬停/锁定)
             </span>
           )}
         </div>
@@ -291,6 +448,30 @@ export default function TimetablePage() {
         onHoverSubclass={setHoverSub}
         onSelectSubclass={selectSubclass}
       />
+
+      <AutoScheduleModal
+        open={autoModalOpen}
+        onClose={() => setAutoModalOpen(false)}
+        defaultSemester={semester}
+        candidateDetails={favoriteDetails}
+        onRun={(codes, sem, prefs) => {
+          void runAutoSchedule(codes, sem, prefs);
+        }}
+      />
+
+      {autoResult && (
+        <SolutionDrawer
+          open={drawerOpen}
+          onClose={closeAutoFlow}
+          result={autoResult}
+          prefs={autoPrefs}
+          hovered={hoveredSolution}
+          locked={lockedSolution}
+          onHover={setHoveredSolution}
+          onLock={(index) => setLockedSolution((previous) => (previous === index ? previous : index))}
+          onApply={applySolution}
+        />
+      )}
     </div>
   );
 }
