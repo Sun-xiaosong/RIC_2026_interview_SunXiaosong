@@ -120,10 +120,6 @@ body {
   width: 160px;
 }
 
-.filter-none {
-  flex: 0 0 auto;
-}
-
 .list-hint {
   display: block;
   margin-bottom: 16px;
@@ -549,8 +545,7 @@ body {
   .course-search,
   .dept-select,
   .sem-select,
-  .req-select,
-  .filter-none {
+  .req-select {
     max-width: none;
     width: 100%;
     min-width: 0;
