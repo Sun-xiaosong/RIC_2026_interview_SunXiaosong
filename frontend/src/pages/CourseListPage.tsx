@@ -53,8 +53,8 @@ export default function CourseListPage() {
         />
       </div>
       <Typography.Text type="secondary" className="list-hint">
-        匹配标题中单词的开头或课程代码的开头(单字符仅匹配代码);结果按 标题精确 &gt;
-        代码精确 &gt; 标题词首 &gt; 代码前缀 排序。
+        匹配标题中单词的开头或课程代码的开头(单字符仅匹配代码);纯数字关键词可匹配代码中任意位置(如
+        3314 → COMP3314)。结果按 标题精确 &gt; 代码精确 &gt; 标题词首 &gt; 代码前缀 排序。
       </Typography.Text>
 
       {error ? (
