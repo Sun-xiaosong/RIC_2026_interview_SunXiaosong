@@ -3,6 +3,7 @@ import AppLayout from './routes/AppLayout';
 import CourseListPage from './pages/CourseListPage';
 import CourseDetailPage from './pages/CourseDetailPage';
 import FavoritesPage from './pages/FavoritesPage';
+import TimetablePage from './pages/TimetablePage';
 import NotFoundPage from './pages/NotFoundPage';
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
         <Route index element={<CourseListPage />} />
         <Route path="courses/:code" element={<CourseDetailPage />} />
         <Route path="favorites" element={<FavoritesPage />} />
+        <Route path="timetable" element={<TimetablePage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>

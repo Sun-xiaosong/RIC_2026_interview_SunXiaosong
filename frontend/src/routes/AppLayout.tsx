@@ -1,5 +1,10 @@
 import { Avatar, Dropdown, Layout, Menu } from 'antd';
-import { BookOutlined, StarOutlined, UserOutlined } from '@ant-design/icons';
+import {
+  BookOutlined,
+  CalendarOutlined,
+  StarOutlined,
+  UserOutlined,
+} from '@ant-design/icons';
 import { NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { useFavorites } from '../hooks/useFavorites';
 
@@ -11,8 +16,12 @@ export default function AppLayout() {
   const navigate = useNavigate();
   const { favorites } = useFavorites();
 
-  // 详情页 /courses/COMP3314 也高亮"课程浏览"
-  const selectedKey = location.pathname === '/favorites' ? '/favorites' : '/';
+  // 详情页 /courses/COMP3314 高亮"课程浏览",其余按路径匹配
+  const selectedKey = location.pathname.startsWith('/favorites')
+    ? '/favorites'
+    : location.pathname.startsWith('/timetable')
+      ? '/timetable'
+      : '/';
 
   return (
     <Layout className="app-layout">
@@ -30,6 +39,7 @@ export default function AppLayout() {
             items={[
               { key: '/', label: '课程浏览' },
               { key: '/favorites', label: '我的收藏' },
+              { key: '/timetable', label: '我的课表' },
             ]}
           />
           <Dropdown
@@ -48,8 +58,9 @@ export default function AppLayout() {
                     </span>
                   ),
                 },
+                { key: 'timetable', icon: <CalendarOutlined />, label: '我的课表' },
               ],
-              onClick: () => navigate('/favorites'),
+              onClick: ({ key }) => navigate(key === 'favorites' ? '/favorites' : '/timetable'),
             }}
           >
             <Avatar className="app-avatar" icon={<UserOutlined />} />
