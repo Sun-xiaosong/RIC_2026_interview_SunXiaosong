@@ -53,7 +53,8 @@ export default function CourseListPage() {
         />
       </div>
       <Typography.Text type="secondary" className="list-hint">
-        搜索结果优先显示名称完全匹配的课程,其次是名称包含关键词的课程;也支持课程代码。
+        匹配标题中单词的开头或课程代码的开头(单字符仅匹配代码);结果按 标题精确 &gt;
+        代码精确 &gt; 标题词首 &gt; 代码前缀 排序。
       </Typography.Text>
 
       {error ? (

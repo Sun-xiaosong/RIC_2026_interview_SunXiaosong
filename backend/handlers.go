@@ -39,8 +39,13 @@ func requireGet(response http.ResponseWriter, request *http.Request) bool {
 // ---- 搜索排序 ----
 
 // matchTier 计算课程与搜索词的匹配档位:
-// 0 标题精确匹配 > 1 代码精确匹配 > 2 标题包含 > 3 代码包含 > -1 不匹配。
+// 0 标题精确匹配 > 1 代码精确匹配 > 2 标题词首匹配 > 3 代码前缀匹配 > -1 不匹配。
 // 在 Go 内存中做(而非 SQL LIKE):规避 LIKE 的 %/_ 通配符转义问题,且大小写行为可控。
+// 匹配语义:
+//   - 标题按"词首"匹配(标题中某个单词以关键词开头),不匹配单词中段的字母,
+//     避免搜 "A" 命中 "machine" 里的 a 这类噪音;
+//   - 单字符关键词只匹配代码前缀,进一步降低单字母的噪音;
+//   - 代码始终按前缀匹配(输入 "COMP"、"FINA" 等)。
 func matchTier(query, code, title string) int {
 	if strings.EqualFold(title, query) {
 		return 0
@@ -49,13 +54,24 @@ func matchTier(query, code, title string) int {
 		return 1
 	}
 	q := strings.ToLower(query)
-	if strings.Contains(strings.ToLower(title), q) {
+	if len(query) >= 2 && titleHasWordPrefix(title, q) {
 		return 2
 	}
-	if strings.Contains(strings.ToLower(code), q) {
+	if strings.HasPrefix(strings.ToLower(code), q) {
 		return 3
 	}
 	return -1
+}
+
+// titleHasWordPrefix 判断标题中是否有单词以 lowerQuery 开头(大小写不敏感)。
+// strings.Fields 按空白分词,单词可携带标点(如 "Life:" 匹配 "life")。
+func titleHasWordPrefix(title, lowerQuery string) bool {
+	for _, word := range strings.Fields(title) {
+		if strings.HasPrefix(strings.ToLower(word), lowerQuery) {
+			return true
+		}
+	}
+	return false
 }
 
 // ---- /api/health ----
