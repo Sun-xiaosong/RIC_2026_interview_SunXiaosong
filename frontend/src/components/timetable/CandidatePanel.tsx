@@ -9,10 +9,11 @@ import { dayLabel, formatInstructor } from '../../lib/constants';
 import {
   blocksOverlap,
   formatMinutes,
+  semesterOf,
   subclassBlocks,
   type TimeBlock,
 } from '../../lib/timetable';
-import type { CourseDetail } from '../../types/course';
+import type { CourseDetail, Subclass } from '../../types/course';
 
 /** 添加课程弹窗:搜索课程(走后端搜索 API)后加入备选列表。 */
 function AddCourseModal({
@@ -45,7 +46,9 @@ function AddCourseModal({
         size="small"
         loading={loading}
         dataSource={courses}
-        locale={{ emptyText: <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description="没有匹配的课程" /> }}
+        locale={{
+          emptyText: <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description="没有匹配的课程" />,
+        }}
         renderItem={(course) => {
           const added = existingCodes.includes(course.code) || isFavorite(course.code);
           return (
@@ -56,7 +59,13 @@ function AddCourseModal({
                     已在备选
                   </Button>
                 ) : (
-                  <Button key="add" size="small" type="primary" icon={<PlusOutlined />} onClick={() => toggle(course.code)}>
+                  <Button
+                    key="add"
+                    size="small"
+                    type="primary"
+                    icon={<PlusOutlined />}
+                    onClick={() => toggle(course.code)}
+                  >
                     加入备选
                   </Button>
                 ),
@@ -81,27 +90,83 @@ function AddCourseModal({
 interface CandidatePanelProps {
   candidates: CourseDetail[];
   loading: boolean;
-  /** courseCode -> 已排入课表的 subclassId */
+  /** courseCode -> 已排 subclassId(不分学期,面板自行判断是否属于当前学期) */
   selectionByCourse: Map<string, number>;
-  /** 其他已排课程(不同课程)的课时段,用于分班冲突置灰 */
+  /** 当前学期其他已排课程的课时段,用于分班冲突置灰 */
   otherBlocks: TimeBlock[];
+  /** 当前查看的学期 */
+  semester: 1 | 2;
+  /** 当前悬停的课程(控制分班展开) */
+  hoverCourse: string | null;
   onHoverCourse: (code: string | null) => void;
   onHoverSubclass: (info: { courseCode: string; subclassId: number } | null) => void;
   onSelectSubclass: (courseCode: string, subclassId: number) => void;
 }
 
-/** 课表页右侧备选课程列表:悬停展开分班,点击分班排入课表。 */
+function SubclassRow({
+  detail,
+  subclass,
+  isSelected,
+  otherBlocks,
+  onHoverSubclass,
+  onSelectSubclass,
+}: {
+  detail: CourseDetail;
+  subclass: Subclass;
+  isSelected: boolean;
+  otherBlocks: TimeBlock[];
+  onHoverSubclass: (info: { courseCode: string; subclassId: number } | null) => void;
+  onSelectSubclass: (courseCode: string, subclassId: number) => void;
+}) {
+  const blocks = subclassBlocks(subclass);
+  const conflict = blocks.some((block) =>
+    otherBlocks.some((other) => blocksOverlap(block, other)),
+  );
+  const className = isSelected
+    ? 'cand-sub is-selected'
+    : conflict
+      ? 'cand-sub is-conflict'
+      : 'cand-sub';
+
+  return (
+    <div
+      className={className}
+      onMouseEnter={() =>
+        onHoverSubclass({ courseCode: detail.code, subclassId: subclass.id })
+      }
+      onMouseLeave={() => onHoverSubclass(null)}
+      onClick={() => onSelectSubclass(detail.code, subclass.id)}
+    >
+      <div className="cand-sub__head">
+        <span className="cand-sub__section">{subclass.section ?? '—'}</span>
+        <span className="cand-sub__instructor">{formatInstructor(subclass.instructor)}</span>
+        {isSelected && <Tag color="cyan">在课表</Tag>}
+        {conflict && <Tag color="red">时间冲突</Tag>}
+      </div>
+      {blocks.map((block, index) => (
+        <div key={index} className="cand-sub__time">
+          {dayLabel(block.day)} {formatMinutes(block.startMin)}–{formatMinutes(block.endMin)}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+/** 课表页右侧备选课程列表:悬停课程展开本学期分班,点击分班排入课表。 */
 export function CandidatePanel({
   candidates,
   loading,
   selectionByCourse,
   otherBlocks,
+  semester,
+  hoverCourse,
   onHoverCourse,
   onHoverSubclass,
   onSelectSubclass,
 }: CandidatePanelProps) {
   const { toggle } = useFavorites();
   const [addOpen, setAddOpen] = useState(false);
+  const otherSemester = semester === 1 ? 2 : 1;
 
   return (
     <aside className="tt-side">
@@ -109,10 +174,12 @@ export function CandidatePanel({
         <Typography.Title level={5} style={{ margin: 0 }}>
           备选课程
         </Typography.Title>
-        <Typography.Text type="secondary">({candidates.length})</Typography.Text>
+        <Typography.Text type="secondary">
+          (Sem {semester} · {candidates.length})
+        </Typography.Text>
       </div>
       <Typography.Paragraph type="secondary" className="tt-side__hint">
-        悬停课程查看分班与可上时间,点击分班排入课表;再次点击其他分班可更换。
+        悬停课程展开本学期分班与可上时间,点击分班排入课表;再点其他分班可更换。
       </Typography.Paragraph>
 
       <div className="tt-cands">
@@ -122,10 +189,33 @@ export function CandidatePanel({
           </div>
         )}
         {!loading && candidates.length === 0 && (
-          <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description="备选列表为空" />
+          <Empty
+            image={Empty.PRESENTED_IMAGE_SIMPLE}
+            description={`Sem ${semester} 没有备选课程开课`}
+          />
         )}
         {candidates.map((detail) => {
           const selectedSubId = selectionByCourse.get(detail.code);
+          const selectedSub =
+            selectedSubId === undefined
+              ? undefined
+              : detail.subclasses.find((subclass) => subclass.id === selectedSubId);
+          const selectedInThisSem = selectedSub !== undefined && semesterOf(selectedSub) === semester;
+
+          const subsCurrent = detail.subclasses.filter(
+            (subclass) => semesterOf(subclass) === semester,
+          );
+          const subsOther = detail.subclasses.filter(
+            (subclass) => semesterOf(subclass) === otherSemester,
+          );
+          // 悬停时展开本学期全部分班;未悬停时只钉住已排的当前学期分班
+          const expanded = hoverCourse === detail.code;
+          const visibleSubs = expanded
+            ? subsCurrent
+            : selectedInThisSem && selectedSub
+              ? [selectedSub]
+              : [];
+
           return (
             <div
               key={detail.code}
@@ -135,7 +225,10 @@ export function CandidatePanel({
             >
               <div className="cand-item__head">
                 <span className="course-code">{detail.code}</span>
-                {selectedSubId !== undefined && <span className="cand-stamp">已排</span>}
+                {selectedInThisSem && <span className="cand-stamp">已排</span>}
+                {selectedSub && !selectedInThisSem && (
+                  <span className="cand-cross-sem">已排于 Sem {semesterOf(selectedSub)}</span>
+                )}
                 <Button
                   type="text"
                   size="small"
@@ -149,44 +242,27 @@ export function CandidatePanel({
               <Typography.Text type="secondary" className="cand-item__title">
                 {detail.title}
               </Typography.Text>
-              <div className="cand-subs">
-                {detail.subclasses.map((subclass) => {
-                  const isSelected = selectedSubId === subclass.id;
-                  const blocks = subclassBlocks(subclass);
-                  const conflict = blocks.some((block) =>
-                    otherBlocks.some((other) => blocksOverlap(block, other)),
-                  );
-                  const className = isSelected
-                    ? 'cand-sub is-selected'
-                    : conflict
-                      ? 'cand-sub is-conflict'
-                      : 'cand-sub';
-                  return (
-                    <div
+              {visibleSubs.length > 0 && (
+                <div className="cand-subs">
+                  {visibleSubs.map((subclass) => (
+                    <SubclassRow
                       key={subclass.id}
-                      className={className}
-                      onMouseEnter={() => onHoverSubclass({ courseCode: detail.code, subclassId: subclass.id })}
-                      onMouseLeave={() => onHoverSubclass(null)}
-                      onClick={() => onSelectSubclass(detail.code, subclass.id)}
-                    >
-                      <div className="cand-sub__head">
-                        <span className="cand-sub__section">{subclass.section ?? '—'}</span>
-                        <span className="cand-sub__instructor">
-                          {formatInstructor(subclass.instructor)}
-                        </span>
-                        {isSelected && <Tag color="cyan">在课表</Tag>}
-                        {conflict && <Tag color="red">时间冲突</Tag>}
-                      </div>
-                      {blocks.map((block, index) => (
-                        <div key={index} className="cand-sub__time">
-                          {dayLabel(block.day)} {formatMinutes(block.startMin)}–
-                          {formatMinutes(block.endMin)}
-                        </div>
-                      ))}
-                    </div>
-                  );
-                })}
-              </div>
+                      detail={detail}
+                      subclass={subclass}
+                      isSelected={selectedSubId === subclass.id}
+                      otherBlocks={otherBlocks}
+                      onHoverSubclass={onHoverSubclass}
+                      onSelectSubclass={onSelectSubclass}
+                    />
+                  ))}
+                </div>
+              )}
+              {subsOther.length > 0 && (
+                <div className="cand-other-note">
+                  另在 Sem {otherSemester} 开设:
+                  {subsOther.map((subclass) => subclass.section ?? subclass.id).join('、')}
+                </div>
+              )}
             </div>
           );
         })}

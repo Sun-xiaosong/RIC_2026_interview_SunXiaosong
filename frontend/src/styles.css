@@ -849,6 +849,21 @@ body {
   transform: rotate(-6deg);
 }
 
+/* 已排于另一学期的提示 */
+.cand-cross-sem {
+  font-size: 11px;
+  color: #faad14;
+}
+
+/* 另一学期开设分班的注记 */
+.cand-other-note {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.45);
+  margin-top: 4px;
+  border-top: 1px dashed #f0f1f4;
+  padding-top: 4px;
+}
+
 .cand-subs {
   display: flex;
   flex-direction: column;

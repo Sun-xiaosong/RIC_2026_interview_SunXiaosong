@@ -1,5 +1,5 @@
 import { QuestionCircleOutlined } from '@ant-design/icons';
-import { App as AntApp, Button, Checkbox, Tooltip, Typography } from 'antd';
+import { App as AntApp, Button, Checkbox, Segmented, Tooltip, Typography } from 'antd';
 import { useEffect, useMemo, useState } from 'react';
 import { CandidatePanel } from '../components/timetable/CandidatePanel';
 import { TimetableGrid } from '../components/timetable/TimetableGrid';
@@ -15,6 +15,7 @@ import {
   blockKey,
   hoursOf,
   latestEndMinute,
+  semesterOf,
   subclassBlocks,
   uniqueBlocks,
   type CoverageCell,
@@ -24,7 +25,7 @@ import {
   type TimeBlock,
 } from '../lib/timetable';
 
-/** 我的课表:基于备选课程(收藏)的一周排课工具,含时间冲突提示与时间覆盖热力。 */
+/** 我的课表:按学期的一周排课工具,含时间冲突提示与时间覆盖热力。 */
 export default function TimetablePage() {
   const { favorites } = useFavorites();
   const { details, loading } = useCourseDetailMap(favorites);
@@ -33,6 +34,7 @@ export default function TimetablePage() {
   const [selections, setSelections] = useState<SelectionEntry[]>(() =>
     readTimetableSelections(),
   );
+  const [semester, setSemester] = useState<1 | 2>(1);
   const [hoverCourse, setHoverCourse] = useState<string | null>(null);
   const [hoverSub, setHoverSub] = useState<{ courseCode: string; subclassId: number } | null>(
     null,
@@ -56,48 +58,53 @@ export default function TimetablePage() {
     });
   }, [favorites, details]);
 
-  /** courseCode -> 已排 subclassId */
+  /** courseCode -> 已排 subclassId(不分学期) */
   const selectionByCourse = useMemo(() => {
     const map = new Map<string, number>();
     for (const entry of selections) map.set(entry.courseCode, entry.subclassId);
     return map;
   }, [selections]);
 
-  /** 已排课程块(含课程与分班元信息) */
-  const selectedInfos: SelectedBlockInfo[] = useMemo(() => {
-    const result: SelectedBlockInfo[] = [];
-    for (const entry of selections) {
-      const detail = details.get(entry.courseCode);
-      const subclass = detail?.subclasses.find((item) => item.id === entry.subclassId);
-      if (!detail || !subclass) continue;
-      result.push({
-        courseCode: detail.code,
+  /** 已排且属于当前学期的条目(时间表与冲突判断都按学期隔离) */
+  const currentSemSelected = useMemo(
+    () =>
+      selections.flatMap((entry) => {
+        const detail = details.get(entry.courseCode);
+        const subclass = detail?.subclasses.find((item) => item.id === entry.subclassId);
+        if (!detail || !subclass || semesterOf(subclass) !== semester) return [];
+        return [{ courseCode: entry.courseCode, detail, subclass }];
+      }),
+    [selections, details, semester],
+  );
+
+  /** 时间表渲染的已排块 */
+  const selectedInfos: SelectedBlockInfo[] = useMemo(
+    () =>
+      currentSemSelected.map(({ courseCode, detail, subclass }) => ({
+        courseCode,
         courseTitle: detail.title,
         section: subclass.section ?? String(subclass.id),
         blocks: subclassBlocks(subclass),
-      });
-    }
-    return result;
-  }, [selections, details]);
-
-  /** 悬停整门课时,该课所有分班(其他课程)已占时段的冲突判断用 */
-  const selectedBlockList = useMemo(
-    () =>
-      selections.map((entry) => {
-        const detail = details.get(entry.courseCode);
-        const subclass = detail?.subclasses.find((item) => item.id === entry.subclassId);
-        return {
-          code: entry.courseCode,
-          blocks: subclass ? subclassBlocks(subclass) : [],
-        };
-      }),
-    [selections, details],
+      })),
+    [currentSemSelected],
   );
 
-  /** 悬停预览:整门课(全部分班并集)或单个分班;红色 = 与其他课程已排时段冲突 */
-  const preview: PreviewInfo | null = useMemo(() => {
-    if (coverageOn) return null;
+  /** 当前学期已排时段(冲突判断用) */
+  const selectedBlockList = useMemo(
+    () =>
+      currentSemSelected.map(({ courseCode, subclass }) => ({
+        code: courseCode,
+        blocks: subclassBlocks(subclass),
+      })),
+    [currentSemSelected],
+  );
 
+  /**
+   * 悬停预览:整门课(本学期分班并集)或单个分班;
+   * 红色 = 与当前学期其他课程已排时段冲突。
+   * 覆盖模式勾选时,悬停依然生效(此时覆盖着色隐藏,见 coverage 计算)。
+   */
+  const preview: PreviewInfo | null = useMemo(() => {
     let courseCode: string | null = null;
     let targetBlocks: TimeBlock[] = [];
     if (hoverSub) {
@@ -110,7 +117,11 @@ export default function TimetablePage() {
       courseCode = hoverCourse;
       const detail = details.get(courseCode);
       targetBlocks = detail
-        ? uniqueBlocks(detail.subclasses.flatMap((subclass) => subclassBlocks(subclass)))
+        ? uniqueBlocks(
+            detail.subclasses
+              .filter((subclass) => semesterOf(subclass) === semester)
+              .flatMap((subclass) => subclassBlocks(subclass)),
+          )
         : [];
     }
     if (!courseCode || targetBlocks.length === 0) return null;
@@ -124,11 +135,14 @@ export default function TimetablePage() {
         .map(blockKey),
     );
     return { blocks: targetBlocks, conflicts };
-  }, [hoverSub, hoverCourse, details, selectedBlockList, coverageOn]);
+  }, [hoverSub, hoverCourse, details, selectedBlockList, semester]);
 
-  /** 时间覆盖:每个 (day, hour) 小时格有多少门备选课(不含已排课程)可上 */
+  /**
+   * 时间覆盖:每个 (day, hour) 小时格有多少门备选课(不含任何已排课程,
+   * 只统计本学期分班)可上。悬停预览激活时返回 null(隐藏覆盖着色)。
+   */
   const coverage: Map<string, CoverageCell> | null = useMemo(() => {
-    if (!coverageOn) return null;
+    if (!coverageOn || preview) return null;
     const selectedCodes = new Set(selections.map((entry) => entry.courseCode));
     const map = new Map<string, CoverageCell>();
 
@@ -136,6 +150,7 @@ export default function TimetablePage() {
       if (selectedCodes.has(detail.code)) continue;
       const cellMap = new Map<string, string[]>();
       for (const subclass of detail.subclasses) {
+        if (semesterOf(subclass) !== semester) continue;
         const sectionLabel = subclass.section ?? String(subclass.id);
         for (const block of subclassBlocks(subclass)) {
           for (const hour of hoursOf(block)) {
@@ -154,11 +169,16 @@ export default function TimetablePage() {
       }
     }
     return map;
-  }, [coverageOn, details, selections]);
+  }, [coverageOn, preview, details, selections, semester]);
 
+  /** 备选列表:只显示在当前学期开课的课程 */
   const candidates = useMemo(
-    () => favorites.map((code) => details.get(code)).filter((detail): detail is NonNullable<typeof detail> => Boolean(detail)),
-    [favorites, details],
+    () =>
+      favorites
+        .map((code) => details.get(code))
+        .filter((detail): detail is NonNullable<typeof detail> => Boolean(detail))
+        .filter((detail) => detail.subclasses.some((s) => semesterOf(s) === semester)),
+    [favorites, details, semester],
   );
 
   const otherBlocksForPanel = useMemo(
@@ -190,7 +210,9 @@ export default function TimetablePage() {
       { courseCode, subclassId },
     ]);
     if (conflict) {
-      void message.warning(`注意:${courseCode}(${subclass.section ?? '—'})与课表中其他课程时间冲突`);
+      void message.warning(
+        `注意:${courseCode}(${subclass.section ?? '—'})与课表中其他课程时间冲突`,
+      );
     } else if (current !== undefined && current !== subclassId) {
       void message.success(`已更换 ${courseCode} 的分班为 ${subclass.section ?? subclassId}`);
     } else {
@@ -216,10 +238,21 @@ export default function TimetablePage() {
             我的课表
           </Typography.Title>
           <div className="tt-toolbar__right">
-            <Checkbox checked={coverageOn} onChange={(event) => setCoverageOn(event.target.checked)}>
+            <Segmented
+              value={semester}
+              onChange={(value) => setSemester(value as 1 | 2)}
+              options={[
+                { label: 'Sem 1', value: 1 },
+                { label: 'Sem 2', value: 2 },
+              ]}
+            />
+            <Checkbox
+              checked={coverageOn}
+              onChange={(event) => setCoverageOn(event.target.checked)}
+            >
               时间覆盖
             </Checkbox>
-            <Tooltip title="开启后按小时显示所有备选课(不含已排课程)的可上课覆盖:颜色越深代表该时段可选课程越多,数字为课程数,悬停数字查看课程与分班明细">
+            <Tooltip title="开启后按小时显示所有备选课(不含已排课程,仅当前学期)的可上课覆盖:颜色越深代表该时段可选课程越多,数字为课程数,悬停数字查看课程与分班明细;悬停备选课时临时显示该课时段">
               <QuestionCircleOutlined className="tt-toolbar__tip" />
             </Tooltip>
             <Button danger disabled={selections.length === 0} onClick={clearTimetable}>
@@ -260,6 +293,8 @@ export default function TimetablePage() {
         loading={loading}
         selectionByCourse={selectionByCourse}
         otherBlocks={otherBlocksForPanel}
+        semester={semester}
+        hoverCourse={hoverCourse}
         onHoverCourse={setHoverCourse}
         onHoverSubclass={setHoverSub}
         onSelectSubclass={selectSubclass}

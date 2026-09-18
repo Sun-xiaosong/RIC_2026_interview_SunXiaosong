@@ -68,6 +68,14 @@ export function blocksOverlap(a: TimeBlock, b: TimeBlock): boolean {
   return a.day === b.day && Math.max(a.startMin, b.startMin) < Math.min(a.endMin, b.endMin);
 }
 
+/** 分班所属学期:解析 semester 字段(如 "2026-27 Sem 1"),返回 1、2 或 null。 */
+export function semesterOf(subclass: Subclass): 1 | 2 | null {
+  const text = subclass.semester ?? '';
+  if (/Sem\s*1\b/.test(text)) return 1;
+  if (/Sem\s*2\b/.test(text)) return 2;
+  return null;
+}
+
 /** 课时段覆盖到的小时列表(15:00-17:50 → [15,16,17];16:00-17:20 → [16,17])。 */
 export function hoursOf(block: TimeBlock): number[] {
   const first = Math.floor(block.startMin / 60);
