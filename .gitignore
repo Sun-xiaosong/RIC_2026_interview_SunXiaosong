@@ -1,0 +1,8 @@
+frontend/node_modules/
+frontend/dist/
+backend/data/*.sqlite
+backend/data/*.sqlite-*
+.DS_Store
+
+# 题目文件仅限本人本次招募使用,不随公开仓库分发
+/docs/

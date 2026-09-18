@@ -1,0 +1,5762 @@
+{
+  "metadata": {
+    "title": "RIC Course Sample Dataset",
+    "source_snapshot": "ricproduction_2026-08-08_02-30-02_pgsql_data.sql",
+    "generated_on": "2026-09-14",
+    "selection": {
+      "method": "Deterministic random sample from courses with more than 30 non-deleted reviews and at least one active subclass",
+      "random_seed": 20260914,
+      "eligible_course_count": 115,
+      "selected_course_count": 10
+    },
+    "privacy": {
+      "user_ids": "Remapped globally to consecutive integers starting at 1",
+      "original_user_mapping_included": false,
+      "deleted_reviews_included": false,
+      "user_profile_or_authentication_fields_included": false
+    },
+    "counts": {
+      "courses": 10,
+      "reviews": 282,
+      "anonymous_users": 266,
+      "departments": 5
+    }
+  },
+  "courses": [
+    {
+      "code": "ACCT1101",
+      "title": "Introduction to financial accounting",
+      "offer_dept": "Faculty of Business and Econom",
+      "requirement": "无前置要求或未提供相关数据",
+      "description": "",
+      "liked_count": 53,
+      "disliked_count": 49,
+      "reviewed_count": 577,
+      "a_plus": 174,
+      "a": 240,
+      "a_minus": 159,
+      "b_plus": 217,
+      "b": 141,
+      "b_minus": 59,
+      "c_plus": 44,
+      "c": 18,
+      "c_minus": 7,
+      "d_plus": 4,
+      "d": 3,
+      "d_minus": 1,
+      "pass": 13,
+      "fail": 16,
+      "tutorial_yes_count": 79,
+      "essay_yes_count": 3,
+      "final_yes_count": 81,
+      "presentation_yes_count": 2,
+      "project_yes_count": 82,
+      "attendance_yes_count": 39,
+      "tutorial_no_count": 3,
+      "essay_no_count": 73,
+      "final_no_count": 0,
+      "presentation_no_count": 76,
+      "project_no_count": 0,
+      "attendance_no_count": 41,
+      "subclasses": [
+        {
+          "id": 52070,
+          "semester": "2026-27 Sem 1",
+          "section": "1A",
+          "instructor": "Kwong,Sze Ting Jasmine",
+          "slots": [
+            {
+              "day": 2,
+              "venue": "KKLG106",
+              "start_time": "09:00",
+              "end_time": "09:50",
+              "start_date": "2026/09/01",
+              "end_date": "2026/10/06",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "KKLG106",
+              "start_time": "10:00",
+              "end_time": "11:50",
+              "start_date": "2026/09/03",
+              "end_date": "2026/09/24",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "KKLG106",
+              "start_time": "10:00",
+              "end_time": "11:50",
+              "start_date": "2026/10/08",
+              "end_date": "2026/10/08",
+              "is_tutorial": false
+            },
+            {
+              "day": 2,
+              "venue": "KKLG106",
+              "start_time": "09:00",
+              "end_time": "09:50",
+              "start_date": "2026/10/20",
+              "end_date": "2026/11/24",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "KKLG106",
+              "start_time": "10:00",
+              "end_time": "11:50",
+              "start_date": "2026/10/22",
+              "end_date": "2026/11/26",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        },
+        {
+          "id": 54665,
+          "semester": "2026-27 Sem 1",
+          "section": "1B",
+          "instructor": "Kwong,Sze Ting Jasmine",
+          "slots": [
+            {
+              "day": 4,
+              "venue": "KKLG106",
+              "start_time": "09:00",
+              "end_time": "09:50",
+              "start_date": "2026/09/03",
+              "end_date": "2026/09/24",
+              "is_tutorial": false
+            },
+            {
+              "day": 5,
+              "venue": "KKLG106",
+              "start_time": "10:00",
+              "end_time": "11:50",
+              "start_date": "2026/09/04",
+              "end_date": "2026/10/09",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "KKLG106",
+              "start_time": "09:00",
+              "end_time": "09:50",
+              "start_date": "2026/10/08",
+              "end_date": "2026/10/08",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "KKLG106",
+              "start_time": "09:00",
+              "end_time": "09:50",
+              "start_date": "2026/10/22",
+              "end_date": "2026/11/26",
+              "is_tutorial": false
+            },
+            {
+              "day": 5,
+              "venue": "KKLG106",
+              "start_time": "10:00",
+              "end_time": "11:50",
+              "start_date": "2026/10/23",
+              "end_date": "2026/11/27",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        },
+        {
+          "id": 51458,
+          "semester": "2026-27 Sem 1",
+          "section": "1C",
+          "instructor": "Kwong,Sze Ting Jasmine",
+          "slots": [
+            {
+              "day": 2,
+              "venue": "KKLG106",
+              "start_time": "10:00",
+              "end_time": "11:50",
+              "start_date": "2026/09/01",
+              "end_date": "2026/10/06",
+              "is_tutorial": false
+            },
+            {
+              "day": 5,
+              "venue": "KKLG106",
+              "start_time": "09:00",
+              "end_time": "09:50",
+              "start_date": "2026/09/04",
+              "end_date": "2026/10/09",
+              "is_tutorial": false
+            },
+            {
+              "day": 2,
+              "venue": "KKLG106",
+              "start_time": "10:00",
+              "end_time": "11:50",
+              "start_date": "2026/10/20",
+              "end_date": "2026/11/24",
+              "is_tutorial": false
+            },
+            {
+              "day": 5,
+              "venue": "KKLG106",
+              "start_time": "09:00",
+              "end_time": "09:50",
+              "start_date": "2026/10/23",
+              "end_date": "2026/11/27",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        },
+        {
+          "id": 53943,
+          "semester": "2026-27 Sem 1",
+          "section": "1D",
+          "instructor": "Zhang,Ruishen",
+          "slots": [
+            {
+              "day": 2,
+              "venue": "KKLG103",
+              "start_time": "12:00",
+              "end_time": "12:50",
+              "start_date": "2026/09/01",
+              "end_date": "2026/10/06",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "KKLG103",
+              "start_time": "17:00",
+              "end_time": "18:50",
+              "start_date": "2026/09/03",
+              "end_date": "2026/09/24",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "KKLG103",
+              "start_time": "17:00",
+              "end_time": "18:50",
+              "start_date": "2026/10/08",
+              "end_date": "2026/10/08",
+              "is_tutorial": false
+            },
+            {
+              "day": 2,
+              "venue": "KKLG103",
+              "start_time": "12:00",
+              "end_time": "12:50",
+              "start_date": "2026/10/20",
+              "end_date": "2026/11/24",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "KKLG103",
+              "start_time": "17:00",
+              "end_time": "18:50",
+              "start_date": "2026/10/22",
+              "end_date": "2026/11/26",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        },
+        {
+          "id": 52578,
+          "semester": "2026-27 Sem 1",
+          "section": "1E",
+          "instructor": "Zhang,Ruishen",
+          "slots": [
+            {
+              "day": 2,
+              "venue": "KKLG103",
+              "start_time": "17:00",
+              "end_time": "18:50",
+              "start_date": "2026/09/01",
+              "end_date": "2026/10/06",
+              "is_tutorial": false
+            },
+            {
+              "day": 5,
+              "venue": "KKLG103",
+              "start_time": "11:00",
+              "end_time": "11:50",
+              "start_date": "2026/09/04",
+              "end_date": "2026/10/09",
+              "is_tutorial": false
+            },
+            {
+              "day": 2,
+              "venue": "KKLG103",
+              "start_time": "17:00",
+              "end_time": "18:50",
+              "start_date": "2026/10/20",
+              "end_date": "2026/11/24",
+              "is_tutorial": false
+            },
+            {
+              "day": 5,
+              "venue": "KKLG103",
+              "start_time": "11:00",
+              "end_time": "11:50",
+              "start_date": "2026/10/23",
+              "end_date": "2026/11/27",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        },
+        {
+          "id": 50922,
+          "semester": "2026-27 Sem 1",
+          "section": "1F",
+          "instructor": "Zhang,Ruishen",
+          "slots": [
+            {
+              "day": 4,
+              "venue": "KKLG103",
+              "start_time": "12:00",
+              "end_time": "12:50",
+              "start_date": "2026/09/03",
+              "end_date": "2026/09/24",
+              "is_tutorial": false
+            },
+            {
+              "day": 5,
+              "venue": "KKLG103",
+              "start_time": "09:00",
+              "end_time": "10:50",
+              "start_date": "2026/09/04",
+              "end_date": "2026/10/09",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "KKLG103",
+              "start_time": "12:00",
+              "end_time": "12:50",
+              "start_date": "2026/10/08",
+              "end_date": "2026/10/08",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "KKLG103",
+              "start_time": "12:00",
+              "end_time": "12:50",
+              "start_date": "2026/10/22",
+              "end_date": "2026/11/26",
+              "is_tutorial": false
+            },
+            {
+              "day": 5,
+              "venue": "KKLG103",
+              "start_time": "09:00",
+              "end_time": "10:50",
+              "start_date": "2026/10/23",
+              "end_date": "2026/11/27",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        },
+        {
+          "id": 54496,
+          "semester": "2026-27 Sem 1",
+          "section": "1G",
+          "instructor": "Keung,Yuk Ying Helena",
+          "slots": [
+            {
+              "day": 5,
+              "venue": "KKLG106",
+              "start_time": "12:00",
+              "end_time": "12:50",
+              "start_date": "2026/09/04",
+              "end_date": "2026/10/09",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "KKLG106",
+              "start_time": "13:00",
+              "end_time": "14:50",
+              "start_date": "2026/09/07",
+              "end_date": "2026/10/05",
+              "is_tutorial": false
+            },
+            {
+              "day": 5,
+              "venue": "KKLG106",
+              "start_time": "12:00",
+              "end_time": "12:50",
+              "start_date": "2026/10/23",
+              "end_date": "2026/11/27",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "KKLG106",
+              "start_time": "13:00",
+              "end_time": "14:50",
+              "start_date": "2026/10/26",
+              "end_date": "2026/11/30",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        },
+        {
+          "id": 55866,
+          "semester": "2026-27 Sem 1",
+          "section": "1H",
+          "instructor": "Keung,Yuk Ying Helena",
+          "slots": [
+            {
+              "day": 4,
+              "venue": "KKLG106",
+              "start_time": "12:00",
+              "end_time": "12:50",
+              "start_date": "2026/09/03",
+              "end_date": "2026/09/24",
+              "is_tutorial": false
+            },
+            {
+              "day": 5,
+              "venue": "KKLG106",
+              "start_time": "13:00",
+              "end_time": "14:50",
+              "start_date": "2026/09/04",
+              "end_date": "2026/10/09",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "KKLG106",
+              "start_time": "12:00",
+              "end_time": "12:50",
+              "start_date": "2026/10/08",
+              "end_date": "2026/10/08",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "KKLG106",
+              "start_time": "12:00",
+              "end_time": "12:50",
+              "start_date": "2026/10/22",
+              "end_date": "2026/11/26",
+              "is_tutorial": false
+            },
+            {
+              "day": 5,
+              "venue": "KKLG106",
+              "start_time": "13:00",
+              "end_time": "14:50",
+              "start_date": "2026/10/30",
+              "end_date": "2026/11/27",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        },
+        {
+          "id": 56476,
+          "semester": "2026-27 Sem 1",
+          "section": "1I",
+          "instructor": "Keung,Yuk Ying Helena",
+          "slots": [
+            {
+              "day": 2,
+              "venue": "KKLG106",
+              "start_time": "12:00",
+              "end_time": "12:50",
+              "start_date": "2026/09/01",
+              "end_date": "2026/10/06",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "KKLG106",
+              "start_time": "13:00",
+              "end_time": "14:50",
+              "start_date": "2026/09/03",
+              "end_date": "2026/09/24",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "KKLG106",
+              "start_time": "13:00",
+              "end_time": "14:50",
+              "start_date": "2026/10/08",
+              "end_date": "2026/10/08",
+              "is_tutorial": false
+            },
+            {
+              "day": 2,
+              "venue": "KKLG106",
+              "start_time": "12:00",
+              "end_time": "12:50",
+              "start_date": "2026/10/20",
+              "end_date": "2026/11/24",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "KKLG106",
+              "start_time": "13:00",
+              "end_time": "14:50",
+              "start_date": "2026/10/22",
+              "end_date": "2026/11/26",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        },
+        {
+          "id": 55768,
+          "semester": "2026-27 Sem 1",
+          "section": "1J",
+          "instructor": "Choi,Seungju",
+          "slots": [
+            {
+              "day": 1,
+              "venue": "KKLG103",
+              "start_time": "15:00",
+              "end_time": "17:50",
+              "start_date": "2026/09/07",
+              "end_date": "2026/10/05",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "KKLG103",
+              "start_time": "15:00",
+              "end_time": "17:50",
+              "start_date": "2026/10/26",
+              "end_date": "2026/11/30",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        },
+        {
+          "id": 55012,
+          "semester": "2026-27 Sem 1",
+          "section": "1K",
+          "instructor": "Choi,Seungju",
+          "slots": [
+            {
+              "day": 2,
+              "venue": "KKLG103",
+              "start_time": "09:00",
+              "end_time": "11:50",
+              "start_date": "2026/09/01",
+              "end_date": "2026/10/06",
+              "is_tutorial": false
+            },
+            {
+              "day": 2,
+              "venue": "KKLG103",
+              "start_time": "09:00",
+              "end_time": "11:50",
+              "start_date": "2026/10/20",
+              "end_date": "2026/11/24",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        },
+        {
+          "id": 51859,
+          "semester": "2026-27 Sem 1",
+          "section": "1L",
+          "instructor": "Choi,Seungju",
+          "slots": [
+            {
+              "day": 4,
+              "venue": "KKLG103",
+              "start_time": "09:00",
+              "end_time": "11:50",
+              "start_date": "2026/09/03",
+              "end_date": "2026/09/24",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "KKLG103",
+              "start_time": "09:00",
+              "end_time": "11:50",
+              "start_date": "2026/10/08",
+              "end_date": "2026/10/08",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "KKLG103",
+              "start_time": "09:00",
+              "end_time": "11:50",
+              "start_date": "2026/10/22",
+              "end_date": "2026/11/26",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        },
+        {
+          "id": 52560,
+          "semester": "2026-27 Sem 1",
+          "section": "1M",
+          "instructor": "Rahman,Nafis",
+          "slots": [
+            {
+              "day": 2,
+              "venue": "MB141",
+              "start_time": "13:00",
+              "end_time": "14:50",
+              "start_date": "2026/09/01",
+              "end_date": "2026/10/06",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "MB141",
+              "start_time": "14:00",
+              "end_time": "14:50",
+              "start_date": "2026/09/07",
+              "end_date": "2026/10/05",
+              "is_tutorial": false
+            },
+            {
+              "day": 2,
+              "venue": "MB141",
+              "start_time": "13:00",
+              "end_time": "14:50",
+              "start_date": "2026/10/20",
+              "end_date": "2026/11/24",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "MB141",
+              "start_time": "14:00",
+              "end_time": "14:50",
+              "start_date": "2026/10/26",
+              "end_date": "2026/11/30",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        },
+        {
+          "id": 51824,
+          "semester": "2026-27 Sem 1",
+          "section": "1N",
+          "instructor": "Rahman,Nafis",
+          "slots": [
+            {
+              "day": 4,
+              "venue": "MB141",
+              "start_time": "12:00",
+              "end_time": "12:50",
+              "start_date": "2026/09/03",
+              "end_date": "2026/09/24",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "MB141",
+              "start_time": "17:00",
+              "end_time": "18:50",
+              "start_date": "2026/09/07",
+              "end_date": "2026/10/05",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "MB141",
+              "start_time": "12:00",
+              "end_time": "12:50",
+              "start_date": "2026/10/08",
+              "end_date": "2026/10/08",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "MB141",
+              "start_time": "12:00",
+              "end_time": "12:50",
+              "start_date": "2026/10/22",
+              "end_date": "2026/11/26",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "MB141",
+              "start_time": "17:00",
+              "end_time": "18:50",
+              "start_date": "2026/10/26",
+              "end_date": "2026/11/30",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        },
+        {
+          "id": 58386,
+          "semester": "2026-27 Sem 1",
+          "section": "1O",
+          "instructor": "Rahman,Nafis",
+          "slots": [
+            {
+              "day": 2,
+              "venue": "MB141",
+              "start_time": "18:00",
+              "end_time": "18:50",
+              "start_date": "2026/09/01",
+              "end_date": "2026/10/06",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "MB141",
+              "start_time": "17:00",
+              "end_time": "18:50",
+              "start_date": "2026/09/03",
+              "end_date": "2026/09/24",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "MB141",
+              "start_time": "17:00",
+              "end_time": "18:50",
+              "start_date": "2026/10/08",
+              "end_date": "2026/10/08",
+              "is_tutorial": false
+            },
+            {
+              "day": 2,
+              "venue": "MB141",
+              "start_time": "18:00",
+              "end_time": "18:50",
+              "start_date": "2026/10/20",
+              "end_date": "2026/11/24",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "MB141",
+              "start_time": "17:00",
+              "end_time": "18:50",
+              "start_date": "2026/10/22",
+              "end_date": "2026/11/26",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        },
+        {
+          "id": 58852,
+          "semester": "2026-27 Sem 1",
+          "section": "1P",
+          "instructor": "Xue,Wenjie",
+          "slots": [
+            {
+              "day": 4,
+              "venue": "LE9",
+              "start_time": "09:00",
+              "end_time": "10:50",
+              "start_date": "2026/09/03",
+              "end_date": "2026/09/24",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "LE9",
+              "start_time": "13:00",
+              "end_time": "13:50",
+              "start_date": "2026/09/07",
+              "end_date": "2026/10/05",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "LE9",
+              "start_time": "09:00",
+              "end_time": "10:50",
+              "start_date": "2026/10/08",
+              "end_date": "2026/10/08",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "LE9",
+              "start_time": "09:00",
+              "end_time": "10:50",
+              "start_date": "2026/10/22",
+              "end_date": "2026/11/26",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "LE9",
+              "start_time": "13:00",
+              "end_time": "13:50",
+              "start_date": "2026/10/26",
+              "end_date": "2026/11/30",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        },
+        {
+          "id": 59217,
+          "semester": "2026-27 Sem 1",
+          "section": "1Q",
+          "instructor": "Xue,Wenjie",
+          "slots": [
+            {
+              "day": 2,
+              "venue": "LE9",
+              "start_time": "12:00",
+              "end_time": "12:50",
+              "start_date": "2026/09/01",
+              "end_date": "2026/10/06",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "LE9",
+              "start_time": "13:00",
+              "end_time": "14:50",
+              "start_date": "2026/09/03",
+              "end_date": "2026/09/24",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "LE9",
+              "start_time": "13:00",
+              "end_time": "14:50",
+              "start_date": "2026/10/08",
+              "end_date": "2026/10/08",
+              "is_tutorial": false
+            },
+            {
+              "day": 2,
+              "venue": "LE9",
+              "start_time": "12:00",
+              "end_time": "12:50",
+              "start_date": "2026/10/20",
+              "end_date": "2026/11/24",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "LE9",
+              "start_time": "13:00",
+              "end_time": "14:50",
+              "start_date": "2026/10/22",
+              "end_date": "2026/11/26",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        },
+        {
+          "id": 67444,
+          "semester": "2026-27 Sem 1",
+          "section": "1R",
+          "instructor": "Xue,Wenjie",
+          "slots": [
+            {
+              "day": 2,
+              "venue": "LE9",
+              "start_time": "09:00",
+              "end_time": "09:50",
+              "start_date": "2026/09/01",
+              "end_date": "2026/10/06",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "LE9",
+              "start_time": "09:00",
+              "end_time": "10:50",
+              "start_date": "2026/09/07",
+              "end_date": "2026/10/05",
+              "is_tutorial": false
+            },
+            {
+              "day": 2,
+              "venue": "LE9",
+              "start_time": "09:00",
+              "end_time": "09:50",
+              "start_date": "2026/10/20",
+              "end_date": "2026/11/24",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "LE9",
+              "start_time": "09:00",
+              "end_time": "10:50",
+              "start_date": "2026/10/26",
+              "end_date": "2026/11/30",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        },
+        {
+          "id": 66615,
+          "semester": "2026-27 Sem 1",
+          "section": "1S",
+          "instructor": "",
+          "slots": [
+            {
+              "day": 4,
+              "venue": "CYPP3",
+              "start_time": "09:00",
+              "end_time": "11:50",
+              "start_date": "2026/09/03",
+              "end_date": "2026/09/24",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "CYPP3",
+              "start_time": "09:00",
+              "end_time": "11:50",
+              "start_date": "2026/10/08",
+              "end_date": "2026/10/08",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "CYPP3",
+              "start_time": "09:00",
+              "end_time": "11:50",
+              "start_date": "2026/10/22",
+              "end_date": "2026/11/26",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        },
+        {
+          "id": 66452,
+          "semester": "2026-27 Sem 1",
+          "section": "1T",
+          "instructor": "",
+          "slots": [
+            {
+              "day": 1,
+              "venue": "TT404",
+              "start_time": "09:00",
+              "end_time": "11:50",
+              "start_date": "2026/09/07",
+              "end_date": "2026/10/05",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "TT404",
+              "start_time": "09:00",
+              "end_time": "11:50",
+              "start_date": "2026/10/26",
+              "end_date": "2026/11/30",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        },
+        {
+          "id": 70024,
+          "semester": "2026-27 Sem 1",
+          "section": "1U",
+          "instructor": "Tong,Chi Chiu Alec",
+          "slots": [
+            {
+              "day": 5,
+              "venue": "KKLG103",
+              "start_time": "14:00",
+              "end_time": "16:50",
+              "start_date": "2026/09/04",
+              "end_date": "2026/10/09",
+              "is_tutorial": false
+            },
+            {
+              "day": 5,
+              "venue": "KKLG103",
+              "start_time": "14:00",
+              "end_time": "16:50",
+              "start_date": "2026/10/30",
+              "end_date": "2026/11/27",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        },
+        {
+          "id": 69496,
+          "semester": "2026-27 Sem 1",
+          "section": "1V",
+          "instructor": "Tong,Chi Chiu Alec",
+          "slots": [
+            {
+              "day": 1,
+              "venue": "KKLG103",
+              "start_time": "09:00",
+              "end_time": "11:50",
+              "start_date": "2026/09/07",
+              "end_date": "2026/10/05",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "KKLG103",
+              "start_time": "09:00",
+              "end_time": "11:50",
+              "start_date": "2026/10/26",
+              "end_date": "2026/11/30",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        },
+        {
+          "id": 67164,
+          "semester": "2026-27 Sem 2",
+          "section": "2AA",
+          "instructor": "Kwong,Sze Ting Jasmine",
+          "slots": [
+            {
+              "day": 2,
+              "venue": "KKLG103",
+              "start_time": "09:00",
+              "end_time": "10:50",
+              "start_date": "2027/01/19",
+              "end_date": "2027/02/02",
+              "is_tutorial": false
+            },
+            {
+              "day": 5,
+              "venue": "KKLG103",
+              "start_time": "12:00",
+              "end_time": "12:50",
+              "start_date": "2027/01/22",
+              "end_date": "2027/02/05",
+              "is_tutorial": false
+            },
+            {
+              "day": 2,
+              "venue": "KKLG103",
+              "start_time": "09:00",
+              "end_time": "10:50",
+              "start_date": "2027/02/16",
+              "end_date": "2027/03/02",
+              "is_tutorial": false
+            },
+            {
+              "day": 5,
+              "venue": "KKLG103",
+              "start_time": "12:00",
+              "end_time": "12:50",
+              "start_date": "2027/02/19",
+              "end_date": "2027/03/05",
+              "is_tutorial": false
+            },
+            {
+              "day": 5,
+              "venue": "KKLG103",
+              "start_time": "12:00",
+              "end_time": "12:50",
+              "start_date": "2027/03/19",
+              "end_date": "2027/03/19",
+              "is_tutorial": false
+            },
+            {
+              "day": 2,
+              "venue": "KKLG103",
+              "start_time": "09:00",
+              "end_time": "10:50",
+              "start_date": "2027/03/23",
+              "end_date": "2027/04/27",
+              "is_tutorial": false
+            },
+            {
+              "day": 5,
+              "venue": "KKLG103",
+              "start_time": "12:00",
+              "end_time": "12:50",
+              "start_date": "2027/04/02",
+              "end_date": "2027/04/30",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        },
+        {
+          "id": 66381,
+          "semester": "2026-27 Sem 2",
+          "section": "2AB",
+          "instructor": "Kwong,Sze Ting Jasmine",
+          "slots": [
+            {
+              "day": 2,
+              "venue": "KKLG104",
+              "start_time": "16:00",
+              "end_time": "17:50",
+              "start_date": "2027/01/19",
+              "end_date": "2027/02/02",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "KKLG104",
+              "start_time": "12:00",
+              "end_time": "12:50",
+              "start_date": "2027/01/21",
+              "end_date": "2027/02/04",
+              "is_tutorial": false
+            },
+            {
+              "day": 2,
+              "venue": "KKLG104",
+              "start_time": "16:00",
+              "end_time": "17:50",
+              "start_date": "2027/02/16",
+              "end_date": "2027/03/02",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "KKLG104",
+              "start_time": "12:00",
+              "end_time": "12:50",
+              "start_date": "2027/02/18",
+              "end_date": "2027/03/04",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "KKLG104",
+              "start_time": "12:00",
+              "end_time": "12:50",
+              "start_date": "2027/03/18",
+              "end_date": "2027/04/29",
+              "is_tutorial": false
+            },
+            {
+              "day": 2,
+              "venue": "KKLG104",
+              "start_time": "16:00",
+              "end_time": "17:50",
+              "start_date": "2027/03/23",
+              "end_date": "2027/04/27",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        },
+        {
+          "id": 67669,
+          "semester": "2026-27 Sem 2",
+          "section": "2AC",
+          "instructor": "Keung,Yuk Ying Helena",
+          "slots": [
+            {
+              "day": 1,
+              "venue": "MB141",
+              "start_time": "12:00",
+              "end_time": "12:50",
+              "start_date": "2027/01/18",
+              "end_date": "2027/02/01",
+              "is_tutorial": false
+            },
+            {
+              "day": 2,
+              "venue": "MB141",
+              "start_time": "09:00",
+              "end_time": "10:50",
+              "start_date": "2027/01/19",
+              "end_date": "2027/02/02",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "MB141",
+              "start_time": "12:00",
+              "end_time": "12:50",
+              "start_date": "2027/02/15",
+              "end_date": "2027/03/01",
+              "is_tutorial": false
+            },
+            {
+              "day": 2,
+              "venue": "MB141",
+              "start_time": "09:00",
+              "end_time": "10:50",
+              "start_date": "2027/02/16",
+              "end_date": "2027/03/02",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "MB141",
+              "start_time": "12:00",
+              "end_time": "12:50",
+              "start_date": "2027/03/15",
+              "end_date": "2027/03/22",
+              "is_tutorial": false
+            },
+            {
+              "day": 2,
+              "venue": "MB141",
+              "start_time": "09:00",
+              "end_time": "10:50",
+              "start_date": "2027/03/23",
+              "end_date": "2027/04/27",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "MB141",
+              "start_time": "12:00",
+              "end_time": "12:50",
+              "start_date": "2027/04/12",
+              "end_date": "2027/04/26",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        },
+        {
+          "id": 68860,
+          "semester": "2026-27 Sem 2",
+          "section": "2AD",
+          "instructor": "Keung,Yuk Ying Helena",
+          "slots": [
+            {
+              "day": 2,
+              "venue": "MB141",
+              "start_time": "11:00",
+              "end_time": "11:50",
+              "start_date": "2027/01/19",
+              "end_date": "2027/02/02",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "MB141",
+              "start_time": "09:00",
+              "end_time": "10:50",
+              "start_date": "2027/01/21",
+              "end_date": "2027/02/04",
+              "is_tutorial": false
+            },
+            {
+              "day": 2,
+              "venue": "MB141",
+              "start_time": "11:00",
+              "end_time": "11:50",
+              "start_date": "2027/02/16",
+              "end_date": "2027/03/02",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "MB141",
+              "start_time": "09:00",
+              "end_time": "10:50",
+              "start_date": "2027/02/18",
+              "end_date": "2027/03/04",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "MB141",
+              "start_time": "09:00",
+              "end_time": "10:50",
+              "start_date": "2027/03/18",
+              "end_date": "2027/04/29",
+              "is_tutorial": false
+            },
+            {
+              "day": 2,
+              "venue": "MB141",
+              "start_time": "11:00",
+              "end_time": "11:50",
+              "start_date": "2027/03/23",
+              "end_date": "2027/04/27",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        },
+        {
+          "id": 69976,
+          "semester": "2026-27 Sem 2",
+          "section": "2AE",
+          "instructor": "Keung,Yuk Ying Helena",
+          "slots": [
+            {
+              "day": 1,
+              "venue": "MB141",
+              "start_time": "13:00",
+              "end_time": "14:50",
+              "start_date": "2027/01/18",
+              "end_date": "2027/02/01",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "MB141",
+              "start_time": "11:00",
+              "end_time": "11:50",
+              "start_date": "2027/01/21",
+              "end_date": "2027/02/04",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "MB141",
+              "start_time": "13:00",
+              "end_time": "14:50",
+              "start_date": "2027/02/15",
+              "end_date": "2027/03/01",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "MB141",
+              "start_time": "11:00",
+              "end_time": "11:50",
+              "start_date": "2027/02/18",
+              "end_date": "2027/03/04",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "MB141",
+              "start_time": "13:00",
+              "end_time": "14:50",
+              "start_date": "2027/03/15",
+              "end_date": "2027/03/22",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "MB141",
+              "start_time": "11:00",
+              "end_time": "11:50",
+              "start_date": "2027/03/18",
+              "end_date": "2027/04/29",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "MB141",
+              "start_time": "13:00",
+              "end_time": "14:50",
+              "start_date": "2027/04/12",
+              "end_date": "2027/04/26",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        },
+        {
+          "id": 70260,
+          "semester": "2026-27 Sem 2",
+          "section": "2AF",
+          "instructor": "Yu,Kwok Kuen Harry",
+          "slots": [
+            {
+              "day": 4,
+              "venue": "MB141",
+              "start_time": "15:00",
+              "end_time": "17:50",
+              "start_date": "2027/01/21",
+              "end_date": "2027/02/04",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "MB141",
+              "start_time": "15:00",
+              "end_time": "17:50",
+              "start_date": "2027/02/18",
+              "end_date": "2027/03/04",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "MB141",
+              "start_time": "15:00",
+              "end_time": "17:50",
+              "start_date": "2027/03/18",
+              "end_date": "2027/04/29",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        },
+        {
+          "id": 68867,
+          "semester": "2026-27 Sem 2",
+          "section": "2AG",
+          "instructor": "Yu,Kwok Kuen Harry",
+          "slots": [
+            {
+              "day": 2,
+              "venue": "MB141",
+              "start_time": "15:00",
+              "end_time": "17:50",
+              "start_date": "2027/01/19",
+              "end_date": "2027/02/02",
+              "is_tutorial": false
+            },
+            {
+              "day": 2,
+              "venue": "MB141",
+              "start_time": "15:00",
+              "end_time": "17:50",
+              "start_date": "2027/02/16",
+              "end_date": "2027/03/02",
+              "is_tutorial": false
+            },
+            {
+              "day": 2,
+              "venue": "MB141",
+              "start_time": "15:00",
+              "end_time": "17:50",
+              "start_date": "2027/03/23",
+              "end_date": "2027/04/27",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        },
+        {
+          "id": 69657,
+          "semester": "2026-27 Sem 2",
+          "section": "2AH",
+          "instructor": "",
+          "slots": [
+            {
+              "day": 1,
+              "venue": "MB141",
+              "start_time": "09:00",
+              "end_time": "11:50",
+              "start_date": "2027/01/18",
+              "end_date": "2027/02/01",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "MB141",
+              "start_time": "09:00",
+              "end_time": "11:50",
+              "start_date": "2027/02/15",
+              "end_date": "2027/03/01",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "MB141",
+              "start_time": "09:00",
+              "end_time": "11:50",
+              "start_date": "2027/03/15",
+              "end_date": "2027/03/22",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "MB141",
+              "start_time": "09:00",
+              "end_time": "11:50",
+              "start_date": "2027/04/12",
+              "end_date": "2027/04/26",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        },
+        {
+          "id": 69387,
+          "semester": "2026-27 Sem 2",
+          "section": "2AI",
+          "instructor": "",
+          "slots": [
+            {
+              "day": 3,
+              "venue": "MB141",
+              "start_time": "09:00",
+              "end_time": "11:50",
+              "start_date": "2027/01/20",
+              "end_date": "2027/02/03",
+              "is_tutorial": false
+            },
+            {
+              "day": 3,
+              "venue": "MB141",
+              "start_time": "09:00",
+              "end_time": "11:50",
+              "start_date": "2027/02/17",
+              "end_date": "2027/03/03",
+              "is_tutorial": false
+            },
+            {
+              "day": 3,
+              "venue": "MB141",
+              "start_time": "09:00",
+              "end_time": "11:50",
+              "start_date": "2027/03/17",
+              "end_date": "2027/04/28",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        },
+        {
+          "id": 70099,
+          "semester": "2026-27 Sem 2",
+          "section": "2AJ",
+          "instructor": "",
+          "slots": [
+            {
+              "day": 5,
+              "venue": "MB141",
+              "start_time": "09:00",
+              "end_time": "11:50",
+              "start_date": "2027/01/22",
+              "end_date": "2027/02/05",
+              "is_tutorial": false
+            },
+            {
+              "day": 5,
+              "venue": "MB141",
+              "start_time": "09:00",
+              "end_time": "11:50",
+              "start_date": "2027/02/19",
+              "end_date": "2027/03/05",
+              "is_tutorial": false
+            },
+            {
+              "day": 5,
+              "venue": "MB141",
+              "start_time": "09:00",
+              "end_time": "11:50",
+              "start_date": "2027/03/19",
+              "end_date": "2027/03/19",
+              "is_tutorial": false
+            },
+            {
+              "day": 5,
+              "venue": "MB141",
+              "start_time": "09:00",
+              "end_time": "11:50",
+              "start_date": "2027/04/02",
+              "end_date": "2027/04/30",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        },
+        {
+          "id": 56270,
+          "semester": "2026-27 Sem 2",
+          "section": "2W",
+          "instructor": "Kwong,Sze Ting Jasmine",
+          "slots": [
+            {
+              "day": 2,
+              "venue": "KKLG102",
+              "start_time": "12:00",
+              "end_time": "12:50",
+              "start_date": "2027/01/19",
+              "end_date": "2027/02/02",
+              "is_tutorial": false
+            },
+            {
+              "day": 5,
+              "venue": "KKLG102",
+              "start_time": "09:00",
+              "end_time": "10:50",
+              "start_date": "2027/01/22",
+              "end_date": "2027/02/05",
+              "is_tutorial": false
+            },
+            {
+              "day": 2,
+              "venue": "KKLG102",
+              "start_time": "12:00",
+              "end_time": "12:50",
+              "start_date": "2027/02/16",
+              "end_date": "2027/03/02",
+              "is_tutorial": false
+            },
+            {
+              "day": 5,
+              "venue": "KKLG102",
+              "start_time": "09:00",
+              "end_time": "10:50",
+              "start_date": "2027/02/19",
+              "end_date": "2027/03/05",
+              "is_tutorial": false
+            },
+            {
+              "day": 5,
+              "venue": "KKLG102",
+              "start_time": "09:00",
+              "end_time": "10:50",
+              "start_date": "2027/03/19",
+              "end_date": "2027/03/19",
+              "is_tutorial": false
+            },
+            {
+              "day": 2,
+              "venue": "KKLG102",
+              "start_time": "12:00",
+              "end_time": "12:50",
+              "start_date": "2027/03/23",
+              "end_date": "2027/04/27",
+              "is_tutorial": false
+            },
+            {
+              "day": 5,
+              "venue": "KKLG102",
+              "start_time": "09:00",
+              "end_time": "10:50",
+              "start_date": "2027/04/02",
+              "end_date": "2027/04/30",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        },
+        {
+          "id": 63043,
+          "semester": "2026-27 Sem 2",
+          "section": "2Y",
+          "instructor": "Kwong,Sze Ting Jasmine",
+          "slots": [
+            {
+              "day": 1,
+              "venue": "KKLG103",
+              "start_time": "09:00",
+              "end_time": "10:50",
+              "start_date": "2027/01/18",
+              "end_date": "2027/02/01",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "KKLG103",
+              "start_time": "15:00",
+              "end_time": "15:50",
+              "start_date": "2027/01/21",
+              "end_date": "2027/02/04",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "KKLG103",
+              "start_time": "09:00",
+              "end_time": "10:50",
+              "start_date": "2027/02/15",
+              "end_date": "2027/03/01",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "KKLG103",
+              "start_time": "15:00",
+              "end_time": "15:50",
+              "start_date": "2027/02/18",
+              "end_date": "2027/03/04",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "KKLG103",
+              "start_time": "09:00",
+              "end_time": "10:50",
+              "start_date": "2027/03/15",
+              "end_date": "2027/03/22",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "KKLG103",
+              "start_time": "15:00",
+              "end_time": "15:50",
+              "start_date": "2027/03/18",
+              "end_date": "2027/04/29",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "KKLG103",
+              "start_time": "09:00",
+              "end_time": "10:50",
+              "start_date": "2027/04/12",
+              "end_date": "2027/04/26",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        },
+        {
+          "id": 59022,
+          "semester": "2026-27 Sem 2",
+          "section": "2Z",
+          "instructor": "Kwong,Sze Ting Jasmine",
+          "slots": [
+            {
+              "day": 1,
+              "venue": "KKLG103",
+              "start_time": "12:00",
+              "end_time": "12:50",
+              "start_date": "2027/01/18",
+              "end_date": "2027/02/01",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "KKLG103",
+              "start_time": "09:00",
+              "end_time": "10:50",
+              "start_date": "2027/01/21",
+              "end_date": "2027/02/04",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "KKLG103",
+              "start_time": "12:00",
+              "end_time": "12:50",
+              "start_date": "2027/02/15",
+              "end_date": "2027/03/01",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "KKLG103",
+              "start_time": "09:00",
+              "end_time": "10:50",
+              "start_date": "2027/02/18",
+              "end_date": "2027/03/04",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "KKLG103",
+              "start_time": "12:00",
+              "end_time": "12:50",
+              "start_date": "2027/03/15",
+              "end_date": "2027/03/22",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "KKLG103",
+              "start_time": "09:00",
+              "end_time": "10:50",
+              "start_date": "2027/03/18",
+              "end_date": "2027/04/29",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "KKLG103",
+              "start_time": "12:00",
+              "end_time": "12:50",
+              "start_date": "2027/04/12",
+              "end_date": "2027/04/26",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        }
+      ],
+      "reviews": [
+        {
+          "id": 17964,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "Jasmine",
+          "content": "Jasmine是我在港大遇到的最好的prof，超级知性优雅，讲课条理清晰且很乐于在课后回答问题，lec不记考勤，每次讲完一个chapter都会做练习kahoot quiz得分全班前三还有attendance bonus，非常非常推荐Jasmine！！课总体wl不大，作业不查正确率交了就满分，小组作业也比较轻松。mid/final很卷，拿a+要两次都接近满分",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 840,
+          "course_code": "ACCT1101",
+          "created_at": "2026-07-26 12:03:21.829527+08",
+          "updated_at": "2026-07-26 12:03:21.829527+08"
+        },
+        {
+          "id": 17969,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "jasmine",
+          "content": "喜欢jasmine 特别喜欢cj 我爱cjcjcjcjcjcjcjcjcjcjcjcjcjcjcjcjcjcj",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 882,
+          "course_code": "ACCT1101",
+          "created_at": "2026-07-26 14:06:50.645899+08",
+          "updated_at": "2026-07-26 14:06:50.645899+08"
+        },
+        {
+          "id": 17993,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "jasmine",
+          "content": "Best teacher ever",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 1024,
+          "course_code": "ACCT1101",
+          "created_at": "2026-07-26 23:22:32.494382+08",
+          "updated_at": "2026-07-26 23:22:32.494382+08"
+        },
+        {
+          "id": 18014,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "Jasmine",
+          "content": "老师教得不错，发音很清楚，感觉学不好是自己的问题。。。",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 896,
+          "course_code": "ACCT1101",
+          "created_at": "2026-07-27 09:33:41.046756+08",
+          "updated_at": "2026-07-27 09:33:41.046756+08"
+        },
+        {
+          "id": 18049,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "Jasmine",
+          "content": "非常喜欢老师的发音，每章都有kahoot quiz有意思",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 964,
+          "course_code": "ACCT1101",
+          "created_at": "2026-07-27 11:07:11.254578+08",
+          "updated_at": "2026-07-27 11:07:11.254578+08"
+        },
+        {
+          "id": 18072,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "",
+          "content": "最后的final太阴了，感觉和上课内容完全没关系",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 990,
+          "course_code": "ACCT1101",
+          "created_at": "2026-07-27 13:17:48.395383+08",
+          "updated_at": "2026-07-27 13:17:48.395383+08"
+        },
+        {
+          "id": 18080,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "Jasmine",
+          "content": "final炸了，midterm也炸了，也有B+，不用太担心",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 685,
+          "course_code": "ACCT1101",
+          "created_at": "2026-07-27 13:31:41.887152+08",
+          "updated_at": "2026-07-27 13:31:41.887152+08"
+        },
+        {
+          "id": 18154,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "",
+          "content": "Helena教的很好，很好听的港式英文口音，很亲切。课程每周都有一个作业可以练习，midterm91分，final有点炸，最终A-",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 1025,
+          "course_code": "ACCT1101",
+          "created_at": "2026-07-27 16:50:16.696478+08",
+          "updated_at": "2026-07-27 16:50:16.696478+08"
+        },
+        {
+          "id": 18242,
+          "year_taken": "2022-2023",
+          "sem_taken": "Sem1",
+          "instructor": "",
+          "content": "会计基础课，对后续学习很有帮助。",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 466,
+          "course_code": "ACCT1101",
+          "created_at": "2026-07-27 22:50:51.551171+08",
+          "updated_at": "2026-07-27 22:50:51.551171+08"
+        },
+        {
+          "id": 18313,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "",
+          "content": "老师很负责用心，上课的时候感觉挺有意思的，wl还可以但是应该是很多人的必修所以谈wl作用也不大哈哈",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 977,
+          "course_code": "ACCT1101",
+          "created_at": "2026-07-28 13:55:10.208647+08",
+          "updated_at": "2026-07-28 13:55:10.208647+08"
+        },
+        {
+          "id": 18357,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "",
+          "content": "我觉得不错，算是所有商院课的前置。",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 1038,
+          "course_code": "ACCT1101",
+          "created_at": "2026-07-28 17:12:05.626196+08",
+          "updated_at": "2026-07-28 17:12:05.626196+08"
+        },
+        {
+          "id": 18370,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "",
+          "content": "还行，比较好学，不用花太多时间，教授人挺好的都有复习课\n\n",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 792,
+          "course_code": "ACCT1101",
+          "created_at": "2026-07-28 17:48:36.869637+08",
+          "updated_at": "2026-07-28 17:48:36.869637+08"
+        },
+        {
+          "id": 18383,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "",
+          "content": "final炸了 不要被mid骗了",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 970,
+          "course_code": "ACCT1101",
+          "created_at": "2026-07-28 19:51:18.324222+08",
+          "updated_at": "2026-07-28 19:51:18.324222+08"
+        },
+        {
+          "id": 18402,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "",
+          "content": "Pascar tutor is goated, great teaching",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 932,
+          "course_code": "ACCT1101",
+          "created_at": "2026-07-29 00:15:06.482584+08",
+          "updated_at": "2026-07-29 00:15:06.482584+08"
+        },
+        {
+          "id": 18408,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "",
+          "content": "不太难的课，但是会有很多作业，其实有点有意思",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 852,
+          "course_code": "ACCT1101",
+          "created_at": "2026-07-29 10:05:31.385295+08",
+          "updated_at": "2026-07-29 10:05:31.385295+08"
+        },
+        {
+          "id": 18445,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "jasmine",
+          "content": "一个gp 期末交大作业，其实就是分部分 纯写题。jasmine每节课有课堂kahoot，手机上做做选择题 前三有bonus，每节课还有小组作业，1-2张A4纸的题目，就是上课讲的要课上完成（此小组非gp小组）。每周有作业 但是不看错对 只要交了就好。说是final比mid难，但是感觉都一样的难，课程内容很细碎",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 1039,
+          "course_code": "ACCT1101",
+          "created_at": "2026-07-29 16:53:44.005656+08",
+          "updated_at": "2026-07-29 16:53:44.005656+08"
+        },
+        {
+          "id": 18455,
+          "year_taken": "2024-2025",
+          "sem_taken": "Sem2",
+          "instructor": "",
+          "content": "🌶🐔 烂龟课，上课一直在睡觉，老师也讲不明白",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 718,
+          "course_code": "ACCT1101",
+          "created_at": "2026-07-29 18:58:10.51636+08",
+          "updated_at": "2026-07-29 18:58:10.51636+08"
+        },
+        {
+          "id": 18467,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "",
+          "content": "整体来说非常注重细节，必须尽量保证自己不会犯太多错误",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 1,
+          "course_code": "ACCT1101",
+          "created_at": "2026-07-29 21:14:00.394323+08",
+          "updated_at": "2026-07-29 21:14:00.394323+08"
+        },
+        {
+          "id": 18501,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "",
+          "content": "课程总体不难，需要认真听课刷题就行了，作业交了就有分，不看对错，总体还可以，wl不算太大",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 978,
+          "course_code": "ACCT1101",
+          "created_at": "2026-07-30 11:58:19.754859+08",
+          "updated_at": "2026-07-30 11:58:19.754859+08"
+        },
+        {
+          "id": 18508,
+          "year_taken": "2022-2023",
+          "sem_taken": "Summer",
+          "instructor": "",
+          "content": "導師人很好，上課要留心，midterm 考砸了grade會很不好",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 504,
+          "course_code": "ACCT1101",
+          "created_at": "2026-07-30 14:27:49.108405+08",
+          "updated_at": "2026-07-30 14:27:49.108405+08"
+        },
+        {
+          "id": 18532,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "Jasmine",
+          "content": "Jasmine的课堂氛围很轻松（除了kahoot需要抢答拿bonus point）。没有accounting相关基础的一定要预习，建议看Robert Libby的Financial Accounting这本书，很多题都源自这里。",
+          "liked_count": 1,
+          "disliked_count": 0,
+          "user_id": 841,
+          "course_code": "ACCT1101",
+          "created_at": "2026-07-31 09:57:54.85473+08",
+          "updated_at": "2026-07-31 09:57:54.85473+08"
+        },
+        {
+          "id": 18555,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "",
+          "content": "老师上课很详细，workload较大，但是认真可以好grade",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 996,
+          "course_code": "ACCT1101",
+          "created_at": "2026-07-31 16:21:35.925307+08",
+          "updated_at": "2026-07-31 16:21:35.925307+08"
+        },
+        {
+          "id": 18563,
+          "year_taken": "2024-2025",
+          "sem_taken": "Sem1",
+          "instructor": "",
+          "content": "intro acct,学过alevel的会计会很有帮助，内容差不多。lecture没有attendance，tutorial要attendance。作业只要做了就能拿满，midterm比较简单，final会要求做表，多复习也不会很难。推荐。",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 903,
+          "course_code": "ACCT1101",
+          "created_at": "2026-07-31 17:01:14.483358+08",
+          "updated_at": "2026-07-31 17:01:14.483358+08"
+        },
+        {
+          "id": 18589,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "",
+          "content": "A vary useful course. The professor are very responsible.",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 880,
+          "course_code": "ACCT1101",
+          "created_at": "2026-08-01 03:23:40.287002+08",
+          "updated_at": "2026-08-01 03:23:40.287002+08"
+        },
+        {
+          "id": 18598,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "Jeffrey",
+          "content": "零基础高考生，个人感觉这门课难度不高，主要就是死板的遵循一些规则。难度可能在于记住这些零散的规则。Jeffrey教的特别好，可惜以后不教这门了。",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 1005,
+          "course_code": "ACCT1101",
+          "created_at": "2026-08-01 10:04:45.740669+08",
+          "updated_at": "2026-08-01 10:04:45.740669+08"
+        },
+        {
+          "id": 18618,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "harry",
+          "content": "lecture教授讲的让人昏昏欲睡，但是tutor讲的很详细，总体给分fair，是一个付出回报成正比的课！",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 913,
+          "course_code": "ACCT1101",
+          "created_at": "2026-08-01 18:53:37.070557+08",
+          "updated_at": "2026-08-01 18:53:37.070557+08"
+        },
+        {
+          "id": 18635,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "",
+          "content": "这个不需要太多的会计基础，认真刷题基本上都可以B range以上，难度不算太大",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 773,
+          "course_code": "ACCT1101",
+          "created_at": "2026-08-01 23:34:24.976595+08",
+          "updated_at": "2026-08-01 23:34:24.976595+08"
+        },
+        {
+          "id": 18641,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "Li Tianyi",
+          "content": "prof very nice and kind",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 791,
+          "course_code": "ACCT1101",
+          "created_at": "2026-08-02 00:18:16.194765+08",
+          "updated_at": "2026-08-02 00:18:16.194765+08"
+        },
+        {
+          "id": 18678,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "",
+          "content": "wl有点大，不过很简单，挺不错的",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 745,
+          "course_code": "ACCT1101",
+          "created_at": "2026-08-02 16:26:20.720142+08",
+          "updated_at": "2026-08-02 16:26:20.720142+08"
+        },
+        {
+          "id": 18680,
+          "year_taken": "2024-2025",
+          "sem_taken": "Sem1",
+          "instructor": "",
+          "content": "新加坡老师的，讲得还不错，稍微有点无聊，给分一般般但能接受",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 850,
+          "course_code": "ACCT1101",
+          "created_at": "2026-08-02 16:52:14.875064+08",
+          "updated_at": "2026-08-02 16:52:14.875064+08"
+        },
+        {
+          "id": 18740,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "",
+          "content": "考试内容和pp差不多，会比pp稍微难一点但是底层逻辑不变。整体不错好🐢",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 904,
+          "course_code": "ACCT1101",
+          "created_at": "2026-08-03 02:10:14.416801+08",
+          "updated_at": "2026-08-03 02:10:14.416801+08"
+        },
+        {
+          "id": 18749,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "",
+          "content": "Pretty straightforward course, but curve is bad",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 1046,
+          "course_code": "ACCT1101",
+          "created_at": "2026-08-03 09:57:30.319321+08",
+          "updated_at": "2026-08-03 09:57:30.319321+08"
+        },
+        {
+          "id": 18754,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "LUOWEI",
+          "content": " The lectures a little bit bored and the professor has accent, But tutor is really good",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 980,
+          "course_code": "ACCT1101",
+          "created_at": "2026-08-03 10:15:11.239414+08",
+          "updated_at": "2026-08-03 10:15:11.239414+08"
+        },
+        {
+          "id": 18782,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "Helena",
+          "content": "学不明白，可能我对会计就是缺根弦吧……",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 1008,
+          "course_code": "ACCT1101",
+          "created_at": "2026-08-03 14:17:34.923755+08",
+          "updated_at": "2026-08-03 14:17:34.923755+08"
+        },
+        {
+          "id": 18786,
+          "year_taken": "2024-2025",
+          "sem_taken": "Sem1",
+          "instructor": "",
+          "content": "just do prac questions and assignments and u should be good ",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 731,
+          "course_code": "ACCT1101",
+          "created_at": "2026-08-03 14:46:08.001108+08",
+          "updated_at": "2026-08-03 14:46:08.001108+08"
+        },
+        {
+          "id": 18805,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "Jiang",
+          "content": "prof Jiang和tutor C J Guo都很好 非常耐心帮助我们解答问题",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 762,
+          "course_code": "ACCT1101",
+          "created_at": "2026-08-03 17:35:42.499885+08",
+          "updated_at": "2026-08-03 17:35:42.499885+08"
+        },
+        {
+          "id": 18847,
+          "year_taken": "2024-2025",
+          "sem_taken": "Sem1",
+          "instructor": "Jasmine",
+          "content": "我自己完全学不会但是教授挺棒的，推荐给喜欢会计的人",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 783,
+          "course_code": "ACCT1101",
+          "created_at": "2026-08-03 22:53:55.058579+08",
+          "updated_at": "2026-08-03 22:53:55.058579+08"
+        },
+        {
+          "id": 18849,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "",
+          "content": "感觉考试和作业不是一种类型。作业更多的是计算列表，但考试还有一半是概念定义类的问题。",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 998,
+          "course_code": "ACCT1101",
+          "created_at": "2026-08-03 22:55:43.063583+08",
+          "updated_at": "2026-08-03 22:55:43.063583+08"
+        },
+        {
+          "id": 18878,
+          "year_taken": "2023-2024",
+          "sem_taken": "Sem2",
+          "instructor": "",
+          "content": "很简单的内容。不需要怎么学就可以",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 475,
+          "course_code": "ACCT1101",
+          "created_at": "2026-08-04 01:04:07.960389+08",
+          "updated_at": "2026-08-04 01:04:07.960389+08"
+        },
+        {
+          "id": 18911,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "",
+          "content": "wl中等偏上 不过有经济基础应该会好",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 1014,
+          "course_code": "ACCT1101",
+          "created_at": "2026-08-04 08:53:10.214605+08",
+          "updated_at": "2026-08-04 08:53:10.214605+08"
+        },
+        {
+          "id": 19044,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "",
+          "content": "建议是高考生不要听信刷两套pp就会好龟的言论。对方是高中国际部在ib或者al拿过会计课A+的人，相当于你在跟学过的人比赛，所以高考生才会觉得难、容错率极低，类比的话就是进了thu贵系cs，发现同学是竞赛金牌的那种绝望。。\n",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 489,
+          "course_code": "ACCT1101",
+          "created_at": "2026-08-07 22:00:03.533924+08",
+          "updated_at": "2026-08-07 22:00:03.533924+08"
+        },
+        {
+          "id": 19046,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "",
+          "content": "可以的嗯嗯好的希望有好贵吧加油呀",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 952,
+          "course_code": "ACCT1101",
+          "created_at": "2026-08-07 22:11:47.166074+08",
+          "updated_at": "2026-08-07 22:11:47.166074+08"
+        }
+      ]
+    },
+    {
+      "code": "CCST9017",
+      "title": "Hidden Order in Daily Life: A Mathematical Perspective",
+      "offer_dept": "University Central",
+      "requirement": "Your enrollment must comply with the <a href=https://commoncore.hku.hk/requirements/\" target=\"_blank\"> requirements of Common Core (CC)</a> and your programme. Contact commoncore@hku.hk for enquiries.\"",
+      "description": "",
+      "liked_count": 28,
+      "disliked_count": 21,
+      "reviewed_count": 209,
+      "a_plus": 35,
+      "a": 49,
+      "a_minus": 63,
+      "b_plus": 40,
+      "b": 26,
+      "b_minus": 11,
+      "c_plus": 6,
+      "c": 4,
+      "c_minus": 0,
+      "d_plus": 0,
+      "d": 0,
+      "d_minus": 1,
+      "pass": 6,
+      "fail": 0,
+      "tutorial_yes_count": 15,
+      "essay_yes_count": 4,
+      "final_yes_count": 15,
+      "presentation_yes_count": 15,
+      "project_yes_count": 15,
+      "attendance_yes_count": 6,
+      "tutorial_no_count": 0,
+      "essay_no_count": 9,
+      "final_no_count": 0,
+      "presentation_no_count": 1,
+      "project_no_count": 0,
+      "attendance_no_count": 9,
+      "subclasses": [
+        {
+          "id": 53397,
+          "semester": "2026-27 Sem 1",
+          "section": "1A",
+          "instructor": "Ng,Tuen Wai",
+          "slots": [
+            {
+              "day": 3,
+              "venue": "MWT2",
+              "start_time": "13:00",
+              "end_time": "14:50",
+              "start_date": "2026/09/02",
+              "end_date": "2026/10/07",
+              "is_tutorial": false
+            },
+            {
+              "day": 3,
+              "venue": "MWT2",
+              "start_time": "13:00",
+              "end_time": "14:50",
+              "start_date": "2026/10/21",
+              "end_date": "2026/11/25",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        },
+        {
+          "id": 50963,
+          "semester": "2026-27 Sem 1",
+          "section": "1B",
+          "instructor": "Ng,Tuen Wai",
+          "slots": [
+            {
+              "day": 3,
+              "venue": "MWT2",
+              "start_time": "17:00",
+              "end_time": "18:50",
+              "start_date": "2026/09/02",
+              "end_date": "2026/10/07",
+              "is_tutorial": false
+            },
+            {
+              "day": 3,
+              "venue": "MWT2",
+              "start_time": "17:00",
+              "end_time": "18:50",
+              "start_date": "2026/10/21",
+              "end_date": "2026/11/25",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        }
+      ],
+      "reviews": [
+        {
+          "id": 11810,
+          "year_taken": "2024-2025",
+          "sem_taken": "Sem1",
+          "instructor": "吴端伟，曾飞龙",
+          "content": "⁢⁢⁢⁢⁢⁢⁢⁢⁢⁢⁢　⁢⁢⁢⁢⁢⁢⁢⁢⁢⁢⁢　⁢⁢⁢⁢⁢⁢⁢⁢⁢⁢⁢　⁢⁢⁢⁢⁢⁢⁢⁢⁢⁢⁢　⁢⁢⁢⁢⁢⁢⁢⁢⁢⁢⁢　⁢⁢⁢⁢⁢⁢⁢⁢⁢⁢⁢　⁢⁢⁢⁢⁢⁢⁢⁢⁢⁢⁢　⁢⁢⁢⁢⁢⁢⁢⁢⁢⁢⁢　⁢⁢⁢⁢⁢⁢⁢⁢⁢⁢⁢　⁢⁢⁢⁢⁢⁢⁢⁢⁢⁢⁢　⁢⁢⁢⁢⁢⁢⁢⁢⁢⁢⁢　⁢⁢⁢⁢⁢⁢⁢⁢⁢⁢⁢　⁢⁢⁢⁢⁢⁢⁢⁢⁢⁢⁢　⁢⁢⁢⁢⁢⁢⁢⁢⁢⁢⁢　⁢⁢⁢⁢⁢⁢⁢⁢⁢⁢⁢　⁢⁢⁢⁢⁢⁢⁢⁢⁢⁢⁢　⁢⁢⁢⁢⁢⁢⁢⁢⁢⁢⁢　⁢⁢⁢⁢⁢⁢⁢⁢⁢⁢⁢　⁢⁢⁢⁢⁢⁢⁢⁢⁢⁢⁢　⁢⁢⁢⁢⁢⁢⁢⁢⁢⁢⁢　⁢⁢⁢⁢⁢⁢⁢⁢⁢⁢⁢　⁢⁢⁢⁢⁢⁢⁢⁢⁢⁢⁢　⁢⁢⁢⁢⁢⁢⁢⁢⁢⁢⁢　⁢⁢⁢⁢⁢⁢⁢⁢⁢⁢⁢　⁢⁢⁢⁢⁢⁢⁢⁢⁢⁢⁢",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 677,
+          "course_code": "CCST9017",
+          "created_at": "2025-01-19 17:07:03.114391+08",
+          "updated_at": "2025-01-19 17:07:03.114391+08"
+        },
+        {
+          "id": 11830,
+          "year_taken": "2024-2025",
+          "sem_taken": "Sem1",
+          "instructor": "",
+          "content": "平时95+，exam会比平时作业简单，应该也95+，group project炸了才过及格。作为ccst应该还会有更好的选择。最后A-",
+          "liked_count": 1,
+          "disliked_count": 0,
+          "user_id": 806,
+          "course_code": "CCST9017",
+          "created_at": "2025-01-19 20:11:40.074084+08",
+          "updated_at": "2025-01-19 20:11:40.074084+08"
+        },
+        {
+          "id": 11846,
+          "year_taken": "2024-2025",
+          "sem_taken": "Sem1",
+          "instructor": "",
+          "content": "不错 高考理科生可以选 学过物理竞赛的更是随便上",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 743,
+          "course_code": "CCST9017",
+          "created_at": "2025-01-19 21:58:52.102859+08",
+          "updated_at": "2025-01-19 21:58:52.102859+08"
+        },
+        {
+          "id": 11923,
+          "year_taken": "2024-2025",
+          "sem_taken": "Sem1",
+          "instructor": "",
+          "content": "简单来说，这个课就是把数学3开头的课每一门浓缩成一节intro，看看你对什么感兴趣未来可以学\n包括但不限于，博弈论，决策树，机器学习，马尔科夫链，劈里啪啦一堆\ngp给分不错，dz期末大爆炸，最多对三分之二，最后A，真不错啊真不错。gp也就一般分数吧，最后report写完我觉得都是一坨，不好说，但是分不错",
+          "liked_count": 1,
+          "disliked_count": 0,
+          "user_id": 800,
+          "course_code": "CCST9017",
+          "created_at": "2025-01-20 09:58:47.667685+08",
+          "updated_at": "2025-01-20 09:58:47.667685+08"
+        },
+        {
+          "id": 11928,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "",
+          "content": "wl 较大，每周都会有2道作业，认真写一半都做得出来，但最重要的还是要找好gp的组员，本人全靠组员帮助拿的A",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 707,
+          "course_code": "CCST9017",
+          "created_at": "2025-01-20 10:49:21.920722+08",
+          "updated_at": "2025-01-20 10:49:21.920722+08"
+        },
+        {
+          "id": 12121,
+          "year_taken": "2024-2025",
+          "sem_taken": "Sem1",
+          "instructor": "",
+          "content": "好龟课，收获很大。wl可大可小，取决于自己对作业的态度。final不算难，考前突击即可。gp找好队友用点心，可以几乎拿满，给分较fair。最后A+",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 708,
+          "course_code": "CCST9017",
+          "created_at": "2025-01-22 22:00:47.740017+08",
+          "updated_at": "2025-01-22 22:00:47.740017+08"
+        },
+        {
+          "id": 12129,
+          "year_taken": "2024-2025",
+          "sem_taken": "Sem1",
+          "instructor": "",
+          "content": "超級垃圾，快跑，workload超級大，每週都有pre lesson and assignments。",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 829,
+          "course_code": "CCST9017",
+          "created_at": "2025-01-23 11:14:47.240198+08",
+          "updated_at": "2025-01-23 11:14:47.240198+08"
+        },
+        {
+          "id": 12154,
+          "year_taken": "2024-2025",
+          "sem_taken": "Sem1",
+          "instructor": "Patrick",
+          "content": "內容很有趣但wl 非常大，每週一份class work 一份hw 還有gp final。兩位教授都挺好人，tutor 推薦Edmond。本人al maths 考生，沒有任何進階數知識或理科競賽經歷學得很痛苦！！！gp 靠神隊友拿到不錯的分數，final 感覺還行最後喜提A-，但y1s1如果你數學很好這門科很推薦。",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 777,
+          "course_code": "CCST9017",
+          "created_at": "2025-01-23 23:57:48.257694+08",
+          "updated_at": "2025-01-23 23:57:48.257694+08"
+        },
+        {
+          "id": 12248,
+          "year_taken": "2024-2025",
+          "sem_taken": "Sem1",
+          "instructor": "",
+          "content": "workload大 每星期都有assignment雖然只有倆題 gp一定得和同一個tut的人組 所以得和認識的人商量好選同一個tut 不然就像我選了倆不認識的 結果被fr",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 532,
+          "course_code": "CCST9017",
+          "created_at": "2025-01-27 10:34:31.056162+08",
+          "updated_at": "2025-01-27 10:34:31.056162+08"
+        },
+        {
+          "id": 12447,
+          "year_taken": "2024-2025",
+          "sem_taken": "Sem1",
+          "instructor": "Ng",
+          "content": "wl较大，难度还行，final test需要好好准备，比较考验速度",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 571,
+          "course_code": "CCST9017",
+          "created_at": "2025-02-06 20:13:16.331574+08",
+          "updated_at": "2025-02-06 20:13:16.331574+08"
+        },
+        {
+          "id": 13120,
+          "year_taken": "2024-2025",
+          "sem_taken": "Sem1",
+          "instructor": "",
+          "content": "快跑。。wl超大，学的内容感觉不像CC的，像专业课，，，，tut避雷Tim，，，",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 738,
+          "course_code": "CCST9017",
+          "created_at": "2025-06-26 12:56:09.147177+08",
+          "updated_at": "2025-06-26 12:56:09.147177+08"
+        },
+        {
+          "id": 13615,
+          "year_taken": "2024-2025",
+          "sem_taken": "Sem1",
+          "instructor": "",
+          "content": "烂龟了，作业一般（没有晚交过，但成绩中等），小组成绩还不错，但考试题目非常的难，可能只对了一半吧，只能说数学没有那么好的人快跑。",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 811,
+          "course_code": "CCST9017",
+          "created_at": "2025-07-27 22:59:53.110737+08",
+          "updated_at": "2025-07-27 22:59:53.110737+08"
+        },
+        {
+          "id": 14035,
+          "year_taken": "2024-2025",
+          "sem_taken": "Sem1",
+          "instructor": "",
+          "content": "课程内容对理科生来说感觉不算难，而且非常非常有意思，出现的很多例题是有趣到会和朋友分享的程度。wl偏高，体现在每周都有作业。最后的final不算难，但可能是太卷了，gp和平时分综合有大约90+%的情况下感觉final做的也不错，最后只有A。",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 789,
+          "course_code": "CCST9017",
+          "created_at": "2025-08-03 00:28:18.859696+08",
+          "updated_at": "2025-08-03 00:28:18.859696+08"
+        },
+        {
+          "id": 14587,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "prof",
+          "content": "课是很有趣，很好玩的，理科思维很让人享受，但分会很烂，感觉学生是清一色的高考理工男，大家都很卷，Final题目也很难，作为CC个人，感觉比12开头的专业数学课更难，日常workload不大，但到期末也很忙",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 914,
+          "course_code": "CCST9017",
+          "created_at": "2025-11-27 21:44:34.872475+08",
+          "updated_at": "2025-11-27 21:44:34.872475+08"
+        },
+        {
+          "id": 14592,
+          "year_taken": "2024-2025",
+          "sem_taken": "Sem1",
+          "instructor": "Ng+FLT",
+          "content": "看到底下有一个STEP grade 2学的很struggle的，我和别的几个STEP考一个1还有个双1的都觉得很恶心，能别学就别学",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 1032,
+          "course_code": "CCST9017",
+          "created_at": "2025-11-29 01:48:19.286796+08",
+          "updated_at": "2025-11-29 01:48:19.286796+08"
+        },
+        {
+          "id": 14629,
+          "year_taken": "2024-2025",
+          "sem_taken": "Sem1",
+          "instructor": "",
+          "content": "整体workload不是很大，还是思考花比较多时间，gp给分比较低但好像其他组也差不多",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 802,
+          "course_code": "CCST9017",
+          "created_at": "2025-12-22 15:13:09.793614+08",
+          "updated_at": "2025-12-22 15:13:09.793614+08"
+        },
+        {
+          "id": 14759,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "Ng Tim",
+          "content": "课程内容很好 考的也还不错 但是group project的引导真的是一坨臭屎，这俩教授也是神人 烂龟了",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 843,
+          "course_code": "CCST9017",
+          "created_at": "2026-01-08 14:09:50.088946+08",
+          "updated_at": "2026-01-08 14:09:50.088946+08"
+        },
+        {
+          "id": 14780,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "",
+          "content": "wl巨大，每个星期都有assignment和class work，syllabus里面还有期末考和gp，基本cc有的考核它都有，考试还巨难无敌了",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 891,
+          "course_code": "CCST9017",
+          "created_at": "2026-01-09 14:07:26.585237+08",
+          "updated_at": "2026-01-09 14:07:26.585237+08"
+        },
+        {
+          "id": 14889,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "Ng，Tsang",
+          "content": "课程还是不错，数学知识学起来有趣，本人高考生，还算能听明白，每周都有asm，wl比较大，但还是能handle，final难，gp的pre还好，report得分有点低",
+          "liked_count": 1,
+          "disliked_count": 0,
+          "user_id": 887,
+          "course_code": "CCST9017",
+          "created_at": "2026-01-13 16:56:34.961498+08",
+          "updated_at": "2026-01-13 16:56:34.961498+08"
+        },
+        {
+          "id": 14891,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "Ng, Tsang",
+          "content": "workload大，高考生尤其是竞赛生都很多，并且是为数不多的每周一次作业+tutorial+gp+final全拉满的CC。。。但是内容还挺有意思",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 884,
+          "course_code": "CCST9017",
+          "created_at": "2026-01-13 17:06:05.538582+08",
+          "updated_at": "2026-01-13 17:06:05.538582+08"
+        },
+        {
+          "id": 14928,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "Ng, Tuen Wai",
+          "content": "gp需要找靠谱一点的队友，前半部博弈论内容比较有意思",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 857,
+          "course_code": "CCST9017",
+          "created_at": "2026-01-14 14:52:35.389444+08",
+          "updated_at": "2026-01-14 14:52:35.389444+08"
+        },
+        {
+          "id": 14968,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "Ng Tuen Wai, Tsang Fai Lung",
+          "content": "这是一个比较有趣的课程，适合数学比较好的人，最好组团上",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 987,
+          "course_code": "CCST9017",
+          "created_at": "2026-01-15 15:44:56.753067+08",
+          "updated_at": "2026-01-15 15:44:56.753067+08"
+        },
+        {
+          "id": 15042,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "",
+          "content": "一门很有趣且很实用的数学课程，涉及的应用面很广因此可以了解很多数学的领域。有些内容可能不容易理解，但是多看看老师精心准备的lecture notes还是非常有帮助的。",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 1007,
+          "course_code": "CCST9017",
+          "created_at": "2026-01-16 18:31:31.258531+08",
+          "updated_at": "2026-01-16 18:31:31.258531+08"
+        },
+        {
+          "id": 15216,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "NTW, TFL; Tim Wotherspoon(tut)",
+          "content": "如果对数学感兴趣的可以选 有些内容可能比较抽象 但个人认为也不需要竞赛背景。\nGP不求讲得高大上 但是要对自己的内容充分理解 并且老师看重pre的整体感，即统一的格式和符号表示啥的",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 847,
+          "course_code": "CCST9017",
+          "created_at": "2026-01-17 17:52:45.696363+08",
+          "updated_at": "2026-01-17 17:52:45.696363+08"
+        },
+        {
+          "id": 15221,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "",
+          "content": "知识点不算难alevel学过高数并且再认真听课自学一下差不多\n但是注意workload不小",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 988,
+          "course_code": "CCST9017",
+          "created_at": "2026-01-17 19:07:52.516214+08",
+          "updated_at": "2026-01-17 19:07:52.516214+08"
+        },
+        {
+          "id": 15239,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "",
+          "content": "课程的内容本身很有意思，里面讲 数学和很多有趣的东西结合，比如说数学与爱情，数学与离婚等。 但是平时的作业比较难也有点多，并且最后需要完成论文和考试，总体不算非常容易，但上的很开心。",
+          "liked_count": 1,
+          "disliked_count": 0,
+          "user_id": 999,
+          "course_code": "CCST9017",
+          "created_at": "2026-01-18 00:51:49.453578+08",
+          "updated_at": "2026-01-18 00:51:49.453578+08"
+        },
+        {
+          "id": 15286,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "",
+          "content": "Wl超级大，而且是不加掩饰的大；但是内容和老师确实都很有意思",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 868,
+          "course_code": "CCST9017",
+          "created_at": "2026-01-18 15:25:20.773379+08",
+          "updated_at": "2026-01-18 15:25:20.773379+08"
+        },
+        {
+          "id": 15322,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "tsang",
+          "content": "分为博弈论和密码学两块，蛮有意思，但是gp可能会背刺你，期末考试有点难",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 873,
+          "course_code": "CCST9017",
+          "created_at": "2026-01-18 20:50:31.701693+08",
+          "updated_at": "2026-01-18 20:50:31.701693+08"
+        },
+        {
+          "id": 15526,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "Prof. Ng",
+          "content": "wl很大 每周都有任务 期末周还有essay 而且考试很难",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 1004,
+          "course_code": "CCST9017",
+          "created_at": "2026-01-19 02:00:03.963867+08",
+          "updated_at": "2026-01-19 02:00:03.963867+08"
+        },
+        {
+          "id": 15587,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "Ng,Tsang",
+          "content": "课有意思\ngp选队友很重要，很重要！选题最好original一些，组团如果组不到好的到课上再选也可以，慎选队友",
+          "liked_count": 1,
+          "disliked_count": 0,
+          "user_id": 871,
+          "course_code": "CCST9017",
+          "created_at": "2026-01-19 09:52:44.225036+08",
+          "updated_at": "2026-01-19 09:52:44.225036+08"
+        },
+        {
+          "id": 15606,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "ng tzsang",
+          "content": "wl很大，gp很吃选题，那个长得像黄仁勋的prof偏爱金融方面的",
+          "liked_count": 1,
+          "disliked_count": 0,
+          "user_id": 855,
+          "course_code": "CCST9017",
+          "created_at": "2026-01-19 10:12:38.675211+08",
+          "updated_at": "2026-01-19 10:12:38.675211+08"
+        },
+        {
+          "id": 15615,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "Ng，Tsang",
+          "content": "课程内容很有意思，wl有点大，gp选题要谨慎，presentation别讲太难太快，教授可能听不懂",
+          "liked_count": 1,
+          "disliked_count": 0,
+          "user_id": 950,
+          "course_code": "CCST9017",
+          "created_at": "2026-01-19 10:21:23.007797+08",
+          "updated_at": "2026-01-19 10:21:23.007797+08"
+        },
+        {
+          "id": 15737,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "",
+          "content": "wl比较大，中间的group project有点看运气",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 1013,
+          "course_code": "CCST9017",
+          "created_at": "2026-01-19 12:47:54.41112+08",
+          "updated_at": "2026-01-19 12:47:54.41112+08"
+        },
+        {
+          "id": 15755,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "",
+          "content": "内容有意思是没错，但是理解难度也比较大，需要好好吸收消化。对于想要学习博弈论和密码学的人来说很好，能真正学到东西。能力一般又只想要好龟的人快跑。我自认为理解了大部分内容，作业也全部认真做，gp也还可以，最后B。",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 936,
+          "course_code": "CCST9017",
+          "created_at": "2026-01-19 13:11:08.768282+08",
+          "updated_at": "2026-01-19 13:11:08.768282+08"
+        },
+        {
+          "id": 15788,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "",
+          "content": "wl相比之下有点大。但不上课自学加写作业差不多每周1.5h就可以解决，很有意思的一门课，学到了挺多东西。gp有幸找到了好队友，但其实这块拉开的分差没那么大，做得好和做的一般可能体现在最终的成绩上也就3%这样，主要还是exam吧。我exam复习了大概六个小时，但最后只写出来了60%的题，其中还有错的，考完讨论下来感觉周围一圈人基本都写完了，本来以为自己完蛋了，但最后拿A了。只能说wl大，但比想象中好🐢很多",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 1020,
+          "course_code": "CCST9017",
+          "created_at": "2026-01-19 13:42:04.916973+08",
+          "updated_at": "2026-01-19 13:42:04.916973+08"
+        },
+        {
+          "id": 16255,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "",
+          "content": "final is curved well",
+          "liked_count": 1,
+          "disliked_count": 0,
+          "user_id": 1034,
+          "course_code": "CCST9017",
+          "created_at": "2026-01-21 15:26:41.594066+08",
+          "updated_at": "2026-07-27 18:19:52.186039+08"
+        },
+        {
+          "id": 16293,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "",
+          "content": "quite difficult and high workload cc",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 1053,
+          "course_code": "CCST9017",
+          "created_at": "2026-01-21 18:23:32.410487+08",
+          "updated_at": "2026-01-21 18:23:32.410487+08"
+        },
+        {
+          "id": 16354,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "",
+          "content": "内容真的有意思，workload也是真的大\n每周assignment+presentation+essay+final，想水的慎选，但确实能学到不少东西\n重视final，我们这届final比作业难很多",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 985,
+          "course_code": "CCST9017",
+          "created_at": "2026-01-22 20:29:41.521662+08",
+          "updated_at": "2026-01-22 20:29:41.521662+08"
+        },
+        {
+          "id": 17594,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "",
+          "content": "wl一般，每节课后有一个简单的assignment，final不用特别复习，翻一下pp就可以过，但是有一个gp还挺麻烦的，虽然说对grade影响好像不大。lecture虽然没有attendance但还是去听一下学习效率更高。lecture和tutorial讲课都很好，不会注水。内容挺有趣的难度也不大，能学到很多东西。",
+          "liked_count": 1,
+          "disliked_count": 0,
+          "user_id": 869,
+          "course_code": "CCST9017",
+          "created_at": "2026-07-15 16:13:24.565992+08",
+          "updated_at": "2026-07-15 16:13:24.565992+08"
+        },
+        {
+          "id": 17730,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "",
+          "content": "牛逼，唯一一门A+ cc，太好龟了",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 703,
+          "course_code": "CCST9017",
+          "created_at": "2026-07-21 19:55:31.50575+08",
+          "updated_at": "2026-07-21 19:55:31.50575+08"
+        }
+      ]
+    },
+    {
+      "code": "COMP2120",
+      "title": "Computer organization",
+      "offer_dept": "School of Computing and Data S",
+      "requirement": "Pass in COMP1117 or ENGG1330, or already enrolled in these courses; Mutually exclusive with: ELEC2441",
+      "description": "",
+      "liked_count": 5,
+      "disliked_count": 6,
+      "reviewed_count": 81,
+      "a_plus": 42,
+      "a": 29,
+      "a_minus": 33,
+      "b_plus": 29,
+      "b": 10,
+      "b_minus": 9,
+      "c_plus": 1,
+      "c": 4,
+      "c_minus": 1,
+      "d_plus": 2,
+      "d": 1,
+      "d_minus": 0,
+      "pass": 0,
+      "fail": 1,
+      "tutorial_yes_count": 0,
+      "essay_yes_count": 0,
+      "final_yes_count": 1,
+      "presentation_yes_count": 0,
+      "project_yes_count": 0,
+      "attendance_yes_count": 0,
+      "tutorial_no_count": 1,
+      "essay_no_count": 1,
+      "final_no_count": 0,
+      "presentation_no_count": 1,
+      "project_no_count": 1,
+      "attendance_no_count": 1,
+      "subclasses": [
+        {
+          "id": 69484,
+          "semester": "2026-27 Sem 1",
+          "section": "1SH",
+          "instructor": "Zhao,Qi",
+          "slots": [
+            {
+              "day": 4,
+              "venue": "",
+              "start_time": "14:00",
+              "end_time": "17:20",
+              "start_date": "2026/09/03",
+              "end_date": "2026/09/03",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "",
+              "start_time": "14:00",
+              "end_time": "17:20",
+              "start_date": "2026/09/07",
+              "end_date": "2026/09/24",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "",
+              "start_time": "14:00",
+              "end_time": "17:20",
+              "start_date": "2026/09/28",
+              "end_date": "2026/09/28",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "",
+              "start_time": "14:00",
+              "end_time": "17:20",
+              "start_date": "2026/10/05",
+              "end_date": "2026/10/15",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        },
+        {
+          "id": 51584,
+          "semester": "2026-27 Sem 2",
+          "section": "2A",
+          "instructor": "Zhao,Qi",
+          "slots": [
+            {
+              "day": 1,
+              "venue": "CYPP4",
+              "start_time": "13:00",
+              "end_time": "14:50",
+              "start_date": "2027/01/18",
+              "end_date": "2027/02/01",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "CYPP4",
+              "start_time": "09:00",
+              "end_time": "09:50",
+              "start_date": "2027/01/21",
+              "end_date": "2027/02/04",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "CYPP4",
+              "start_time": "13:00",
+              "end_time": "14:50",
+              "start_date": "2027/02/15",
+              "end_date": "2027/03/01",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "CYPP4",
+              "start_time": "09:00",
+              "end_time": "09:50",
+              "start_date": "2027/02/18",
+              "end_date": "2027/03/04",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "CYPP4",
+              "start_time": "13:00",
+              "end_time": "14:50",
+              "start_date": "2027/03/15",
+              "end_date": "2027/03/22",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "CYPP4",
+              "start_time": "09:00",
+              "end_time": "09:50",
+              "start_date": "2027/03/18",
+              "end_date": "2027/04/29",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "CYPP4",
+              "start_time": "13:00",
+              "end_time": "14:50",
+              "start_date": "2027/04/12",
+              "end_date": "2027/04/26",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        },
+        {
+          "id": 52111,
+          "semester": "2026-27 Sem 2",
+          "section": "2B",
+          "instructor": "Zhao,Qi",
+          "slots": [
+            {
+              "day": 1,
+              "venue": "CYPP4",
+              "start_time": "16:00",
+              "end_time": "17:50",
+              "start_date": "2027/01/18",
+              "end_date": "2027/02/01",
+              "is_tutorial": false
+            },
+            {
+              "day": 3,
+              "venue": "CYPP4",
+              "start_time": "11:00",
+              "end_time": "11:50",
+              "start_date": "2027/01/20",
+              "end_date": "2027/02/03",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "CYPP4",
+              "start_time": "16:00",
+              "end_time": "17:50",
+              "start_date": "2027/02/15",
+              "end_date": "2027/03/01",
+              "is_tutorial": false
+            },
+            {
+              "day": 3,
+              "venue": "CYPP4",
+              "start_time": "11:00",
+              "end_time": "11:50",
+              "start_date": "2027/02/17",
+              "end_date": "2027/03/03",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "CYPP4",
+              "start_time": "16:00",
+              "end_time": "17:50",
+              "start_date": "2027/03/15",
+              "end_date": "2027/03/22",
+              "is_tutorial": false
+            },
+            {
+              "day": 3,
+              "venue": "CYPP4",
+              "start_time": "11:00",
+              "end_time": "11:50",
+              "start_date": "2027/03/17",
+              "end_date": "2027/04/28",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "CYPP4",
+              "start_time": "16:00",
+              "end_time": "17:50",
+              "start_date": "2027/04/12",
+              "end_date": "2027/04/26",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        }
+      ],
+      "reviews": [
+        {
+          "id": 13226,
+          "year_taken": "2024-2025",
+          "sem_taken": "Sem2",
+          "instructor": "Zhao Qi",
+          "content": "教授人很好 如果想拿a range 平时分要高 期末也得努力。final记得复习ppt tutorial和past paper 因为你或多或少会碰到类似的题型",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 631,
+          "course_code": "COMP2120",
+          "created_at": "2025-07-01 14:22:40.168617+08",
+          "updated_at": "2025-07-01 14:22:40.168617+08"
+        },
+        {
+          "id": 13405,
+          "year_taken": "2024-2025",
+          "sem_taken": "Sem2",
+          "instructor": "Zhao Qi",
+          "content": "内容并不难，而且大题题型很固定所以能按套路拿好龟。教授的口音和课件都不太行，但是现场找他问问题能得到还算满意的回答，在Moodle问问题就很久不回。课程组织略显混乱，好在最后给龟不错。",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 600,
+          "course_code": "COMP2120",
+          "created_at": "2025-07-21 13:51:55.267824+08",
+          "updated_at": "2025-07-21 13:51:55.267824+08"
+        },
+        {
+          "id": 13433,
+          "year_taken": "2024-2025",
+          "sem_taken": "Sem2",
+          "instructor": "zhao qi",
+          "content": "学不到东西，卷。但是好🐢，期末题量比较大",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 572,
+          "course_code": "COMP2120",
+          "created_at": "2025-07-21 23:19:09.539551+08",
+          "updated_at": "2025-07-21 23:19:09.539551+08"
+        },
+        {
+          "id": 13489,
+          "year_taken": "2024-2025",
+          "sem_taken": "Sem2",
+          "instructor": "Zhao Qi",
+          "content": "课程结构设计很一般，内容在一块的也没有放在一块讲。老师讲的还算清楚。tutorial和asm很重要，好好做题期末会考相似的。课程内容本身不难。overall A+\n",
+          "liked_count": 1,
+          "disliked_count": 0,
+          "user_id": 739,
+          "course_code": "COMP2120",
+          "created_at": "2025-07-24 10:10:55.372356+08",
+          "updated_at": "2025-07-24 10:10:55.372356+08"
+        },
+        {
+          "id": 13625,
+          "year_taken": "2024-2025",
+          "sem_taken": "Sem2",
+          "instructor": "",
+          "content": "烂了，悲。非计算机，感觉枯燥无聊，平时作业没好好做，final做得好也救不回来了QAQ",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 696,
+          "course_code": "COMP2120",
+          "created_at": "2025-07-28 08:54:31.361154+08",
+          "updated_at": "2025-07-28 08:54:31.361154+08"
+        },
+        {
+          "id": 13707,
+          "year_taken": "2024-2025",
+          "sem_taken": "Sem2",
+          "instructor": "",
+          "content": "没有想象中好龟，个人感觉讲课的顺序和框架有点混乱。做往卷对期末考试有用的，skip了一个5%的quiz，最后B range可以接受。",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 735,
+          "course_code": "COMP2120",
+          "created_at": "2025-07-28 15:35:09.021231+08",
+          "updated_at": "2025-07-28 15:35:09.021231+08"
+        },
+        {
+          "id": 13960,
+          "year_taken": "2024-2025",
+          "sem_taken": "Sem2",
+          "instructor": "Zhao qi",
+          "content": "教授人很好，内地清华毕业的好像（不知道有没有记错）。有点呆，之前好多人叫他上传tut exercise还是记不起来。每周三小时，不会专门设tut的课，直接塞进lecture三小时里了。midterm是一个突击quiz，但其实你求求他他还是会告诉你大概什么时候会有quiz，并且open book（就是不让上网查）。作业不难，基本就是比tut exercise加一点点考点而已。但是考试对我来说有点难，可能因为不是计算机专业的所以学的有点云里雾里。但内容讲的非常细，至少让我对整个计算机运行有了更深入的了解。attendance就是提交tut exercise就可以了，所以如果对计算机比较了解的感觉不去都可以，但不太了解的建议听一听，因为ppt有些地方写的有点没逻辑要听他讲才明白。个人认为对我这种社恐星人很友好，因为没有gp和pre，教授还比较好沟通，可以一试",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 454,
+          "course_code": "COMP2120",
+          "created_at": "2025-08-01 12:20:20.475363+08",
+          "updated_at": "2025-08-01 12:20:20.475363+08"
+        },
+        {
+          "id": 14001,
+          "year_taken": "2024-2025",
+          "sem_taken": "Sem2",
+          "instructor": "Zhao Qi",
+          "content": "教授人很好，讲的也很清楚，只不过期末要拉curve，整体不是很卷",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 624,
+          "course_code": "COMP2120",
+          "created_at": "2025-08-02 10:55:42.222577+08",
+          "updated_at": "2025-08-02 10:55:42.222577+08"
+        },
+        {
+          "id": 14056,
+          "year_taken": "2024-2025",
+          "sem_taken": "Sem2",
+          "instructor": "zhao qi",
+          "content": "COMP里的文科 coding几乎为0",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 532,
+          "course_code": "COMP2120",
+          "created_at": "2025-08-03 14:32:34.477219+08",
+          "updated_at": "2025-08-03 14:32:34.477219+08"
+        },
+        {
+          "id": 14580,
+          "year_taken": "2024-2025",
+          "sem_taken": "Sem2",
+          "instructor": "Zhaoqi",
+          "content": "生活太如意了想挑战自己了，觉得自己的cgpa太高了，想要让人生充满挫折了，可以选",
+          "liked_count": 1,
+          "disliked_count": 0,
+          "user_id": 755,
+          "course_code": "COMP2120",
+          "created_at": "2025-11-25 12:54:13.271446+08",
+          "updated_at": "2025-11-25 12:54:13.271446+08"
+        },
+        {
+          "id": 16802,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "zhao qi",
+          "content": "教授很善良，平时和考前都耐心答疑，态度也很不错。我觉得问题主要在于kpchan留下的烂摊子。平时学习感觉很混乱，没有章法，认真看了PPT发现tutorial是另外一个套路（尤其是cache，类似于econ1210），平时认真做PP又发现很多不在这学期的教学内容中，甚至有错题。最后考试我能感受到赵教授出了很多考察理解的题目，但蛮多tutorial和作业中的内容没有覆盖到，感觉一拳打在了棉花上。然后我上课感觉难以完全听懂，想认真读教材，但发现教材讲了很多超出这门课syllabus的东西，挑选内容很耗费精力，遂放弃并兼顾其他课。我觉得主要是kpchan设计的不好，qizhao只是继承人。课程内容的设置决定了他只能在小细节上区分等地，奈何主包不擅长细节，感觉期末会吃亏。与nus的课程比较感觉也做的不好。进度掌握的不好，最后赶着讲完的，最后一个tutorial的后半部分甚至没讲。但也不用太在意啦，一门课而已，或许日后会明白这门课的价值的。还是很喜欢qizhao的，没有任何架子，耐心解答学生问题，也能从学生角度考虑。希望他手下留情吧呜呜呜",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 662,
+          "course_code": "COMP2120",
+          "created_at": "2026-05-26 04:54:46.907471+08",
+          "updated_at": "2026-05-26 04:54:46.907471+08"
+        },
+        {
+          "id": 16817,
+          "year_taken": "2026-2027",
+          "sem_taken": "Sem2",
+          "instructor": "",
+          "content": "内容：每周两个 lecture（有6个 tutorial 替换 lecture）：演进、数字逻辑、数字表示、计算机算术、指令执行周期、存储层次、高速缓存、外部存储、输入输出、指令集、寻址模式、汇编语言、操作系统、流水线、RISC。Tutorial 讲解一些经典题目，能够帮助理解，设计的非常好。有5个 assignment 里面的题目也非常经典。有一个期中 quiz 比较简单。有一个 final，可以带cheatsheet，中规中矩。这门课对应 CSAPP，但zhao把许多繁琐的细节删去，只留下最核心的思想，如果不走硬件，那这门课也足够了，能够大致了解计算机是怎么运作，没必要学很深，但同时相比于 CSAPP 少了许多内容，许多东西都只是带过，根本手搓不了一台计算机。\n学习：这学期只有1/3~1/2去上课，课上也不会补充太多东西，按照课件讲，但是课件太乱了没有什么结构化，看起来非常麻烦，需要问很多 AI 才能自学明白。同时我看着 B 站九曲阑干讲 CSAPP的对应部分，他以 Y86-64来讲，zhao以自创的来讲，能够相互呼应，加深理解。Tutorial assignment quiz 的东西都非常经典，重合度比较高，好好跟着做，有的经典的会重复好几遍，足矣。准备 final，先复习了一下我自己拓展的，又对着 cheat sheet 看了一遍。",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 853,
+          "course_code": "COMP2120",
+          "created_at": "2026-05-31 14:17:18.002538+08",
+          "updated_at": "2026-05-31 14:17:18.002538+08"
+        },
+        {
+          "id": 17345,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "",
+          "content": "23年后pp才有参考价值（教授22年summer入职），25/26题量比以往大，现在出题方向是减轻纯背书默写内容，更偏向理解。final前的office hour想拿高分一定要去，海底捞级别的。\n上课积极回答问题有2%的加分，每次都去上课这个加分很容易拿，增加quiz和final容错。本人quiz发挥大失误14/20，Assignment扣0.6%，attendance拿满，final全会最后A+。quiz改卷只看答案，final相对来说过程或者格式需要严谨一点。",
+          "liked_count": 1,
+          "disliked_count": 0,
+          "user_id": 1016,
+          "course_code": "COMP2120",
+          "created_at": "2026-06-20 14:05:38.11716+08",
+          "updated_at": "2026-06-20 14:05:38.11716+08"
+        },
+        {
+          "id": 17536,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "Qi Zhao",
+          "content": "总体来说课程内容还是比较重要的，教授也比较负责任，不过如果想要问问题的话建议线下真实，教授不怎么看邮件😅😅",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 875,
+          "course_code": "COMP2120",
+          "created_at": "2026-07-12 10:18:54.550729+08",
+          "updated_at": "2026-07-12 10:18:54.550729+08"
+        },
+        {
+          "id": 17571,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "",
+          "content": "教授讲得很清晰。想拿分要仔细过ppt上知识点",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 726,
+          "course_code": "COMP2120",
+          "created_at": "2026-07-13 17:23:01.077344+08",
+          "updated_at": "2026-07-13 17:23:01.077344+08"
+        },
+        {
+          "id": 17585,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "zhaoqi",
+          "content": "期末考的比较细，总体来说不是特别难的comp，代码部分没有其他comp那么多，但是因为特别卷，上课回答问题可以加分，最后🐢不是很理想，但professor人很好最后说会给most of you B range",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 751,
+          "course_code": "COMP2120",
+          "created_at": "2026-07-14 21:05:16.516152+08",
+          "updated_at": "2026-07-14 21:05:16.516152+08"
+        },
+        {
+          "id": 17614,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "zhao qi",
+          "content": "好课，老师讲的明白，考也考的是教过讲过的。每节课认真听不可能差",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 914,
+          "course_code": "COMP2120",
+          "created_at": "2026-07-16 14:57:17.67161+08",
+          "updated_at": "2026-07-16 14:57:17.67161+08"
+        },
+        {
+          "id": 17616,
+          "year_taken": "2026-2027",
+          "sem_taken": "Sem2",
+          "instructor": "zhao qi",
+          "content": "好课，难度不大，能把知识点梳理起来就能拿A+",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 746,
+          "course_code": "COMP2120",
+          "created_at": "2026-07-16 15:02:10.532468+08",
+          "updated_at": "2026-07-16 15:02:10.532468+08"
+        },
+        {
+          "id": 17685,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "zhao qi",
+          "content": "lecture听得挺折磨，但是全部跟下来之后复习的时候会好一些。final考的和pp题型不完全一样，注意不要太依靠pp，要对知识点有理解。教授人很好，final前的office hour很有用。最后拿了a+",
+          "liked_count": 1,
+          "disliked_count": 0,
+          "user_id": 801,
+          "course_code": "COMP2120",
+          "created_at": "2026-07-20 15:40:42.734163+08",
+          "updated_at": "2026-07-20 15:40:42.734163+08"
+        },
+        {
+          "id": 17735,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "zhaoqi",
+          "content": "基本没有coding lecture都有去 topic中间会有点跳脱但后面讲完后就通了，上课答题有加分但我没答过 最后final感觉是有理解的基本可以答得到 也是A+了",
+          "liked_count": 1,
+          "disliked_count": 0,
+          "user_id": 1050,
+          "course_code": "COMP2120",
+          "created_at": "2026-07-21 23:39:26.440342+08",
+          "updated_at": "2026-07-21 23:39:26.440342+08"
+        },
+        {
+          "id": 17737,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "",
+          "content": "教授讲的很好，并且人很好，但感觉要认真看ppt上的知识点才比较好拿高分。",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 899,
+          "course_code": "COMP2120",
+          "created_at": "2026-07-22 00:17:09.793416+08",
+          "updated_at": "2026-07-22 00:17:09.793416+08"
+        },
+        {
+          "id": 17827,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "zq",
+          "content": "学完这门课可以对计算机的运行有个基本认识 老师上课也专注于ppt 把这部分吃透就好",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 725,
+          "course_code": "COMP2120",
+          "created_at": "2026-07-23 14:08:25.570627+08",
+          "updated_at": "2026-07-23 14:08:25.570627+08"
+        },
+        {
+          "id": 17831,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "Qi Zhao",
+          "content": "老师上课态度很好，但是讲的真的很不容易听懂，自己课下弄懂后拿A＋很容易",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 909,
+          "course_code": "COMP2120",
+          "created_at": "2026-07-23 14:39:47.635872+08",
+          "updated_at": "2026-07-23 14:39:47.635872+08"
+        },
+        {
+          "id": 18112,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "Zhao qi",
+          "content": "老师人非常非常好 人很善良并且似乎学术成就也很高。值得注意的是课程现在改的记忆性的东西变少了，更加偏动脑思考的题了，做题很舒服，平时作业和最后考试很多相似的题型，好好写作业",
+          "liked_count": 1,
+          "disliked_count": 0,
+          "user_id": 722,
+          "course_code": "COMP2120",
+          "created_at": "2026-07-27 14:36:16.835098+08",
+          "updated_at": "2026-07-27 14:36:16.835098+08"
+        },
+        {
+          "id": 18252,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "zhaoqi",
+          "content": "好龟课 作业认真做 cheatsheet做好 A",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 810,
+          "course_code": "COMP2120",
+          "created_at": "2026-07-27 23:57:40.452695+08",
+          "updated_at": "2026-07-27 23:57:40.452695+08"
+        },
+        {
+          "id": 18283,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "",
+          "content": "midterm基本垫底最后final认真还是a range了",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 764,
+          "course_code": "COMP2120",
+          "created_at": "2026-07-28 10:25:41.345883+08",
+          "updated_at": "2026-07-28 10:25:41.345883+08"
+        },
+        {
+          "id": 18543,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "",
+          "content": "完全文科课程， final和midterm cheat sheet做得好就没啥问题，没上过一节课，本来想去上一上，毕竟要pop quiz，后来告诉我们pop quiz时间会提前一周通知，那我还上个勾八。但是感觉pop quiz和final90%以上的题我都有把握，但是最后还是a-，只能说comp的课还是太卷了。",
+          "liked_count": 1,
+          "disliked_count": 0,
+          "user_id": 758,
+          "course_code": "COMP2120",
+          "created_at": "2026-07-31 11:21:24.48543+08",
+          "updated_at": "2026-07-31 11:21:24.48543+08"
+        },
+        {
+          "id": 18566,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "Zhao Qi",
+          "content": "计算机组成，课程部分内容还是有些抽象的，并且章节很多很杂，需要多理解，感觉不属于那种可以期末之前恶补搞定的课程。赵老师人还是很好的，上课会有很多手写版书，会帮助理解，所以lecture能去还是值得一去。估计课程人太多了还挺卷的，最后堪堪A range",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 789,
+          "course_code": "COMP2120",
+          "created_at": "2026-07-31 17:24:03.328582+08",
+          "updated_at": "2026-07-31 17:24:03.328582+08"
+        },
+        {
+          "id": 18901,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "",
+          "content": "整体不是很难，自学也可以，但不要忘了期中有一个小测试",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 687,
+          "course_code": "COMP2120",
+          "created_at": "2026-08-04 06:39:14.670845+08",
+          "updated_at": "2026-08-04 06:39:14.670845+08"
+        },
+        {
+          "id": 18999,
+          "year_taken": "2024-2025",
+          "sem_taken": "Sem2",
+          "instructor": "",
+          "content": "计算机文科, 全靠B站上大学, PPT比较难学懂",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 640,
+          "course_code": "COMP2120",
+          "created_at": "2026-08-05 10:40:33.335313+08",
+          "updated_at": "2026-08-05 10:40:33.335313+08"
+        }
+      ]
+    },
+    {
+      "code": "COMP3314",
+      "title": "Introduction to machine learning",
+      "offer_dept": "School of Computing and Data S",
+      "requirement": "Pass in MATH1853 or MATH2014 or MATH1013; and COMP2119 or COMP2118 or COMP2502 or ELEC2543 or FITE2000",
+      "description": "",
+      "liked_count": 4,
+      "disliked_count": 6,
+      "reviewed_count": 43,
+      "a_plus": 23,
+      "a": 25,
+      "a_minus": 12,
+      "b_plus": 21,
+      "b": 5,
+      "b_minus": 3,
+      "c_plus": 4,
+      "c": 4,
+      "c_minus": 0,
+      "d_plus": 0,
+      "d": 0,
+      "d_minus": 0,
+      "pass": 2,
+      "fail": 1,
+      "tutorial_yes_count": 0,
+      "essay_yes_count": 0,
+      "final_yes_count": 3,
+      "presentation_yes_count": 0,
+      "project_yes_count": 3,
+      "attendance_yes_count": 1,
+      "tutorial_no_count": 3,
+      "essay_no_count": 3,
+      "final_no_count": 0,
+      "presentation_no_count": 3,
+      "project_no_count": 0,
+      "attendance_no_count": 2,
+      "subclasses": [
+        {
+          "id": 52718,
+          "semester": "2026-27 Sem 1",
+          "section": "1A",
+          "instructor": "Xu,Dong",
+          "slots": [
+            {
+              "day": 1,
+              "venue": "MB167",
+              "start_time": "15:00",
+              "end_time": "17:50",
+              "start_date": "2026/09/07",
+              "end_date": "2026/10/05",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "MB167",
+              "start_time": "15:00",
+              "end_time": "17:50",
+              "start_date": "2026/10/26",
+              "end_date": "2026/11/30",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        },
+        {
+          "id": 69498,
+          "semester": "2026-27 Sem 1",
+          "section": "1SH",
+          "instructor": "Gao,Shenghua; Zhao,Hengshuang",
+          "slots": [
+            {
+              "day": 4,
+              "venue": "",
+              "start_time": "14:00",
+              "end_time": "17:20",
+              "start_date": "2026/10/22",
+              "end_date": "2026/10/22",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "",
+              "start_time": "14:00",
+              "end_time": "17:20",
+              "start_date": "2026/10/26",
+              "end_date": "2026/12/03",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        },
+        {
+          "id": 56040,
+          "semester": "2026-27 Sem 2",
+          "section": "2B",
+          "instructor": "Zhao,Hengshuang",
+          "slots": [
+            {
+              "day": 1,
+              "venue": "CBA",
+              "start_time": "09:00",
+              "end_time": "11:50",
+              "start_date": "2027/01/18",
+              "end_date": "2027/02/01",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "CBA",
+              "start_time": "09:00",
+              "end_time": "11:50",
+              "start_date": "2027/02/15",
+              "end_date": "2027/03/01",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "CBA",
+              "start_time": "09:00",
+              "end_time": "11:50",
+              "start_date": "2027/03/15",
+              "end_date": "2027/03/22",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "CBA",
+              "start_time": "09:00",
+              "end_time": "11:50",
+              "start_date": "2027/04/12",
+              "end_date": "2027/04/26",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        },
+        {
+          "id": 54193,
+          "semester": "2026-27 Sem 2",
+          "section": "2C",
+          "instructor": "Yu,Yizhou",
+          "slots": [
+            {
+              "day": 5,
+              "venue": "MB167",
+              "start_time": "15:00",
+              "end_time": "17:50",
+              "start_date": "2027/01/22",
+              "end_date": "2027/01/29",
+              "is_tutorial": false
+            },
+            {
+              "day": 5,
+              "venue": "MB167",
+              "start_time": "15:00",
+              "end_time": "17:50",
+              "start_date": "2027/02/19",
+              "end_date": "2027/03/05",
+              "is_tutorial": false
+            },
+            {
+              "day": 5,
+              "venue": "MB167",
+              "start_time": "15:00",
+              "end_time": "17:50",
+              "start_date": "2027/03/19",
+              "end_date": "2027/03/19",
+              "is_tutorial": false
+            },
+            {
+              "day": 5,
+              "venue": "MB167",
+              "start_time": "15:00",
+              "end_time": "17:50",
+              "start_date": "2027/04/02",
+              "end_date": "2027/04/30",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        }
+      ],
+      "reviews": [
+        {
+          "id": 10343,
+          "year_taken": "2023-2024",
+          "sem_taken": "Sem2",
+          "instructor": "Zhao Hengshuang",
+          "content": "平时作业是写代码，全靠gpt就可以了。考试考的是概念和一些涉及数学统计的东西，我们这届考得比之前简单很多。我作业大概拿了90%，考试都写完了，最后A+",
+          "liked_count": 1,
+          "disliked_count": 0,
+          "user_id": 484,
+          "course_code": "COMP3314",
+          "created_at": "2024-08-02 22:15:29.933712+08",
+          "updated_at": "2024-08-02 22:15:29.933712+08"
+        },
+        {
+          "id": 10366,
+          "year_taken": "2023-2024",
+          "sem_taken": "Sem1",
+          "instructor": "",
+          "content": "not a bad course as long as you understand the prof",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 546,
+          "course_code": "COMP3314",
+          "created_at": "2024-08-03 15:43:49.381707+08",
+          "updated_at": "2024-08-03 15:43:49.381707+08"
+        },
+        {
+          "id": 10652,
+          "year_taken": "2023-2024",
+          "sem_taken": "Sem2",
+          "instructor": "Yu Yizhou",
+          "content": "Final考的都是ppt上有的，计算量小，但是概念性的考的略细",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 137,
+          "course_code": "COMP3314",
+          "created_at": "2024-08-06 01:05:40.307246+08",
+          "updated_at": "2024-08-06 01:05:40.307246+08"
+        },
+        {
+          "id": 10885,
+          "year_taken": "2023-2024",
+          "sem_taken": "Other",
+          "instructor": "Hengshuang Zhao",
+          "content": "This professor is utter garbage and the course is a complete waste of time. They DONT teach any ML. The entire course assumes that you already know ML. Instead, they throw you into a python tutorial.\n\nThe lecture content is the worst, most disorganized, poorly crafted garbage I've ever hade the displeasure of reading.\n\nTake this in semester 2, I beg you.",
+          "liked_count": 3,
+          "disliked_count": 0,
+          "user_id": 528,
+          "course_code": "COMP3314",
+          "created_at": "2024-09-29 18:57:05.71783+08",
+          "updated_at": "2024-09-29 18:57:05.71783+08"
+        },
+        {
+          "id": 11294,
+          "year_taken": "2024-2025",
+          "sem_taken": "Sem1",
+          "instructor": "Zhao Hengshuang",
+          "content": "A+, very typical ML syllabus, lectures slides are overly complicated so I suggest watching tutorials online. Assignments can easily be done with help of AI, 1 of the assignments is a kaggle competition, make sure to extract as many useful features as u can and try with different models. Final exam is a lot easier than the pastpapers, but u still need to know little bit of math (partial derivatives). no need to go to lectures at all if u can learn on ur own",
+          "liked_count": 1,
+          "disliked_count": 0,
+          "user_id": 469,
+          "course_code": "COMP3314",
+          "created_at": "2025-01-16 14:12:37.925646+08",
+          "updated_at": "2025-01-16 14:12:37.925646+08"
+        },
+        {
+          "id": 11539,
+          "year_taken": "2024-2025",
+          "sem_taken": "Sem1",
+          "instructor": "zhao hengshuang",
+          "content": "不是哥们，你ppt做的盐都不盐了? 英语听不懂，slide让人难受，基本都是课本截图，那我为什么不直接看课本啊？final考的也是一坨，你平时一点都不提数学，最后final考三四十分的概率和partial derivative故意整我们是吧。龟最后A-",
+          "liked_count": 6,
+          "disliked_count": 0,
+          "user_id": 496,
+          "course_code": "COMP3314",
+          "created_at": "2025-01-17 08:23:41.042622+08",
+          "updated_at": "2025-01-17 08:23:41.042622+08"
+        },
+        {
+          "id": 11720,
+          "year_taken": "2023-2024",
+          "sem_taken": "Sem2",
+          "instructor": "Zhao Hengshuang",
+          "content": "老师英语不太好导致上课上得抓心挠肝 不太喜欢那个kaggle的作业 非要ranking final自我感觉良好 最后B+",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 216,
+          "course_code": "COMP3314",
+          "created_at": "2025-01-18 20:58:01.414391+08",
+          "updated_at": "2025-01-18 20:58:01.414391+08"
+        },
+        {
+          "id": 12313,
+          "year_taken": "2024-2025",
+          "sem_taken": "Sem1",
+          "instructor": "牢赵",
+          "content": "final炸了，考完我以为又要拿D+了（decision tree忘了怎么算，decision tree后面一道大题也只记得一半不会写，扣了至少30多分吧我估计）。好在最后的back propagation之前看懂了ppt拿了点分，出分结果居然能有A-，真不知道这个final怎么给分的",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 535,
+          "course_code": "COMP3314",
+          "created_at": "2025-02-02 14:26:39.106002+08",
+          "updated_at": "2025-02-02 14:26:39.106002+08"
+        },
+        {
+          "id": 12783,
+          "year_taken": "2024-2025",
+          "sem_taken": "Sem2",
+          "instructor": "zhaohengshuang",
+          "content": "给分好但 教，考，作业，三分离的课，考完大家都笑了",
+          "liked_count": 1,
+          "disliked_count": 0,
+          "user_id": 570,
+          "course_code": "COMP3314",
+          "created_at": "2025-06-20 03:26:05.049221+08",
+          "updated_at": "2025-06-20 03:26:05.049221+08"
+        },
+        {
+          "id": 13555,
+          "year_taken": "2024-2025",
+          "sem_taken": "Sem2",
+          "instructor": "Yu Yi Zhou",
+          "content": "老师讲的还行 但都是ml最基础的内容 比隔壁sub少讲了两个slides 给分似乎也没有隔壁sub 好 教考分离",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 558,
+          "course_code": "COMP3314",
+          "created_at": "2025-07-25 17:14:24.164284+08",
+          "updated_at": "2025-07-25 17:14:24.164284+08"
+        },
+        {
+          "id": 14146,
+          "year_taken": "2024-2025",
+          "sem_taken": "Sem1",
+          "instructor": "",
+          "content": "还行，一学期课没咋去上，作业基本糊弄，最后靠slides和youtube补天，🐢最后B+，我觉得可以接受",
+          "liked_count": 1,
+          "disliked_count": 0,
+          "user_id": 433,
+          "course_code": "COMP3314",
+          "created_at": "2025-08-04 15:44:46.587223+08",
+          "updated_at": "2025-08-04 15:44:46.587223+08"
+        },
+        {
+          "id": 14402,
+          "year_taken": "2024-2025",
+          "sem_taken": "Sem1",
+          "instructor": "",
+          "content": "老师人很好给分也好认真学，冲冲冲！",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 424,
+          "course_code": "COMP3314",
+          "created_at": "2025-08-21 22:53:25.899592+08",
+          "updated_at": "2025-08-21 22:53:25.899592+08"
+        },
+        {
+          "id": 16561,
+          "year_taken": "2024-2025",
+          "sem_taken": "Sem2",
+          "instructor": "Yu,Yizhou",
+          "content": "讲课应该是继KLP之后比较好的了，虽然上课讲内容比较慢。考试卷怀疑也不是Prof自己出的，上课说不考的内容考试卷考了，没教过的内容也考了，但是给分好像比较好，最后A",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 643,
+          "course_code": "COMP3314",
+          "created_at": "2026-02-09 11:29:15.298735+08",
+          "updated_at": "2026-02-09 11:29:15.298735+08"
+        },
+        {
+          "id": 16937,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "Yu Yizhou",
+          "content": "老师讲课很慢 最后一个作业莫名奇妙给分很低 而且感觉很卷 很多已经学过ML的来上 最后只有B+ ",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 709,
+          "course_code": "COMP3314",
+          "created_at": "2026-06-17 10:07:15.147639+08",
+          "updated_at": "2026-06-17 10:07:15.147639+08"
+        },
+        {
+          "id": 17393,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "Yu yizhou",
+          "content": "Exambase里公布的past paper居然基本cover了考试里所有的题型，第一次遇到这么心善的comp课",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 627,
+          "course_code": "COMP3314",
+          "created_at": "2026-06-23 00:28:30.245046+08",
+          "updated_at": "2026-06-23 00:28:30.245046+08"
+        },
+        {
+          "id": 17549,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "Yu Yizhou",
+          "content": "非常神奇的一门课，本人天资愚钝，从头到尾不知道在干什么，但是莫名其妙给分还不错",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 772,
+          "course_code": "COMP3314",
+          "created_at": "2026-07-13 10:11:44.356066+08",
+          "updated_at": "2026-07-13 10:11:44.356066+08"
+        },
+        {
+          "id": 17740,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "yuyizhou",
+          "content": "这门课难度确实不高，内容和stat3612有很多重合，btw讲课质量倒是远远不如3612。。工院教授普遍情况了也是。yuyizhou会记attendance，3h lecture真的要给人累死。final巨简单平时也拉不开差距，所以容错率比较低，final都会做平时也基本拿满但是只有A",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 701,
+          "course_code": "COMP3314",
+          "created_at": "2026-07-22 10:15:25.037141+08",
+          "updated_at": "2026-07-22 10:15:25.037141+08"
+        },
+        {
+          "id": 18085,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "Zhao Hengshuang",
+          "content": "给分很好，考前临时突击居然给了A",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 685,
+          "course_code": "COMP3314",
+          "created_at": "2026-07-27 13:34:52.779133+08",
+          "updated_at": "2026-07-27 13:34:52.779133+08"
+        },
+        {
+          "id": 18108,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "Zhao",
+          "content": "教授人真非常非常好 平时作业也不太难 教的东西感觉也是借鉴的美国名校 都是比较基础的机器学习内容没有非常难理解 感觉比较有用。缺点就是教 考 学完全是三门课，一门课相当于学了三门课，某种意义上还挺赚的。今年final不知为何非常简单，感觉非常卷，错一个题就B了可能。但是总体好龟",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 722,
+          "course_code": "COMP3314",
+          "created_at": "2026-07-27 14:33:28.586635+08",
+          "updated_at": "2026-07-27 14:33:28.586635+08"
+        },
+        {
+          "id": 18190,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": " zhao hengshuang",
+          "content": "感觉挺好的，认真学就可以好grade",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 661,
+          "course_code": "COMP3314",
+          "created_at": "2026-07-27 18:52:24.311034+08",
+          "updated_at": "2026-07-29 22:35:03.217427+08"
+        },
+        {
+          "id": 18616,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "",
+          "content": "讲的不难，都是传统的machine learning，后面有一些neural network，cnn的内容。上课内容偏coding，但考试偏数学。考试不难，但分差很小，错一点就可能往下掉一些，我就是不知道错了哪里，最后拿了B",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 759,
+          "course_code": "COMP3314",
+          "created_at": "2026-08-01 18:42:24.481303+08",
+          "updated_at": "2026-08-01 18:42:24.481303+08"
+        }
+      ]
+    },
+    {
+      "code": "FINA2312",
+      "title": "Advanced corporate finance",
+      "offer_dept": "Faculty of Business and Econom",
+      "requirement": "Pass in ECON1210 and FINA1310; Only open to year 2 or above students",
+      "description": "",
+      "liked_count": 3,
+      "disliked_count": 1,
+      "reviewed_count": 37,
+      "a_plus": 8,
+      "a": 5,
+      "a_minus": 9,
+      "b_plus": 7,
+      "b": 6,
+      "b_minus": 3,
+      "c_plus": 2,
+      "c": 0,
+      "c_minus": 1,
+      "d_plus": 1,
+      "d": 0,
+      "d_minus": 0,
+      "pass": 3,
+      "fail": 0,
+      "tutorial_yes_count": 0,
+      "essay_yes_count": 0,
+      "final_yes_count": 0,
+      "presentation_yes_count": 0,
+      "project_yes_count": 0,
+      "attendance_yes_count": 0,
+      "tutorial_no_count": 0,
+      "essay_no_count": 0,
+      "final_no_count": 0,
+      "presentation_no_count": 0,
+      "project_no_count": 0,
+      "attendance_no_count": 0,
+      "subclasses": [
+        {
+          "id": 53832,
+          "semester": "2026-27 Sem 1",
+          "section": "1A",
+          "instructor": "Wong,Kit Pong",
+          "slots": [
+            {
+              "day": 3,
+              "venue": "MB237",
+              "start_time": "11:00",
+              "end_time": "11:50",
+              "start_date": "2026/09/02",
+              "end_date": "2026/10/07",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "MB237",
+              "start_time": "15:00",
+              "end_time": "16:50",
+              "start_date": "2026/09/07",
+              "end_date": "2026/10/05",
+              "is_tutorial": false
+            },
+            {
+              "day": 3,
+              "venue": "MB237",
+              "start_time": "11:00",
+              "end_time": "11:50",
+              "start_date": "2026/10/21",
+              "end_date": "2026/11/25",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "MB237",
+              "start_time": "15:00",
+              "end_time": "16:50",
+              "start_date": "2026/10/26",
+              "end_date": "2026/11/30",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        },
+        {
+          "id": 51136,
+          "semester": "2026-27 Sem 2",
+          "section": "2B",
+          "instructor": "Wong,Kit Pong",
+          "slots": [
+            {
+              "day": 1,
+              "venue": "LE8",
+              "start_time": "15:00",
+              "end_time": "15:50",
+              "start_date": "2027/01/18",
+              "end_date": "2027/02/01",
+              "is_tutorial": false
+            },
+            {
+              "day": 3,
+              "venue": "LE8",
+              "start_time": "09:00",
+              "end_time": "10:50",
+              "start_date": "2027/01/20",
+              "end_date": "2027/02/03",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "LE8",
+              "start_time": "15:00",
+              "end_time": "15:50",
+              "start_date": "2027/02/15",
+              "end_date": "2027/03/01",
+              "is_tutorial": false
+            },
+            {
+              "day": 3,
+              "venue": "LE8",
+              "start_time": "09:00",
+              "end_time": "10:50",
+              "start_date": "2027/02/17",
+              "end_date": "2027/03/03",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "LE8",
+              "start_time": "15:00",
+              "end_time": "15:50",
+              "start_date": "2027/03/15",
+              "end_date": "2027/03/22",
+              "is_tutorial": false
+            },
+            {
+              "day": 3,
+              "venue": "LE8",
+              "start_time": "09:00",
+              "end_time": "10:50",
+              "start_date": "2027/03/17",
+              "end_date": "2027/04/28",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "LE8",
+              "start_time": "15:00",
+              "end_time": "15:50",
+              "start_date": "2027/04/12",
+              "end_date": "2027/04/26",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        }
+      ],
+      "reviews": [
+        {
+          "id": 12319,
+          "year_taken": "2023-2024",
+          "sem_taken": "Sem2",
+          "instructor": "",
+          "content": "纯考试课，内容覆盖equity+fixed income+option的最基础部分，equity和fixed income会最基本的折现就好，option会2322里的树状图就好，内容简单，平时听赫敏的tutorial，考试前刷刷题就能好龟",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 414,
+          "course_code": "FINA2312",
+          "created_at": "2025-02-02 21:21:23.742198+08",
+          "updated_at": "2025-02-02 21:21:23.742198+08"
+        },
+        {
+          "id": 12466,
+          "year_taken": "2024-2025",
+          "sem_taken": "Sem1",
+          "instructor": "",
+          "content": "刷题课 只看assignment和exam成绩\n把所有题全刷懂了就好龟",
+          "liked_count": 1,
+          "disliked_count": 0,
+          "user_id": 420,
+          "course_code": "FINA2312",
+          "created_at": "2025-02-07 16:41:15.466891+08",
+          "updated_at": "2025-02-07 16:41:15.466891+08"
+        },
+        {
+          "id": 12556,
+          "year_taken": "2024-2025",
+          "sem_taken": "Sem1",
+          "instructor": "",
+          "content": "超级大好课，不要被这个课名吓到，本人其他fina全是B，没学过2322，这门课拿了A直接给自己干自信了。教授上课超级催眠全靠tutor赫敏带飞。期中之前几乎都是1310内容只是多了点derivative知识。期中考试难度较高，当时考了tracking portfolio没有考credit matrix，很多人没有想到。期末考试相对比较简单，和课后的例题相似度很大。只是当时有一道题需要用binomial model自己求risk free rate 难倒很多人。midterm84，作业满分，final都做出来了。总体好龟。",
+          "liked_count": 5,
+          "disliked_count": 0,
+          "user_id": 497,
+          "course_code": "FINA2312",
+          "created_at": "2025-02-16 22:24:46.918041+08",
+          "updated_at": "2025-02-16 22:24:46.918041+08"
+        },
+        {
+          "id": 12585,
+          "year_taken": "2024-2025",
+          "sem_taken": "Sem2",
+          "instructor": "",
+          "content": "轻松简单，但是卷，认真学最后A-",
+          "liked_count": 1,
+          "disliked_count": 0,
+          "user_id": 394,
+          "course_code": "FINA2312",
+          "created_at": "2025-02-25 12:01:52.062717+08",
+          "updated_at": "2025-02-25 12:01:52.062717+08"
+        },
+        {
+          "id": 12642,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "kwok",
+          "content": "…不要来不要来不要来，考得非常tricky",
+          "liked_count": 1,
+          "disliked_count": 0,
+          "user_id": 601,
+          "course_code": "FINA2312",
+          "created_at": "2025-05-05 11:49:32.816866+08",
+          "updated_at": "2025-05-05 11:49:32.816866+08"
+        },
+        {
+          "id": 13328,
+          "year_taken": "2024-2025",
+          "sem_taken": "Sem1",
+          "instructor": "wong",
+          "content": "适合刷题党，老课件，有点乱，老师功底扎实。卷。",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 514,
+          "course_code": "FINA2312",
+          "created_at": "2025-07-10 00:37:24.509667+08",
+          "updated_at": "2025-07-10 00:37:24.509667+08"
+        },
+        {
+          "id": 13352,
+          "year_taken": "2024-2025",
+          "sem_taken": "Sem2",
+          "instructor": "",
+          "content": "没有别人嘴里说的那么简单，80%都是derivative知识",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 422,
+          "course_code": "FINA2312",
+          "created_at": "2025-07-16 16:19:24.234028+08",
+          "updated_at": "2025-07-16 16:19:24.234028+08"
+        },
+        {
+          "id": 14201,
+          "year_taken": "2024-2025",
+          "sem_taken": "Sem2",
+          "instructor": "",
+          "content": "上课真的要睡着了哈哈，建议学过fina2322的同学来，轻松A",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 538,
+          "course_code": "FINA2312",
+          "created_at": "2025-08-04 21:36:24.193328+08",
+          "updated_at": "2025-08-04 21:36:24.193328+08"
+        },
+        {
+          "id": 14392,
+          "year_taken": "2024-2025",
+          "sem_taken": "Sem2",
+          "instructor": "Keith",
+          "content": "very friendly prof, boring lec but very useful!!! got A",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 540,
+          "course_code": "FINA2312",
+          "created_at": "2025-08-17 18:44:01.820417+08",
+          "updated_at": "2025-08-17 18:44:01.820417+08"
+        },
+        {
+          "id": 14560,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "",
+          "content": "期中给分很chill 考的和pp不一样的地方很多",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 646,
+          "course_code": "FINA2312",
+          "created_at": "2025-10-27 17:05:05.963325+08",
+          "updated_at": "2025-10-27 17:05:05.963325+08"
+        },
+        {
+          "id": 14610,
+          "year_taken": "2024-2025",
+          "sem_taken": "Sem1",
+          "instructor": "wong",
+          "content": "期中考试可以做pp 期末没有做pp的必要 tutorial/hw弄明白的基础上就看临场发挥 出题很灵活",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 654,
+          "course_code": "FINA2312",
+          "created_at": "2025-12-10 16:51:21.232159+08",
+          "updated_at": "2025-12-10 16:51:21.232159+08"
+        },
+        {
+          "id": 15542,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "",
+          "content": "很棒的课，内容不难，对于上过1310和2322来说自学完全可以，但是考试又有一定的区分度和思考量不至于0容错",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 562,
+          "course_code": "FINA2312",
+          "created_at": "2026-01-19 04:49:48.578359+08",
+          "updated_at": "2026-01-19 04:49:48.578359+08"
+        },
+        {
+          "id": 16014,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "keith",
+          "content": "其实给龟还可以，我作业扣了一点点分，mt只有83（比平均分高不了几分），期末有些题目不确定，最后也A-了。",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 552,
+          "course_code": "FINA2312",
+          "created_at": "2026-01-20 03:16:48.955707+08",
+          "updated_at": "2026-01-20 03:16:48.955707+08"
+        },
+        {
+          "id": 16191,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "Wong",
+          "content": "卷，期末很难，期中几乎满分最后A-",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 397,
+          "course_code": "FINA2312",
+          "created_at": "2026-01-21 09:51:05.655476+08",
+          "updated_at": "2026-01-21 09:51:05.655476+08"
+        },
+        {
+          "id": 17018,
+          "year_taken": "2026-2027",
+          "sem_taken": "Sem2",
+          "instructor": "Wong",
+          "content": "学的知识很硬核很实用 给分还是不错的！不用太担心",
+          "liked_count": 1,
+          "disliked_count": 0,
+          "user_id": 934,
+          "course_code": "FINA2312",
+          "created_at": "2026-06-17 14:28:27.392432+08",
+          "updated_at": "2026-06-17 14:28:27.392432+08"
+        },
+        {
+          "id": 17343,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "",
+          "content": "還可以。MT沒之前説的那麽簡單，mean 64 max 92，我大概89.5。Final挺難的，跟之前某個評論說的一樣考了implied risk free rate from binomial model，看來他也是重複問的。大概一道大題不懂寫，implied risk的sub question也不懂寫。最後A。",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 780,
+          "course_code": "FINA2312",
+          "created_at": "2026-06-20 13:59:34.179108+08",
+          "updated_at": "2026-06-20 13:59:34.179108+08"
+        },
+        {
+          "id": 18290,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "",
+          "content": "prof人很好，课上比较无聊，final比期中难",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 581,
+          "course_code": "FINA2312",
+          "created_at": "2026-07-28 11:06:00.09934+08",
+          "updated_at": "2026-07-28 11:06:00.09934+08"
+        },
+        {
+          "id": 18866,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "",
+          "content": "学完完全不记得有啥了 这门课讲的是什么呀 谁能告诉我",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 814,
+          "course_code": "FINA2312",
+          "created_at": "2026-08-04 00:04:38.244996+08",
+          "updated_at": "2026-08-04 00:04:38.244996+08"
+        }
+      ]
+    },
+    {
+      "code": "FINA3326",
+      "title": "Equity valuation and investment management",
+      "offer_dept": "Faculty of Business and Econom",
+      "requirement": "Pass in FINA2320; Only open to year 2 or above students",
+      "description": "",
+      "liked_count": 2,
+      "disliked_count": 2,
+      "reviewed_count": 50,
+      "a_plus": 5,
+      "a": 33,
+      "a_minus": 5,
+      "b_plus": 13,
+      "b": 12,
+      "b_minus": 1,
+      "c_plus": 0,
+      "c": 0,
+      "c_minus": 0,
+      "d_plus": 0,
+      "d": 0,
+      "d_minus": 0,
+      "pass": 3,
+      "fail": 0,
+      "tutorial_yes_count": 2,
+      "essay_yes_count": 0,
+      "final_yes_count": 2,
+      "presentation_yes_count": 0,
+      "project_yes_count": 2,
+      "attendance_yes_count": 0,
+      "tutorial_no_count": 0,
+      "essay_no_count": 1,
+      "final_no_count": 0,
+      "presentation_no_count": 1,
+      "project_no_count": 0,
+      "attendance_no_count": 1,
+      "subclasses": [
+        {
+          "id": 51526,
+          "semester": "2026-27 Sem 1",
+          "section": "1A",
+          "instructor": "Woo,Jack Man Jimmy",
+          "slots": [
+            {
+              "day": 5,
+              "venue": "TT404",
+              "start_time": "14:00",
+              "end_time": "16:50",
+              "start_date": "2026/09/04",
+              "end_date": "2026/10/09",
+              "is_tutorial": false
+            },
+            {
+              "day": 5,
+              "venue": "TT404",
+              "start_time": "14:00",
+              "end_time": "16:50",
+              "start_date": "2026/10/30",
+              "end_date": "2026/11/27",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        },
+        {
+          "id": 53279,
+          "semester": "2026-27 Sem 2",
+          "section": "2B",
+          "instructor": "Woo,Jack Man Jimmy",
+          "slots": [
+            {
+              "day": 5,
+              "venue": "KK101",
+              "start_time": "13:00",
+              "end_time": "15:50",
+              "start_date": "2027/01/22",
+              "end_date": "2027/01/29",
+              "is_tutorial": false
+            },
+            {
+              "day": 5,
+              "venue": "KK101",
+              "start_time": "13:00",
+              "end_time": "15:50",
+              "start_date": "2027/02/19",
+              "end_date": "2027/03/05",
+              "is_tutorial": false
+            },
+            {
+              "day": 5,
+              "venue": "KK101",
+              "start_time": "13:00",
+              "end_time": "15:50",
+              "start_date": "2027/03/19",
+              "end_date": "2027/03/19",
+              "is_tutorial": false
+            },
+            {
+              "day": 5,
+              "venue": "KK101",
+              "start_time": "13:00",
+              "end_time": "15:50",
+              "start_date": "2027/04/02",
+              "end_date": "2027/04/30",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        }
+      ],
+      "reviews": [
+        {
+          "id": 10856,
+          "year_taken": "2023-2024",
+          "sem_taken": "Sem2",
+          "instructor": "Jimmy Woo",
+          "content": "Workload大，但没想象中大，至少比隔壁fixed income securities轻松。Final前只要预留7天刷题刷past paper就没大问题。很多人final做不完。记得要练速度。\nmidterm我只拿了50.5分，当时median 68.5分，我比midterm整整低了18分。当时觉得天都要塌下来了，还在想有没有办法late drop。然后prof说midterm只占25%，就算考得不好也可以final 努力。最后我final估计考了 85%左右、而且project拿了9/10，最后拉回了A。\n",
+          "liked_count": 2,
+          "disliked_count": 0,
+          "user_id": 541,
+          "course_code": "FINA3326",
+          "created_at": "2024-09-09 00:16:42.455813+08",
+          "updated_at": "2024-09-09 00:16:42.455813+08"
+        },
+        {
+          "id": 10878,
+          "year_taken": "2023-2024",
+          "sem_taken": "Sem2",
+          "instructor": "Jimmy Woo",
+          "content": "能学到的东西挺多的，很干货，考试稍微有点卷，可以带cheatsheet，但是要熟悉公式的用法",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 33,
+          "course_code": "FINA3326",
+          "created_at": "2024-09-20 18:58:32.828583+08",
+          "updated_at": "2024-09-20 18:58:32.828583+08"
+        },
+        {
+          "id": 11233,
+          "year_taken": "2024-2025",
+          "sem_taken": "Sem1",
+          "instructor": "jimmy",
+          "content": "之前在噗噗回复过，出分了再来ric贴一下：\n是比较typical的刷题课，能带cheatsheet。midterm略难（statistics不太高），但final比pp简单，题量也少了很多，大家考下来应该都挺满意（所以容错率可能偏低）。平时成绩95+，final错了一点，但感觉也能90+，不意外地拿了A+。\n课程内容主要是dcf（很细致，不过没怎么讲excel建模） 、comparables、real options，计算的部分都给了详细的example，后面还讲了点基金和价值投资，放了巴菲特老爷子的采访。\n整体wl还行，比往年小。以前应该有4份asm，现在只有2份；gp是用dcf和comparable给AAPL估值。gp和asm都可以1-10人组队。\njimmy人很好，感觉他对这个topic很热情，还经常分享一些实用的投资网站，上课有recording；tutor赫敏yyds不用多说。\n推荐擅长做题、想刷分以及对dcf感兴趣的朋友上（想要更多practical experience比较推荐3316/3351，想学real option推荐2312）。",
+          "liked_count": 5,
+          "disliked_count": 0,
+          "user_id": 458,
+          "course_code": "FINA3326",
+          "created_at": "2025-01-16 09:55:30.947903+08",
+          "updated_at": "2025-01-16 09:55:30.947903+08"
+        },
+        {
+          "id": 13765,
+          "year_taken": "2024-2025",
+          "sem_taken": "Sem1",
+          "instructor": "",
+          "content": "刷题课 把pp刷懂拿a range没问题",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 398,
+          "course_code": "FINA3326",
+          "created_at": "2025-07-29 11:13:57.743774+08",
+          "updated_at": "2025-07-29 11:13:57.743774+08"
+        },
+        {
+          "id": 13849,
+          "year_taken": "2023-2024",
+          "sem_taken": "Sem1",
+          "instructor": "jimmy",
+          "content": "课程设置很硬核 Hermione很用心 靠自学和刷题",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 384,
+          "course_code": "FINA3326",
+          "created_at": "2025-07-30 12:47:57.590969+08",
+          "updated_at": "2025-07-30 12:47:57.590969+08"
+        },
+        {
+          "id": 14062,
+          "year_taken": "2024-2025",
+          "sem_taken": "Sem1",
+          "instructor": "Jimmy",
+          "content": "一定多刷题，之前上课总昏昏欲睡，qi mo",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 440,
+          "course_code": "FINA3326",
+          "created_at": "2025-08-03 15:27:00.636492+08",
+          "updated_at": "2025-08-03 15:27:00.636492+08"
+        },
+        {
+          "id": 16465,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "Jimmy Woo",
+          "content": "AMPB必修，课程内容就是各种股权估值的方法，需要一些fina1310的基础知识但是教授也会全部重新解释一遍。Jimmy和Hermione教的很不错，会认真回答课上以及office hour时候的问题。lec没有出勤分且有recording，tutorial出勤占5%，两次大作业10%（100%和97%），一个valuation report占10%（82%），期中25%（没刷题然后考试时候做不完，59%；median是63，mean是59），期末50%，最后B+。这个像是和1210一样的刷题课，考试想好龟必须对知识点很熟练，比较擅长考试或者想准备ibd和er面试的同学可能会喜欢这节课。",
+          "liked_count": 2,
+          "disliked_count": 0,
+          "user_id": 607,
+          "course_code": "FINA3326",
+          "created_at": "2026-01-26 19:12:47.712721+08",
+          "updated_at": "2026-01-26 19:12:47.712721+08"
+        },
+        {
+          "id": 17002,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "Jimmy",
+          "content": "学得很舒服的一个finance elective 因为课程设置思路很清晰 重点明确在dcf上 后面的都只是顺带 期中考试和最近两年的pp（MC部分）几乎一样 刷过就不会考差 期末明显比pp简单 大题只有dcf和comps 其余也基本可以从HW里找到原型 最后给分相当宽容 属于是实用且assessment as expected 推荐！！",
+          "liked_count": 1,
+          "disliked_count": 0,
+          "user_id": 654,
+          "course_code": "FINA3326",
+          "created_at": "2026-06-17 13:21:44.94366+08",
+          "updated_at": "2026-06-17 13:21:44.94366+08"
+        },
+        {
+          "id": 18057,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "Jimmy",
+          "content": "前面学DCF，后面学relative valuation和投资方法，只要把DCF啃下来后面的知识就学得轻松很多，需要付出很多努力去消化和记背知识点，asm和gp建议找靠谱的同学一起。",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 595,
+          "course_code": "FINA3326",
+          "created_at": "2026-07-27 11:37:31.548067+08",
+          "updated_at": "2026-07-27 11:37:31.548067+08"
+        },
+        {
+          "id": 18164,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "Jimmy",
+          "content": "讲解DCF Valuation 和 Relative Valuation，想进投行一定要选的一门课，投行面试必问！内容比较复杂，要多花时间去研究。每年midterm(25%)/ final(50%) 出的题目都是新的，不会考past paper 里面的题目，所以要把概念理解透才能够做出来。还2 份assignment(10%)和一个group project(10%)，做Apple 的valuation。要花在这门课的时间虽然很多，但是学完一定收获满满！想尽投行的一定要考虑这门课！！！",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 549,
+          "course_code": "FINA3326",
+          "created_at": "2026-07-27 17:00:03.717146+08",
+          "updated_at": "2026-07-27 17:00:03.717146+08"
+        },
+        {
+          "id": 18711,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "",
+          "content": "刷题有用之课，midt大刷一翻拿了好成绩，final前懈怠了考得应该不怎样，加起来拿了B+，已满意。学的东西还可以，挺强调dcf的相关内容",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 612,
+          "course_code": "FINA3326",
+          "created_at": "2026-08-02 21:40:53.682957+08",
+          "updated_at": "2026-08-02 21:40:53.682957+08"
+        },
+        {
+          "id": 18723,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "",
+          "content": "非常好龟的课，平时好好上考前刷下题目就行",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 463,
+          "course_code": "FINA3326",
+          "created_at": "2026-08-02 22:25:58.485287+08",
+          "updated_at": "2026-08-02 22:25:58.485287+08"
+        }
+      ]
+    },
+    {
+      "code": "JAPN1088",
+      "title": "Japanese language I (Part 1)",
+      "offer_dept": "School of Modern Languages & C",
+      "requirement": "Year 3 or above students are not eligible to enroll to this course.",
+      "description": "",
+      "liked_count": 13,
+      "disliked_count": 0,
+      "reviewed_count": 46,
+      "a_plus": 16,
+      "a": 15,
+      "a_minus": 7,
+      "b_plus": 10,
+      "b": 3,
+      "b_minus": 1,
+      "c_plus": 1,
+      "c": 2,
+      "c_minus": 0,
+      "d_plus": 0,
+      "d": 0,
+      "d_minus": 0,
+      "pass": 0,
+      "fail": 0,
+      "tutorial_yes_count": 5,
+      "essay_yes_count": 0,
+      "final_yes_count": 5,
+      "presentation_yes_count": 0,
+      "project_yes_count": 0,
+      "attendance_yes_count": 5,
+      "tutorial_no_count": 0,
+      "essay_no_count": 5,
+      "final_no_count": 0,
+      "presentation_no_count": 5,
+      "project_no_count": 5,
+      "attendance_no_count": 0,
+      "subclasses": [
+        {
+          "id": 51891,
+          "semester": "2026-27 Sem 1",
+          "section": "1A",
+          "instructor": "Lau,Ka Hei Isaac",
+          "slots": [
+            {
+              "day": 5,
+              "venue": "CPD-3.23",
+              "start_time": "12:00",
+              "end_time": "13:50",
+              "start_date": "2026/09/04",
+              "end_date": "2026/10/09",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "CPD-3.23",
+              "start_time": "12:00",
+              "end_time": "13:50",
+              "start_date": "2026/09/07",
+              "end_date": "2026/10/05",
+              "is_tutorial": false
+            },
+            {
+              "day": 5,
+              "venue": "CPD-3.23",
+              "start_time": "12:00",
+              "end_time": "13:50",
+              "start_date": "2026/10/23",
+              "end_date": "2026/11/27",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "CPD-3.23",
+              "start_time": "12:00",
+              "end_time": "13:50",
+              "start_date": "2026/10/26",
+              "end_date": "2026/11/30",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        },
+        {
+          "id": 53909,
+          "semester": "2026-27 Sem 1",
+          "section": "1B",
+          "instructor": "Gunji,Takuya",
+          "slots": [
+            {
+              "day": 5,
+              "venue": "CPD-3.22",
+              "start_time": "15:00",
+              "end_time": "16:50",
+              "start_date": "2026/09/04",
+              "end_date": "2026/10/09",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "CPD-3.22",
+              "start_time": "15:00",
+              "end_time": "16:50",
+              "start_date": "2026/09/07",
+              "end_date": "2026/10/05",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "CPD-3.22",
+              "start_time": "15:00",
+              "end_time": "16:50",
+              "start_date": "2026/10/26",
+              "end_date": "2026/11/30",
+              "is_tutorial": false
+            },
+            {
+              "day": 5,
+              "venue": "CPD-3.22",
+              "start_time": "15:00",
+              "end_time": "16:50",
+              "start_date": "2026/10/30",
+              "end_date": "2026/11/27",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        },
+        {
+          "id": 55819,
+          "semester": "2026-27 Sem 1",
+          "section": "1C",
+          "instructor": "Hashimoto,Takuro",
+          "slots": [
+            {
+              "day": 2,
+              "venue": "CPD-3.21",
+              "start_time": "10:00",
+              "end_time": "11:50",
+              "start_date": "2026/09/01",
+              "end_date": "2026/10/06",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "CPD-3.21",
+              "start_time": "10:00",
+              "end_time": "11:50",
+              "start_date": "2026/09/03",
+              "end_date": "2026/09/24",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "CPD-3.21",
+              "start_time": "10:00",
+              "end_time": "11:50",
+              "start_date": "2026/10/08",
+              "end_date": "2026/10/08",
+              "is_tutorial": false
+            },
+            {
+              "day": 2,
+              "venue": "CPD-3.21",
+              "start_time": "10:00",
+              "end_time": "11:50",
+              "start_date": "2026/10/20",
+              "end_date": "2026/11/24",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "CPD-3.21",
+              "start_time": "10:00",
+              "end_time": "11:50",
+              "start_date": "2026/10/22",
+              "end_date": "2026/11/26",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        },
+        {
+          "id": 53071,
+          "semester": "2026-27 Sem 1",
+          "section": "1D",
+          "instructor": "Hashimoto,Takuro",
+          "slots": [
+            {
+              "day": 2,
+              "venue": "CPD-3.22",
+              "start_time": "13:00",
+              "end_time": "14:50",
+              "start_date": "2026/09/01",
+              "end_date": "2026/10/06",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "CPD-3.22",
+              "start_time": "13:00",
+              "end_time": "14:50",
+              "start_date": "2026/09/03",
+              "end_date": "2026/09/24",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "CPD-3.22",
+              "start_time": "13:00",
+              "end_time": "14:50",
+              "start_date": "2026/10/08",
+              "end_date": "2026/10/08",
+              "is_tutorial": false
+            },
+            {
+              "day": 2,
+              "venue": "CPD-3.22",
+              "start_time": "13:00",
+              "end_time": "14:50",
+              "start_date": "2026/10/20",
+              "end_date": "2026/11/24",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "CPD-3.22",
+              "start_time": "13:00",
+              "end_time": "14:50",
+              "start_date": "2026/10/22",
+              "end_date": "2026/11/26",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        }
+      ],
+      "reviews": [
+        {
+          "id": 16539,
+          "year_taken": "2024-2025",
+          "sem_taken": "Sem1",
+          "instructor": "Gunji ",
+          "content": "怎么下面都是避雷Gunji的，虽然他改作业的真的很严(这是真的，但是只要好好上课好好背单词，日语1开头的真的不难，我的作业也经常被Gunji挑出错来，但是Gunji之后也说过一两个错误不会说incomplete 的。我比较喜欢Gunji是因为他的课堂真的很有意思而且会学到很多关于日本的小知识。btw Gunji人真的很好，是一个很有意思的老师，课上会分享很多学习日语的小技巧，期中好像是95往上，期末感觉发挥正常，listening quiz写的有点拉，speaking 也一般，我上1088之前50音图都没背完，不存在炸鱼，最后成绩是A",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 608,
+          "course_code": "JAPN1088",
+          "created_at": "2026-02-01 20:58:26.443101+08",
+          "updated_at": "2026-02-01 20:58:26.443101+08"
+        },
+        {
+          "id": 16700,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "Sasaki",
+          "content": "課程有點像回到了小學中學的感覺，每星期有工作紙作業和默寫。WL挺大的，但其實他逼你做這麼多練習是挺有效的，就是你學完不會忘記。depends on 你對日語有多大興趣咯。還有，如果要報一定要報sasaki 我的女神。",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 1054,
+          "course_code": "JAPN1088",
+          "created_at": "2026-04-29 16:19:22.1382+08",
+          "updated_at": "2026-04-29 16:19:22.1382+08"
+        },
+        {
+          "id": 16748,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "hashimoto&kodama",
+          "content": "内容简单努力就好龟，不存在太炸鱼的情况。\nhashimoto、kodama一生推，两位都非常非常非常好，每周上课简直就是享受",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 721,
+          "course_code": "JAPN1088",
+          "created_at": "2026-05-16 00:17:25.582804+08",
+          "updated_at": "2026-05-16 00:17:25.582804+08"
+        },
+        {
+          "id": 17978,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "Hashimoto",
+          "content": "hashimoto老师是很好的老师，课上学到了很多。",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 676,
+          "course_code": "JAPN1088",
+          "created_at": "2026-07-26 17:23:35.273457+08",
+          "updated_at": "2026-07-26 17:23:35.273457+08"
+        },
+        {
+          "id": 18381,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "Hashimoto",
+          "content": "Hashimoto特别好！这门课小作业比较多但是的确不难，记好ddl别过（）",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 825,
+          "course_code": "JAPN1088",
+          "created_at": "2026-07-28 19:00:32.178487+08",
+          "updated_at": "2026-07-28 19:00:32.178487+08"
+        },
+        {
+          "id": 18453,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "Gunji",
+          "content": "不要选gunji不要选gunji不要选gunji 重要的事情讲三遍 上课的节奏比其他老师会慢",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 1047,
+          "course_code": "JAPN1088",
+          "created_at": "2026-07-29 18:29:15.139732+08",
+          "updated_at": "2026-07-29 18:29:15.139732+08"
+        },
+        {
+          "id": 18575,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem1",
+          "instructor": "Hashimoto",
+          "content": "Hashimoto-sensei was quite good. Very organised lessons and provided helpful feedback.\nSkill class was not the same as Gunji-sensei tends to overly complicate matters or grade extremely strictly compared to other teachers.",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 832,
+          "course_code": "JAPN1088",
+          "created_at": "2026-07-31 20:29:50.249088+08",
+          "updated_at": "2026-07-31 20:29:50.249088+08"
+        }
+      ]
+    },
+    {
+      "code": "MATH2102",
+      "title": "Linear algebra II",
+      "offer_dept": "Science Faculty",
+      "requirement": "Pass in MATH2101 Linear algebra I or (MATH1821 Mathematical methods for actuarial science I  and MATH2822 Mathematical methods for actuarial science II)",
+      "description": "",
+      "liked_count": 0,
+      "disliked_count": 1,
+      "reviewed_count": 31,
+      "a_plus": 16,
+      "a": 9,
+      "a_minus": 4,
+      "b_plus": 2,
+      "b": 2,
+      "b_minus": 4,
+      "c_plus": 2,
+      "c": 3,
+      "c_minus": 0,
+      "d_plus": 1,
+      "d": 0,
+      "d_minus": 0,
+      "pass": 0,
+      "fail": 3,
+      "tutorial_yes_count": 0,
+      "essay_yes_count": 0,
+      "final_yes_count": 2,
+      "presentation_yes_count": 0,
+      "project_yes_count": 0,
+      "attendance_yes_count": 0,
+      "tutorial_no_count": 2,
+      "essay_no_count": 2,
+      "final_no_count": 0,
+      "presentation_no_count": 2,
+      "project_no_count": 2,
+      "attendance_no_count": 2,
+      "subclasses": [
+        {
+          "id": 69170,
+          "semester": "2026-27 Sem 1",
+          "section": "1A",
+          "instructor": "Law,Ka Ho",
+          "slots": [
+            {
+              "day": 2,
+              "venue": "MWT4",
+              "start_time": "12:00",
+              "end_time": "13:50",
+              "start_date": "2026/09/01",
+              "end_date": "2026/10/06",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "MWT4",
+              "start_time": "17:00",
+              "end_time": "18:50",
+              "start_date": "2026/09/03",
+              "end_date": "2026/09/24",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "MWT4",
+              "start_time": "17:00",
+              "end_time": "18:50",
+              "start_date": "2026/10/08",
+              "end_date": "2026/10/08",
+              "is_tutorial": false
+            },
+            {
+              "day": 2,
+              "venue": "MWT4",
+              "start_time": "12:00",
+              "end_time": "13:50",
+              "start_date": "2026/10/20",
+              "end_date": "2026/11/24",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "MWT4",
+              "start_time": "17:00",
+              "end_time": "18:50",
+              "start_date": "2026/10/22",
+              "end_date": "2026/11/26",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        },
+        {
+          "id": 69747,
+          "semester": "2026-27 Sem 2",
+          "section": "2B",
+          "instructor": "Law,Ka Ho",
+          "slots": [
+            {
+              "day": 1,
+              "venue": "MWT4",
+              "start_time": "15:00",
+              "end_time": "16:50",
+              "start_date": "2027/01/18",
+              "end_date": "2027/02/01",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "MWT4",
+              "start_time": "15:00",
+              "end_time": "16:50",
+              "start_date": "2027/01/21",
+              "end_date": "2027/02/04",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "MWT4",
+              "start_time": "15:00",
+              "end_time": "16:50",
+              "start_date": "2027/02/15",
+              "end_date": "2027/03/01",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "MWT4",
+              "start_time": "15:00",
+              "end_time": "16:50",
+              "start_date": "2027/02/18",
+              "end_date": "2027/03/04",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "MWT4",
+              "start_time": "15:00",
+              "end_time": "16:50",
+              "start_date": "2027/03/15",
+              "end_date": "2027/03/22",
+              "is_tutorial": false
+            },
+            {
+              "day": 4,
+              "venue": "MWT4",
+              "start_time": "15:00",
+              "end_time": "16:50",
+              "start_date": "2027/03/18",
+              "end_date": "2027/04/29",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "MWT4",
+              "start_time": "15:00",
+              "end_time": "16:50",
+              "start_date": "2027/04/12",
+              "end_date": "2027/04/26",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        }
+      ],
+      "reviews": [
+        {
+          "id": 16896,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "Law Ka Ho, Ruben La",
+          "content": "教学模式抽象、助教讲课抽象、知识量极大但是给龟还挺好的，不骂lkh了",
+          "liked_count": 1,
+          "disliked_count": 0,
+          "user_id": 697,
+          "course_code": "MATH2102",
+          "created_at": "2026-06-17 02:13:00.927293+08",
+          "updated_at": "2026-06-17 02:13:00.927293+08"
+        },
+        {
+          "id": 17181,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "lkh",
+          "content": "真无语了， lkh专业能力不行，课件全是错，私下问问题也不会，教课也不会教，对着书读，态度还差，问几个问题就不耐烦，问到不会的就开始转移话题，final出题也不知道出的啥，test满分最后也没A+。反正看见他教就躲吧",
+          "liked_count": 1,
+          "disliked_count": 0,
+          "user_id": 686,
+          "course_code": "MATH2102",
+          "created_at": "2026-06-17 23:35:29.145987+08",
+          "updated_at": "2026-06-17 23:35:29.145987+08"
+        },
+        {
+          "id": 17203,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "lkh",
+          "content": "lkh我恨你。。。。。见到lkh就跑吧。feedback记得骂他。",
+          "liked_count": 1,
+          "disliked_count": 0,
+          "user_id": 754,
+          "course_code": "MATH2102",
+          "created_at": "2026-06-18 09:38:37.433529+08",
+          "updated_at": "2026-06-18 09:38:37.433529+08"
+        },
+        {
+          "id": 17452,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "La,Ruben Man La; Law,Ka Ho",
+          "content": "作为非MATH major，为了之后学更多algebra选的这门课，总体上下来体验一般。作为最advanced的2XXX数学课 采用了flipped lecture的课程安排 这其实让人非常疑惑，video recording基本上就是LADR这本书的重点复述 虽然Dr Law表现得非常注重mathematical rigor但是他自己在video中书写的证明其实比较简略，同时Ruben在拓展课上面讲得东西也是非常hand wavy 感觉像是想到什么讲什么，作业课的题目的技巧和例子其实在Video lecture涉及的不多，我不认为这样子的教学方式能够真的教会什么。这门课的考察是Dr Law特有的 short answer + “1 2 4 8” mcq + True or False + 简答题 期末还很神秘的引入了填词题和画\\Rightarrow \\Leftarrow \\Leftrightarrow关系的题目。对于想要考好考试刷分的选手：如果之后还是这种考查方式 感觉可以让AI帮忙生成模拟卷刷题，复习自己还没掌握的定理，而不要一头扎进textbook。如果想要真正感受一套不一样的线代体系（operators on finite dimensional space, instead of matrix theory）则可以多看看参考书写写课后习题，确实是很经典。",
+          "liked_count": 2,
+          "disliked_count": 0,
+          "user_id": 427,
+          "course_code": "MATH2102",
+          "created_at": "2026-06-28 22:56:10.275228+08",
+          "updated_at": "2026-06-28 22:56:10.275228+08"
+        },
+        {
+          "id": 17586,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "",
+          "content": "简单课，但垃圾课程设计，law还对自己的flipped lecture自鸣得意，但实则是一点用没有，ruben la讲的其实不错的，都给law毁了",
+          "liked_count": 1,
+          "disliked_count": 0,
+          "user_id": 876,
+          "course_code": "MATH2102",
+          "created_at": "2026-07-15 10:52:14.748562+08",
+          "updated_at": "2026-07-15 10:52:14.748562+08"
+        },
+        {
+          "id": 18157,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "Law KH",
+          "content": "烂🐢➕教授上的是依托，准确来讲教授不上课嗯",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 672,
+          "course_code": "MATH2102",
+          "created_at": "2026-07-27 16:52:20.83651+08",
+          "updated_at": "2026-07-27 16:52:20.83651+08"
+        }
+      ]
+    },
+    {
+      "code": "MATH2211",
+      "title": "Multivariable calculus",
+      "offer_dept": "Science Faculty",
+      "requirement": "Pass in MATH1013 University mathematics II or MATH1821 Mathematical methods for actuarial science I or (MATH1851 Calculus and ordinary differential equations and MATH1853 Linear algebra, probability and statistics).",
+      "description": "",
+      "liked_count": 4,
+      "disliked_count": 1,
+      "reviewed_count": 71,
+      "a_plus": 34,
+      "a": 36,
+      "a_minus": 22,
+      "b_plus": 24,
+      "b": 17,
+      "b_minus": 10,
+      "c_plus": 5,
+      "c": 3,
+      "c_minus": 1,
+      "d_plus": 2,
+      "d": 0,
+      "d_minus": 0,
+      "pass": 3,
+      "fail": 6,
+      "tutorial_yes_count": 5,
+      "essay_yes_count": 0,
+      "final_yes_count": 5,
+      "presentation_yes_count": 0,
+      "project_yes_count": 0,
+      "attendance_yes_count": 0,
+      "tutorial_no_count": 0,
+      "essay_no_count": 6,
+      "final_no_count": 0,
+      "presentation_no_count": 5,
+      "project_no_count": 5,
+      "attendance_no_count": 5,
+      "subclasses": [
+        {
+          "id": 54407,
+          "semester": "2026-27 Sem 1",
+          "section": "1A",
+          "instructor": "Ching,Tak Wing",
+          "slots": [
+            {
+              "day": 2,
+              "venue": "MWT2",
+              "start_time": "12:00",
+              "end_time": "12:50",
+              "start_date": "2026/09/01",
+              "end_date": "2026/10/06",
+              "is_tutorial": false
+            },
+            {
+              "day": 5,
+              "venue": "MWT2",
+              "start_time": "09:00",
+              "end_time": "10:50",
+              "start_date": "2026/09/04",
+              "end_date": "2026/10/09",
+              "is_tutorial": false
+            },
+            {
+              "day": 2,
+              "venue": "MWT2",
+              "start_time": "12:00",
+              "end_time": "12:50",
+              "start_date": "2026/10/20",
+              "end_date": "2026/11/24",
+              "is_tutorial": false
+            },
+            {
+              "day": 5,
+              "venue": "MWT2",
+              "start_time": "09:00",
+              "end_time": "10:50",
+              "start_date": "2026/10/23",
+              "end_date": "2026/11/27",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        },
+        {
+          "id": 51419,
+          "semester": "2026-27 Sem 2",
+          "section": "2B",
+          "instructor": "Ching,Tak Wing",
+          "slots": [
+            {
+              "day": 1,
+              "venue": "MWT2",
+              "start_time": "16:00",
+              "end_time": "17:50",
+              "start_date": "2027/01/18",
+              "end_date": "2027/02/01",
+              "is_tutorial": false
+            },
+            {
+              "day": 3,
+              "venue": "MWT2",
+              "start_time": "11:00",
+              "end_time": "11:50",
+              "start_date": "2027/01/20",
+              "end_date": "2027/02/03",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "MWT2",
+              "start_time": "16:00",
+              "end_time": "17:50",
+              "start_date": "2027/02/15",
+              "end_date": "2027/03/01",
+              "is_tutorial": false
+            },
+            {
+              "day": 3,
+              "venue": "MWT2",
+              "start_time": "11:00",
+              "end_time": "11:50",
+              "start_date": "2027/02/17",
+              "end_date": "2027/03/03",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "MWT2",
+              "start_time": "16:00",
+              "end_time": "17:50",
+              "start_date": "2027/03/15",
+              "end_date": "2027/03/22",
+              "is_tutorial": false
+            },
+            {
+              "day": 3,
+              "venue": "MWT2",
+              "start_time": "11:00",
+              "end_time": "11:50",
+              "start_date": "2027/03/17",
+              "end_date": "2027/04/28",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "MWT2",
+              "start_time": "16:00",
+              "end_time": "17:50",
+              "start_date": "2027/04/12",
+              "end_date": "2027/04/26",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        },
+        {
+          "id": 69681,
+          "semester": "2026-27 Sem 2",
+          "section": "2C",
+          "instructor": "Ching,Tak Wing",
+          "slots": [
+            {
+              "day": 1,
+              "venue": "KB223",
+              "start_time": "13:00",
+              "end_time": "14:50",
+              "start_date": "2027/01/18",
+              "end_date": "2027/02/01",
+              "is_tutorial": false
+            },
+            {
+              "day": 5,
+              "venue": "KB223",
+              "start_time": "18:00",
+              "end_time": "18:50",
+              "start_date": "2027/01/22",
+              "end_date": "2027/01/29",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "KB223",
+              "start_time": "13:00",
+              "end_time": "14:50",
+              "start_date": "2027/02/15",
+              "end_date": "2027/03/01",
+              "is_tutorial": false
+            },
+            {
+              "day": 5,
+              "venue": "KB223",
+              "start_time": "18:00",
+              "end_time": "18:50",
+              "start_date": "2027/02/19",
+              "end_date": "2027/03/05",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "KB223",
+              "start_time": "13:00",
+              "end_time": "14:50",
+              "start_date": "2027/03/15",
+              "end_date": "2027/03/22",
+              "is_tutorial": false
+            },
+            {
+              "day": 5,
+              "venue": "KB223",
+              "start_time": "18:00",
+              "end_time": "18:50",
+              "start_date": "2027/03/19",
+              "end_date": "2027/03/19",
+              "is_tutorial": false
+            },
+            {
+              "day": 5,
+              "venue": "KB223",
+              "start_time": "18:00",
+              "end_time": "18:50",
+              "start_date": "2027/04/02",
+              "end_date": "2027/04/30",
+              "is_tutorial": false
+            },
+            {
+              "day": 1,
+              "venue": "KB223",
+              "start_time": "13:00",
+              "end_time": "14:50",
+              "start_date": "2027/04/12",
+              "end_date": "2027/04/26",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        }
+      ],
+      "reviews": [
+        {
+          "id": 18019,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "ctw",
+          "content": "很卷，第五章内容有点抽象，前面四章还好",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 1015,
+          "course_code": "MATH2211",
+          "created_at": "2026-07-27 09:51:26.804529+08",
+          "updated_at": "2026-07-27 09:51:26.804529+08"
+        },
+        {
+          "id": 18054,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "CTW",
+          "content": "考试改卷很严，步骤一定要写完整清楚，不然即使结果对的也会扣细节分。。。一整个无语",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 595,
+          "course_code": "MATH2211",
+          "created_at": "2026-07-27 11:32:10.325452+08",
+          "updated_at": "2026-07-27 11:32:10.325452+08"
+        },
+        {
+          "id": 18066,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "Ching Tak Wing",
+          "content": "不想说啥了，不知道final到底考砸到什么程度，，，，，两次test都是A range，最后成绩出来拿到B-我真没想到",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 1051,
+          "course_code": "MATH2211",
+          "created_at": "2026-07-27 12:46:57.462413+08",
+          "updated_at": "2026-07-27 12:46:57.462413+08"
+        },
+        {
+          "id": 18299,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "chine",
+          "content": "上完2014来的，一个学期都在自学，感觉比2014难，考前把tutorial，revision paper和past paper全做了，感觉题型还是比较固定，但要花时间刷题",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 788,
+          "course_code": "MATH2211",
+          "created_at": "2026-07-28 12:00:30.306962+08",
+          "updated_at": "2026-07-28 12:00:30.306962+08"
+        },
+        {
+          "id": 18448,
+          "year_taken": "2024-2025",
+          "sem_taken": "Sem2",
+          "instructor": "",
+          "content": "学过2014于是放松警惕了，test考的很烂，期末需要猛猛刷题，没想象中好龟",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 604,
+          "course_code": "MATH2211",
+          "created_at": "2026-07-29 17:18:36.079482+08",
+          "updated_at": "2026-07-29 17:18:36.079482+08"
+        }
+      ]
+    },
+    {
+      "code": "SCNC1112",
+      "title": "Fundamentals of modern science",
+      "offer_dept": "Science Faculty",
+      "requirement": "NIL(This course is compulsory for all students taking a Science major offered by the Faculty of Science, except those who are eligible for exemption. Students should take this course in their first year.)",
+      "description": "",
+      "liked_count": 0,
+      "disliked_count": 33,
+      "reviewed_count": 83,
+      "a_plus": 16,
+      "a": 28,
+      "a_minus": 23,
+      "b_plus": 18,
+      "b": 14,
+      "b_minus": 20,
+      "c_plus": 15,
+      "c": 14,
+      "c_minus": 8,
+      "d_plus": 4,
+      "d": 2,
+      "d_minus": 0,
+      "pass": 5,
+      "fail": 2,
+      "tutorial_yes_count": 20,
+      "essay_yes_count": 0,
+      "final_yes_count": 22,
+      "presentation_yes_count": 22,
+      "project_yes_count": 22,
+      "attendance_yes_count": 0,
+      "tutorial_no_count": 0,
+      "essay_no_count": 19,
+      "final_no_count": 0,
+      "presentation_no_count": 0,
+      "project_no_count": 0,
+      "attendance_no_count": 18,
+      "subclasses": [
+        {
+          "id": 53847,
+          "semester": "2026-27 Sem 1",
+          "section": "1A",
+          "instructor": "Leung,Kar Man; Merilae,Juha Kari Kristian; Pun,Chun Shing Jason",
+          "slots": [
+            {
+              "day": 2,
+              "venue": "LE1",
+              "start_time": "10:00",
+              "end_time": "11:50",
+              "start_date": "2026/09/01",
+              "end_date": "2026/10/06",
+              "is_tutorial": false
+            },
+            {
+              "day": 5,
+              "venue": "LE1",
+              "start_time": "12:00",
+              "end_time": "12:50",
+              "start_date": "2026/09/04",
+              "end_date": "2026/10/09",
+              "is_tutorial": false
+            },
+            {
+              "day": 2,
+              "venue": "LE1",
+              "start_time": "10:00",
+              "end_time": "11:50",
+              "start_date": "2026/10/20",
+              "end_date": "2026/11/24",
+              "is_tutorial": false
+            },
+            {
+              "day": 5,
+              "venue": "LE1",
+              "start_time": "12:00",
+              "end_time": "12:50",
+              "start_date": "2026/10/23",
+              "end_date": "2026/11/27",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        },
+        {
+          "id": 56309,
+          "semester": "2026-27 Sem 2",
+          "section": "2B",
+          "instructor": "Au Yeung,Ho Yu; Guo,Meng; Pun,Chun Shing Jason; Zheng,Chaogu",
+          "slots": [
+            {
+              "day": 2,
+              "venue": "LE1",
+              "start_time": "10:00",
+              "end_time": "11:50",
+              "start_date": "2027/01/19",
+              "end_date": "2027/02/02",
+              "is_tutorial": false
+            },
+            {
+              "day": 5,
+              "venue": "LE1",
+              "start_time": "12:00",
+              "end_time": "12:50",
+              "start_date": "2027/01/22",
+              "end_date": "2027/02/05",
+              "is_tutorial": false
+            },
+            {
+              "day": 2,
+              "venue": "LE1",
+              "start_time": "10:00",
+              "end_time": "11:50",
+              "start_date": "2027/02/16",
+              "end_date": "2027/03/02",
+              "is_tutorial": false
+            },
+            {
+              "day": 5,
+              "venue": "LE1",
+              "start_time": "12:00",
+              "end_time": "12:50",
+              "start_date": "2027/02/19",
+              "end_date": "2027/03/05",
+              "is_tutorial": false
+            },
+            {
+              "day": 5,
+              "venue": "LE1",
+              "start_time": "12:00",
+              "end_time": "12:50",
+              "start_date": "2027/03/19",
+              "end_date": "2027/03/19",
+              "is_tutorial": false
+            },
+            {
+              "day": 2,
+              "venue": "LE1",
+              "start_time": "10:00",
+              "end_time": "11:50",
+              "start_date": "2027/03/23",
+              "end_date": "2027/04/27",
+              "is_tutorial": false
+            },
+            {
+              "day": 5,
+              "venue": "LE1",
+              "start_time": "12:00",
+              "end_time": "12:50",
+              "start_date": "2027/04/02",
+              "end_date": "2027/04/30",
+              "is_tutorial": false
+            }
+          ],
+          "is_active": true
+        }
+      ],
+      "reviews": [
+        {
+          "id": 18359,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "",
+          "content": "糟糕的课，把每个学科最浮于表面的知识拉出来讲一遍美其名曰科学基础，考试为难而难考的全是犄角旮旯里细碎无用的知识点，gp遇到摆烂的队友基本完蛋。想拿好龟最好提前找好靠谱的队友，考试背得仔细一点还是可以拿到不错的分数的",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 918,
+          "course_code": "SCNC1112",
+          "created_at": "2026-07-28 17:14:40.572638+08",
+          "updated_at": "2026-07-28 17:14:40.572638+08"
+        },
+        {
+          "id": 18429,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "",
+          "content": "垃圾课，真的垃圾。考试化学生物占比贼大，完全背诵来的。而且小组project更是一坨，分到垃圾队友就拜拜了",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 951,
+          "course_code": "SCNC1112",
+          "created_at": "2026-07-29 14:37:34.541871+08",
+          "updated_at": "2026-07-29 14:37:34.541871+08"
+        },
+        {
+          "id": 18672,
+          "year_taken": "2025-2026",
+          "sem_taken": "Sem2",
+          "instructor": "",
+          "content": "pre给分奇怪，认真做了但都在平均以下，最好提前找好组员，考试需要刷题。最后猛猛刷题，A",
+          "liked_count": 0,
+          "disliked_count": 0,
+          "user_id": 1026,
+          "course_code": "SCNC1112",
+          "created_at": "2026-08-02 15:23:38.490694+08",
+          "updated_at": "2026-08-02 15:23:38.490694+08"
+        }
+      ]
+    }
+  ]
+}
