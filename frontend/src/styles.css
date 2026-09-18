@@ -96,17 +96,32 @@ body {
 
 .list-toolbar {
   display: flex;
+  flex-wrap: wrap;
   gap: 12px;
   margin-bottom: 8px;
 }
 
 .course-search {
-  flex: 1;
+  flex: 1 1 260px;
   max-width: 480px;
+  min-width: 220px;
 }
 
 .dept-select {
-  min-width: 280px;
+  min-width: 260px;
+  flex: 0 1 auto;
+}
+
+.sem-select {
+  width: 160px;
+}
+
+.req-select {
+  width: 160px;
+}
+
+.filter-none {
+  flex: 0 0 auto;
 }
 
 .list-hint {
@@ -532,7 +547,10 @@ body {
   }
 
   .course-search,
-  .dept-select {
+  .dept-select,
+  .sem-select,
+  .req-select,
+  .filter-none {
     max-width: none;
     width: 100%;
     min-width: 0;

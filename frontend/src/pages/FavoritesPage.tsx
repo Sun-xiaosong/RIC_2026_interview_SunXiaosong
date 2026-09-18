@@ -8,7 +8,7 @@ import { useFavorites } from '../hooks/useFavorites';
 /** 我的收藏页:展示 localStorage 中收藏的全部课程。 */
 export default function FavoritesPage() {
   const { favorites } = useFavorites();
-  const { courses, loading } = useCoursesQuery({ q: '', dept: '' });
+  const { courses, loading } = useCoursesQuery({ q: '', dept: '', sem: '', req: '' });
   const navigate = useNavigate();
 
   const favoriteCourses = useMemo(

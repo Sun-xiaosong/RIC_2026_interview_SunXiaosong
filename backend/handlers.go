@@ -90,23 +90,36 @@ func healthHandler(db *sql.DB) http.HandlerFunc {
 
 // ---- /api/courses 列表与搜索 ----
 
-// fetchCourseSummaries 查询全部课程摘要(评价数为 reviews 表真实条数),
-// dept 为空串时不过滤院系。结果按课程代码排序。
-func fetchCourseSummaries(db *sql.DB, dept string) ([]courseSummary, error) {
+// fetchCourseSummaries 查询全部课程摘要(评价数为 reviews 表真实条数)。
+// dept/sem/req 三个筛选维度可叠加(AND),空串表示不启用该维度:
+//   - dept:院系精确等值;
+//   - sem:"1"/"2",要求该课程在对应学期存在班次(subclasses.semester 后缀匹配);
+//   - req:"yes"/"no",按是否有前置要求过滤(空串、NIL、占位文本视为无)。
+// 结果按课程代码排序。
+func fetchCourseSummaries(db *sql.DB, dept, sem, req string) ([]courseSummary, error) {
+	semesterPattern := ""
+	if sem != "" {
+		semesterPattern = "%Sem " + sem
+	}
+
 	rows, err := db.Query(`
 		SELECT
 			courses.code,
 			courses.title,
 			courses.offer_dept,
+			courses.requirement,
 			COUNT(reviews.id),
 			courses.liked_count,
 			courses.disliked_count
 		FROM courses
 		LEFT JOIN reviews ON reviews.course_code = courses.code
 		WHERE (? = '' OR courses.offer_dept = ?)
+			AND (? = '' OR EXISTS (
+				SELECT 1 FROM subclasses s
+				WHERE s.course_code = courses.code AND s.semester LIKE ?))
 		GROUP BY courses.code
 		ORDER BY courses.code ASC
-	`, dept, dept)
+	`, dept, dept, sem, semesterPattern)
 	if err != nil {
 		return nil, err
 	}
@@ -115,15 +128,40 @@ func fetchCourseSummaries(db *sql.DB, dept string) ([]courseSummary, error) {
 	courses := make([]courseSummary, 0, 10)
 	for rows.Next() {
 		var item courseSummary
+		var requirement *string
 		if err := rows.Scan(
-			&item.Code, &item.Title, &item.OfferDept, &item.ReviewedCount,
+			&item.Code, &item.Title, &item.OfferDept, &requirement, &item.ReviewedCount,
 			&item.LikedCount, &item.DislikedCount,
 		); err != nil {
 			return nil, err
 		}
+		hasReq := hasPrerequisite(requirement)
+		if (req == "yes" && !hasReq) || (req == "no" && hasReq) {
+			continue
+		}
 		courses = append(courses, item)
 	}
 	return courses, rows.Err()
+}
+
+// hasPrerequisite 判断课程是否真的有前置要求。
+// 数据集中的"无前置"有三种形态:NULL/空串、以 NIL 开头(SCNC1112)、
+// 以及占位文本"无前置要求或未提供相关数据"(ACCT1101),均视为无前置要求。
+func hasPrerequisite(requirement *string) bool {
+	if requirement == nil {
+		return false
+	}
+	trimmed := strings.TrimSpace(*requirement)
+	if trimmed == "" {
+		return false
+	}
+	if strings.HasPrefix(strings.ToUpper(trimmed), "NIL") {
+		return false
+	}
+	if strings.HasPrefix(trimmed, "无前置要求") {
+		return false
+	}
+	return true
 }
 
 func coursesHandler(db *sql.DB) http.HandlerFunc {
@@ -134,8 +172,18 @@ func coursesHandler(db *sql.DB) http.HandlerFunc {
 
 		query := strings.TrimSpace(request.URL.Query().Get("q"))
 		dept := request.URL.Query().Get("dept")
+		sem := request.URL.Query().Get("sem")
+		if sem != "" && sem != "1" && sem != "2" {
+			writeError(response, http.StatusBadRequest, "sem must be 1 or 2")
+			return
+		}
+		req := request.URL.Query().Get("req")
+		if req != "" && req != "yes" && req != "no" {
+			writeError(response, http.StatusBadRequest, "req must be yes or no")
+			return
+		}
 
-		courses, err := fetchCourseSummaries(db, dept)
+		courses, err := fetchCourseSummaries(db, dept, sem, req)
 		if err != nil {
 			writeError(response, http.StatusInternalServerError, "database query failed")
 			return
