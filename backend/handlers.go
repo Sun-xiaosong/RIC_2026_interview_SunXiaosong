@@ -38,59 +38,25 @@ func requireGet(response http.ResponseWriter, request *http.Request) bool {
 
 // ---- 搜索排序 ----
 
-// matchTier 计算课程与搜索词的匹配档位:
-// 0 标题精确匹配 > 1 代码精确匹配 > 2 标题词首匹配 > 3 代码前缀匹配 >
-// 4 代码包含匹配(仅纯数字关键词) > -1 不匹配。
+// matchTier 计算课程代码与搜索词的匹配档位:
+// 0 代码精确匹配 > 1 代码前缀匹配 > 2 代码包含匹配 > -1 不匹配。
+// 只匹配课程代码(8 位:4 个字母 + 4 个数字,如 COMP3314),标题不参与搜索;
+// 代码包含关键词即命中(不区分大小写),因此搜字母(COMP)、数字(3314)、
+// 片段(ct、na23)都能找到对应课程。
 // 在 Go 内存中做(而非 SQL LIKE):规避 LIKE 的 %/_ 通配符转义问题,且大小写行为可控。
-// 匹配语义:
-//   - 标题按"词首"匹配(标题中某个单词以关键词开头),不匹配单词中段的字母,
-//     避免搜 "A" 命中 "machine" 里的 a 这类噪音;
-//   - 单字符关键词只匹配代码前缀,进一步降低单字母的噪音;
-//   - 代码按前缀匹配("COMP"、"FINA");纯数字关键词额外允许代码包含匹配,
-//     支持直接搜课程编号(如 "3314" 命中 COMP3314)。
-func matchTier(query, code, title string) int {
-	if strings.EqualFold(title, query) {
+func matchTier(query, code string) int {
+	if strings.EqualFold(code, query) {
 		return 0
 	}
-	if strings.EqualFold(code, query) {
-		return 1
-	}
 	q := strings.ToLower(query)
-	if len(query) >= 2 && titleHasWordPrefix(title, q) {
-		return 2
-	}
 	lowerCode := strings.ToLower(code)
 	if strings.HasPrefix(lowerCode, q) {
-		return 3
+		return 1
 	}
-	if isDigits(q) && strings.Contains(lowerCode, q) {
-		return 4
+	if strings.Contains(lowerCode, q) {
+		return 2
 	}
 	return -1
-}
-
-// titleHasWordPrefix 判断标题中是否有单词以 lowerQuery 开头(大小写不敏感)。
-// strings.Fields 按空白分词,单词可携带标点(如 "Life:" 匹配 "life")。
-func titleHasWordPrefix(title, lowerQuery string) bool {
-	for _, word := range strings.Fields(title) {
-		if strings.HasPrefix(strings.ToLower(word), lowerQuery) {
-			return true
-		}
-	}
-	return false
-}
-
-// isDigits 判断非空字符串是否全部由 ASCII 数字组成。
-func isDigits(s string) bool {
-	if s == "" {
-		return false
-	}
-	for _, r := range s {
-		if r < '0' || r > '9' {
-			return false
-		}
-	}
-	return true
 }
 
 // ---- /api/health ----
@@ -178,13 +144,13 @@ func coursesHandler(db *sql.DB) http.HandlerFunc {
 		if query != "" {
 			matched := make([]courseSummary, 0, len(courses))
 			for _, item := range courses {
-				if matchTier(query, item.Code, item.Title) >= 0 {
+				if matchTier(query, item.Code) >= 0 {
 					matched = append(matched, item)
 				}
 			}
 			sort.SliceStable(matched, func(i, j int) bool {
-				ti := matchTier(query, matched[i].Code, matched[i].Title)
-				tj := matchTier(query, matched[j].Code, matched[j].Title)
+				ti := matchTier(query, matched[i].Code)
+				tj := matchTier(query, matched[j].Code)
 				if ti != tj {
 					return ti < tj
 				}
