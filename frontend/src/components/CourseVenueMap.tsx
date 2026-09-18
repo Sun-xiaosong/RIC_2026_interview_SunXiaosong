@@ -74,7 +74,7 @@ export default function CourseVenueMap({ subclasses }: CourseVenueMapProps) {
 
   return (
     <div>
-      <MapContainer center={HKU_CENTER} zoom={17} scrollWheelZoom={false} className="venue-map">
+      <MapContainer center={HKU_CENTER} zoom={17} scrollWheelZoom className="venue-map">
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"

@@ -1,6 +1,8 @@
-import { Card, Empty, Grid, Progress, Table, Tooltip, Typography } from 'antd';
+import { Card, Empty, Grid, Progress, Table, Tooltip, Typography, App as AntApp } from 'antd';
+import { HeartFilled, HeartOutlined } from '@ant-design/icons';
 import type { ColumnsType } from 'antd/es/table';
 import { useNavigate } from 'react-router-dom';
+import { useFavorites } from '../hooks/useFavorites';
 import type { CourseSummary } from '../types/course';
 
 /** 好评率:无投票返回 null(展示为 —)。 */
@@ -24,14 +26,39 @@ export function CourseResultsTable({ courses, loading, emptyText = '没有找到
   const navigate = useNavigate();
   const screens = Grid.useBreakpoint();
   const isMobile = !screens.md;
+  const { isFavorite, toggle } = useFavorites();
+  const { message } = AntApp.useApp();
+
+  /** 列表内联的爱心收藏按钮:点击直接切换收藏,不跳转详情页。 */
+  const renderHeart = (code: string) => {
+    const active = isFavorite(code);
+    return (
+      <span
+        role="button"
+        aria-label={active ? '取消收藏' : '收藏'}
+        title={active ? '取消收藏' : '收藏'}
+        className={active ? 'fav-heart is-active' : 'fav-heart'}
+        onClick={(event) => {
+          event.stopPropagation();
+          toggle(code);
+          void message.success(active ? '已取消收藏' : '已加入收藏');
+        }}
+      >
+        {active ? <HeartFilled /> : <HeartOutlined />}
+      </span>
+    );
+  };
 
   const columns: ColumnsType<CourseSummary> = [
     {
       title: '课程',
       dataIndex: 'code',
       render: (_, course) => (
-        <div>
-          <span className="course-code">{course.code}</span>
+        <div className="course-cell">
+          <div className="course-cell__code-row">
+            <span className="course-code">{course.code}</span>
+            {renderHeart(course.code)}
+          </div>
           <Typography.Text type="secondary" className="course-title">
             {course.title}
           </Typography.Text>
@@ -113,9 +140,12 @@ export function CourseResultsTable({ courses, loading, emptyText = '没有找到
             >
               <div className="course-card__head">
                 <span className="course-code">{course.code}</span>
-                {rate !== null && (
-                  <span className="course-card__rate">{Math.round(rate * 100)}% 好评</span>
-                )}
+                <div className="course-card__actions">
+                  {rate !== null && (
+                    <span className="course-card__rate">{Math.round(rate * 100)}% 好评</span>
+                  )}
+                  {renderHeart(course.code)}
+                </div>
               </div>
               <Typography.Text type="secondary">{course.title}</Typography.Text>
               <div className="course-card__meta">

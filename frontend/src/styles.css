@@ -121,6 +121,37 @@ body {
   color: #2f54eb;
 }
 
+.course-cell__code-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 列表内联爱心收藏 */
+.fav-heart {
+  color: #bfbfbf;
+  cursor: pointer;
+  font-size: 15px;
+  line-height: 1;
+  padding: 3px;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.fav-heart:hover {
+  color: #ff7875;
+  transform: scale(1.15);
+}
+
+.fav-heart.is-active {
+  color: #ff4d4f;
+}
+
+.course-card__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .course-title {
   display: block;
   font-size: 13px;
