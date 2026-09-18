@@ -181,14 +181,6 @@ export default function TimetablePage() {
     [favorites, details, semester],
   );
 
-  const otherBlocksForPanel = useMemo(
-    () =>
-      selectedBlockList
-        .filter((item) => !hoverCourse || item.code !== hoverCourse)
-        .flatMap((item) => item.blocks),
-    [selectedBlockList, hoverCourse],
-  );
-
   const hourEnd = useMemo(
     () => Math.max(19, Math.ceil(latestEndMinute(details) / 60)),
     [details],
@@ -292,7 +284,7 @@ export default function TimetablePage() {
         candidates={candidates}
         loading={loading}
         selectionByCourse={selectionByCourse}
-        otherBlocks={otherBlocksForPanel}
+        selectedBlockList={selectedBlockList}
         semester={semester}
         hoverCourse={hoverCourse}
         onHoverCourse={setHoverCourse}

@@ -92,8 +92,8 @@ interface CandidatePanelProps {
   loading: boolean;
   /** courseCode -> 已排 subclassId(不分学期,面板自行判断是否属于当前学期) */
   selectionByCourse: Map<string, number>;
-  /** 当前学期其他已排课程的课时段,用于分班冲突置灰 */
-  otherBlocks: TimeBlock[];
+  /** 当前学期已排课程的时段(按课程分组),用于冲突判断 */
+  selectedBlockList: SelectedBlocks[];
   /** 当前查看的学期 */
   semester: 1 | 2;
   /** 当前悬停的课程(控制分班展开) */
@@ -103,25 +103,40 @@ interface CandidatePanelProps {
   onSelectSubclass: (courseCode: string, subclassId: number) => void;
 }
 
+interface SelectedBlocks {
+  code: string;
+  blocks: TimeBlock[];
+}
+
+/** 分班是否与课表中"其他课程"的已排时段冲突(永远排除本课程自己,与悬停无关)。 */
+function subclassConflicts(
+  subclass: Subclass,
+  courseCode: string,
+  selectedBlockList: SelectedBlocks[],
+): boolean {
+  const blocks = subclassBlocks(subclass);
+  const otherBlocks = selectedBlockList
+    .filter((item) => item.code !== courseCode)
+    .flatMap((item) => item.blocks);
+  return blocks.some((block) => otherBlocks.some((other) => blocksOverlap(block, other)));
+}
+
 function SubclassRow({
   detail,
   subclass,
   isSelected,
-  otherBlocks,
+  conflict,
   onHoverSubclass,
   onSelectSubclass,
 }: {
   detail: CourseDetail;
   subclass: Subclass;
   isSelected: boolean;
-  otherBlocks: TimeBlock[];
+  conflict: boolean;
   onHoverSubclass: (info: { courseCode: string; subclassId: number } | null) => void;
   onSelectSubclass: (courseCode: string, subclassId: number) => void;
 }) {
   const blocks = subclassBlocks(subclass);
-  const conflict = blocks.some((block) =>
-    otherBlocks.some((other) => blocksOverlap(block, other)),
-  );
   const className = isSelected
     ? 'cand-sub is-selected'
     : conflict
@@ -157,7 +172,7 @@ export function CandidatePanel({
   candidates,
   loading,
   selectionByCourse,
-  otherBlocks,
+  selectedBlockList,
   semester,
   hoverCourse,
   onHoverCourse,
@@ -208,6 +223,18 @@ export function CandidatePanel({
           const subsOther = detail.subclasses.filter(
             (subclass) => semesterOf(subclass) === otherSemester,
           );
+          const conflictBySubclass = new Map(
+            subsCurrent.map((subclass) => [
+              subclass.id,
+              subclassConflicts(subclass, detail.code, selectedBlockList),
+            ]),
+          );
+          // 本学期所有分班都与课表其他课程冲突 → 课程整体标注(已排的不算)
+          const courseAllConflict =
+            !selectedInThisSem &&
+            subsCurrent.length > 0 &&
+            subsCurrent.every((subclass) => conflictBySubclass.get(subclass.id));
+
           // 悬停时展开本学期全部分班;未悬停时只钉住已排的当前学期分班
           const expanded = hoverCourse === detail.code;
           const visibleSubs = expanded
@@ -219,7 +246,7 @@ export function CandidatePanel({
           return (
             <div
               key={detail.code}
-              className="cand-item"
+              className={courseAllConflict ? 'cand-item is-conflict' : 'cand-item'}
               onMouseEnter={() => onHoverCourse(detail.code)}
               onMouseLeave={() => onHoverCourse(null)}
             >
@@ -229,6 +256,7 @@ export function CandidatePanel({
                 {selectedSub && !selectedInThisSem && (
                   <span className="cand-cross-sem">已排于 Sem {semesterOf(selectedSub)}</span>
                 )}
+                {courseAllConflict && <Tag color="red">时间冲突</Tag>}
                 <Button
                   type="text"
                   size="small"
@@ -250,7 +278,7 @@ export function CandidatePanel({
                       detail={detail}
                       subclass={subclass}
                       isSelected={selectedSubId === subclass.id}
-                      otherBlocks={otherBlocks}
+                      conflict={conflictBySubclass.get(subclass.id) ?? false}
                       onHoverSubclass={onHoverSubclass}
                       onSelectSubclass={onSelectSubclass}
                     />

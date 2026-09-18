@@ -825,6 +825,18 @@ body {
   box-shadow: 0 1px 4px rgba(47, 84, 235, 0.08);
 }
 
+/* 本学期所有分班都与课表冲突的课程 */
+.cand-item.is-conflict {
+  background: #fff2f0;
+  border-color: #ffa39e;
+  opacity: 0.75;
+}
+
+.cand-item.is-conflict:hover {
+  border-color: #ff7875;
+  box-shadow: none;
+}
+
 .cand-item__head {
   display: flex;
   align-items: center;
