@@ -6,23 +6,7 @@ body {
 
 .app-layout {
   min-height: 100vh;
-  isolation: isolate;
-  position: relative;
   background: linear-gradient(165deg, #e9f5ee 0%, #f6fbf8 45%, #fdfefd 100%);
-}
-
-/* 液态玻璃背后的环境光斑:让玻璃的折射模糊有内容可表现 */
-.app-layout::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background:
-    radial-gradient(620px 420px at 12% 6%, rgba(16, 185, 129, 0.18), transparent 65%),
-    radial-gradient(720px 520px at 88% 16%, rgba(20, 184, 166, 0.15), transparent 65%),
-    radial-gradient(860px 640px at 72% 88%, rgba(110, 231, 183, 0.18), transparent 62%),
-    radial-gradient(520px 420px at 22% 82%, rgba(45, 212, 191, 0.12), transparent 65%);
 }
 
 /* 细滚动条 */
