@@ -43,6 +43,7 @@ export function SolutionDrawer({
       onClose={onClose}
       mask={false}
       destroyOnHidden
+      rootClassName="liquid-drawer"
     >
       {result.solutions.length === 0 ? (
         <Empty
