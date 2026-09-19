@@ -6,7 +6,23 @@ body {
 
 .app-layout {
   min-height: 100vh;
-  background: linear-gradient(165deg, #eef7f2 0%, #f6fbf8 45%, #fdfefd 100%);
+  isolation: isolate;
+  position: relative;
+  background: linear-gradient(165deg, #e9f5ee 0%, #f6fbf8 45%, #fdfefd 100%);
+}
+
+/* 液态玻璃背后的环境光斑:让玻璃的折射模糊有内容可表现 */
+.app-layout::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(620px 420px at 12% 6%, rgba(16, 185, 129, 0.18), transparent 65%),
+    radial-gradient(720px 520px at 88% 16%, rgba(20, 184, 166, 0.15), transparent 65%),
+    radial-gradient(860px 640px at 72% 88%, rgba(110, 231, 183, 0.18), transparent 62%),
+    radial-gradient(520px 420px at 22% 82%, rgba(45, 212, 191, 0.12), transparent 65%);
 }
 
 /* 细滚动条 */
@@ -30,7 +46,7 @@ body {
 
 /* 液态玻璃顶栏:高折射模糊 + 顶部镜面高光 + 亮边 */
 .app-header {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.4));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.52), rgba(255, 255, 255, 0.32));
   backdrop-filter: blur(24px) saturate(180%) brightness(1.04);
   -webkit-backdrop-filter: blur(24px) saturate(180%) brightness(1.04);
   border-bottom: 1px solid rgba(255, 255, 255, 0.55);
@@ -600,7 +616,7 @@ body {
   border-radius: 16px;
   padding: 10px;
   background:
-    linear-gradient(160deg, rgba(255, 255, 255, 0.68), rgba(255, 255, 255, 0.42)) padding-box,
+    linear-gradient(160deg, rgba(255, 255, 255, 0.52), rgba(255, 255, 255, 0.26)) padding-box,
     linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.15)) border-box;
   backdrop-filter: blur(24px) saturate(170%);
   -webkit-backdrop-filter: blur(24px) saturate(170%);
@@ -829,7 +845,7 @@ body {
   z-index: 2;
 }
 
-/* 右侧备选列表:液态玻璃 */
+/* 右侧备选列表:液态玻璃 + 斜向扫光 */
 .tt-side {
   width: 320px;
   flex-shrink: 0;
@@ -837,7 +853,7 @@ body {
   border-radius: 16px;
   padding: 14px;
   background:
-    linear-gradient(165deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.45)) padding-box,
+    linear-gradient(165deg, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.28)) padding-box,
     linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.15)) border-box;
   backdrop-filter: blur(24px) saturate(170%);
   -webkit-backdrop-filter: blur(24px) saturate(170%);
@@ -850,6 +866,23 @@ body {
   max-height: calc(100vh - 96px);
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+}
+
+/* 玻璃上的斜向镜面扫光 */
+.tt-side::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  pointer-events: none;
+  background: linear-gradient(
+    115deg,
+    transparent 32%,
+    rgba(255, 255, 255, 0.22) 46%,
+    rgba(255, 255, 255, 0.05) 54%,
+    transparent 68%
+  );
 }
 
 .tt-side__head {
