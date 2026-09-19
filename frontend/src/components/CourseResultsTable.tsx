@@ -94,7 +94,7 @@ export function CourseResultsTable({ courses, loading, emptyText = '没有找到
               percent={percent}
               showInfo={false}
               size="small"
-              strokeColor={rate >= 0.6 ? '#52C41A' : rate >= 0.4 ? '#FAAD14' : '#FF4D4F'}
+              strokeColor={rate >= 0.6 ? '#059669' : rate >= 0.4 ? '#6EE7B7' : '#94A3B8'}
             />
             <span className="like-rate__text">
               {percent}%

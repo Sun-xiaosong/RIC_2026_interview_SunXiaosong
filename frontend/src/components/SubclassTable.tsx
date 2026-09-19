@@ -5,7 +5,7 @@ import type { Slot, Subclass } from '../types/course';
 function SlotLine({ slot }: { slot: Slot }) {
   return (
     <div className="slot-line">
-      <Tag color="blue">{dayLabel(slot.day)}</Tag>
+      <Tag color="cyan">{dayLabel(slot.day)}</Tag>
       <span className="slot-line__time">
         {slot.startTime}–{slot.endTime}
       </span>

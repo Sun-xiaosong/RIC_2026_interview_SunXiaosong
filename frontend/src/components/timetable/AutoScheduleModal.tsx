@@ -116,7 +116,7 @@ export function AutoScheduleModal({
                 <Tag
                   key={code}
                   closable
-                  color={count === 0 ? 'red' : 'blue'}
+                  color={count === 0 ? 'red' : 'green'}
                   onClose={() => toggleCode(code)}
                 >
                   {code}

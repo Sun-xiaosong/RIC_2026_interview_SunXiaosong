@@ -8,22 +8,28 @@ import App from './App';
 import { FavoritesProvider } from './context/FavoritesContext';
 import './styles.css';
 
-// 主题定制:学术蓝主色 + 浅灰页面底色,表格/卡片细节微调。
+// 主题定制:翡翠绿主色 + 蓝绿点缀,浅绿雾面页面底色,圆润留白的呼吸感。
 const theme = {
   token: {
-    colorPrimary: '#2F54EB',
-    borderRadius: 6,
+    colorPrimary: '#059669',
+    colorInfo: '#0D9488',
+    colorLink: '#0D9488',
+    borderRadius: 10,
     fontSize: 14,
-    colorBgLayout: '#F5F7FA',
-    colorTextBase: '#1F2329',
+    colorBgLayout: '#F3F9F6',
+    colorTextBase: '#1C2B25',
   },
   components: {
     Table: {
-      headerBg: '#FAFAFA',
-      rowHoverBg: '#F0F5FF',
+      headerBg: '#F4FAF7',
+      rowHoverBg: '#EDF8F2',
     },
     Card: {
-      boxShadowTertiary: '0 1px 2px rgba(0, 0, 0, 0.03)',
+      boxShadowTertiary: '0 1px 2px rgba(6, 95, 70, 0.04)',
+    },
+    Segmented: {
+      itemSelectedBg: '#E6F6EF',
+      itemSelectedColor: '#047857',
     },
   },
 };

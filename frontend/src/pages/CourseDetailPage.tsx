@@ -73,7 +73,7 @@ export default function CourseDetailPage() {
           <span className="course-code">{course.code}</span>
           {course.title}
         </Typography.Title>
-        {course.offerDept && <Tag color="blue">{course.offerDept}</Tag>}
+        {course.offerDept && <Tag color="cyan">{course.offerDept}</Tag>}
       </div>
 
       <div className="detail-layout">
